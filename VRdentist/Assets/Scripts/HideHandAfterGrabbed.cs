@@ -15,8 +15,8 @@ public class HideHandAfterGrabbed : MonoBehaviour
     void Start()
     {
         grabInteractable = this.GetComponent<XRGrabInteractable>();
-        grabInteractable.onSelectEnter.AddListener(OnGrabbed);
-        grabInteractable.onSelectExit.AddListener(OnReleased);
+        grabInteractable.onSelectEntered.AddListener(OnGrabbed);
+        grabInteractable.onSelectExited.AddListener(OnReleased);
     }
 
     void OnGrabbed(XRBaseInteractor rBaseInteractor)
@@ -49,8 +49,8 @@ public class HideHandAfterGrabbed : MonoBehaviour
     private void OnDestroy()
     {
         if (grabInteractable) {
-            grabInteractable.onSelectEnter.RemoveListener(OnGrabbed);
-            grabInteractable.onSelectExit.RemoveListener(OnReleased);
+            grabInteractable.onSelectEntered.RemoveListener(OnGrabbed);
+            grabInteractable.onSelectExited.RemoveListener(OnReleased);
         }
     }
 

@@ -52,8 +52,8 @@ public class GrabbableEquipmentBehavior : MonoBehaviour
         if (!animator) {
             animator = this.GetComponentInChildren<Animator>();
         }
-        grabInteractable.onSelectEnter.AddListener(OnGrabbed);
-        grabInteractable.onSelectExit.AddListener(OnReleased);
+        grabInteractable.onSelectEntered.AddListener(OnGrabbed);
+        grabInteractable.onSelectExited.AddListener(OnReleased);
         grabInteractable.onActivate.AddListener(OnActivate);
         grabInteractable.onDeactivate.AddListener(OnDeactivate);
         SetAnimation();
@@ -139,8 +139,8 @@ public class GrabbableEquipmentBehavior : MonoBehaviour
 
     private void OnDestroy()
     {
-        grabInteractable.onSelectEnter.RemoveListener(OnGrabbed);
-        grabInteractable.onSelectExit.RemoveListener(OnReleased);
+        grabInteractable.onSelectEntered.RemoveListener(OnGrabbed);
+        grabInteractable.onSelectExited.RemoveListener(OnReleased);
         grabInteractable.onActivate.RemoveListener(OnActivate);
         grabInteractable.onDeactivate.RemoveListener(OnDeactivate);
     }

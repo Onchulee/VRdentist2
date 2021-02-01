@@ -16,6 +16,13 @@
       },
       "hash": "dab2d32e9d66d260596f9633db88c2040cf717a7"
     },
+    "com.dgn.thaitext": {
+      "version": "https://github.com/Onchulee/ThaiText.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "9693b62b2c74c6ecbd4b30b8098d896f1fab7a77"
+    },
     "com.dgn.unity-attributes": {
       "version": "https://github.com/Onchulee/UnityAttributes.git#1.0.6",
       "depth": 0,

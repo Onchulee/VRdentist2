@@ -13,6 +13,7 @@ public class CutTeethEvent : SceneEvent
     public string toolName;
     public string progressTextName;
     public float actionTime;
+    public string guidanceName = "PathGuidance";
     public SceneEvent nextScene;
 
     private GameObject wisdomTeeth;
@@ -20,6 +21,7 @@ public class CutTeethEvent : SceneEvent
     private List<GameObject> fragmentTooth;
     private GrabbableEquipmentBehavior tool;
     private Text progressText;
+    private PathGuidance guidance;
 
     private bool isCollided;
     private float progressTime;
@@ -32,6 +34,7 @@ public class CutTeethEvent : SceneEvent
         bool foundTrigger = SceneAssetManager.GetAssetComponent<CollisionTrigger>(wisdomTeethTriggerName, out wisdomTeethTrigger);
         bool foundItem = SceneAssetManager.GetAssetComponent<GrabbableEquipmentBehavior>(toolName, out tool);
         bool foundText = SceneAssetManager.GetAssetComponent<Text>(progressTextName, out progressText);
+        SceneAssetManager.GetAssetComponent<PathGuidance>(guidanceName, out guidance);
 
         fragmentTooth = new List<GameObject>();
         foreach (string targetName in fragmentTeethNames) {
@@ -75,6 +78,8 @@ public class CutTeethEvent : SceneEvent
             progressText.text = GetProgressString();
             progressText.gameObject.SetActive(true);
         }
+        guidance?.SetParent(tool.transform);
+        guidance?.SetTarget(wisdomTeeth.transform);
     }
 
     public override void UpdateEvent()
@@ -95,6 +100,8 @@ public class CutTeethEvent : SceneEvent
 
     public override void StopEvent()
     {
+        guidance?.SetTarget(null);
+        guidance?.SetParent(null);
         if (wisdomTeethTrigger)
         {
             Debug.Log("CollisionTriggerEvent remove events");
@@ -122,12 +129,7 @@ public class CutTeethEvent : SceneEvent
 
     public override void UnPause()
     {
-
-    }
-
-    public override void Skip()
-    {
-
+    
     }
 
     private void OnCollisionEnter(Collision collision)

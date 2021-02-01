@@ -287,11 +287,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 29643360390311922, guid: a76007fe273a1914f89e1e41e5b66f65,
         type: 3}
-      propertyPath: respawnAt.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 29643360390311922, guid: a76007fe273a1914f89e1e41e5b66f65,
-        type: 3}
       propertyPath: respawnAt.Array.data[0]
       value: 
       objectReference: {fileID: 2348290371949360265}
@@ -1092,11 +1087,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8440276471894281748, guid: 0de2a918f70647f49ae36e9462e9becc,
         type: 3}
-      propertyPath: respawnAt.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8440276471894281748, guid: 0de2a918f70647f49ae36e9462e9becc,
-        type: 3}
       propertyPath: respawnAt.Array.data[0]
       value: 
       objectReference: {fileID: 2348290371949360265}
@@ -1436,11 +1426,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Syringe02
-      objectReference: {fileID: 0}
-    - target: {fileID: 8208386353222027711, guid: 54727774cccb5ab419e9648fc9e32298,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54727774cccb5ab419e9648fc9e32298, type: 3}

@@ -10,8 +10,6 @@ public class CollisionTrigger : MonoBehaviour
     
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("CollisionTrigger call: " + collision.gameObject.name + " / OnCollisionEnterEvent: "+ (OnCollisionEnterEvent!=null));
-
         OnCollisionEnterEvent?.Invoke(collision);
     }
 

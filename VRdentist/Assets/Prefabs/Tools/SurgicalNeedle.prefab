@@ -94,12 +94,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 854883cd773861a4783c1e524c3eb10b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  config: {fileID: 11400000, guid: 2690cf9ea109abf439216cf04d5e8f1c, type: 2}
+  enableRespawn: 1
   respawnAt: {fileID: 0}
-  respawnTime: 1.5
-  respawnOnCollsionLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  enableRespawn: 0
+  disableWhenIsKinematic: 0
 --- !u!65 &2431277679323122605
 BoxCollider:
   m_ObjectHideFlags: 0

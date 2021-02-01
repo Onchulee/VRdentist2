@@ -7,28 +7,30 @@ public class CollisionTriggerEvent : SceneEvent
 {
     public string collisionTriggerName;
     public string targetItemName;
+    public string guidanceName= "PathGuidance";
     public SceneEvent nextScene;
 
     private CollisionTrigger trigger;
     private GrabbableEquipmentBehavior targetItem;
+    private PathGuidance guidance;
 
     private bool isCollided;
 
     public override void InitEvent()
     {
         base.InitEvent();
-        bool foundTrigger = SceneAssetManager.GetAssetComponent<CollisionTrigger>(collisionTriggerName, out trigger);
-        bool foundItem = SceneAssetManager.GetAssetComponent<GrabbableEquipmentBehavior>(targetItemName, out targetItem);
+        SceneAssetManager.GetAssetComponentInChildren<CollisionTrigger>(collisionTriggerName, out trigger);
+        SceneAssetManager.GetAssetComponent<GrabbableEquipmentBehavior>(targetItemName, out targetItem);
+        SceneAssetManager.GetAssetComponent<PathGuidance>(guidanceName, out guidance);
 
-        Debug.Log("Found Asset[" + collisionTriggerName + "]: " + foundTrigger);
-        Debug.Log("Found Asset[" + targetItemName + "]: " + foundItem);
-        
         if (nextScene) nextScene.InitEvent();
     }
 
     public override void StartEvent()
     {
         isCollided = false;
+        guidance?.SetParent(targetItem.transform);
+        guidance?.SetTarget(trigger.transform);
         if (trigger)
         {
             trigger.gameObject.SetActive(true);
@@ -55,6 +57,8 @@ public class CollisionTriggerEvent : SceneEvent
             trigger.OnCollisionExitEvent -= OnCollisionExit;
             trigger.gameObject.SetActive(false);
         }
+        guidance?.SetTarget(null);
+        guidance?.SetParent(null);
         Debug.Log("Stop event: " + this.name);
     }
 
@@ -69,11 +73,6 @@ public class CollisionTriggerEvent : SceneEvent
     }
 
     public override void UnPause()
-    {
-
-    }
-
-    public override void Skip()
     {
 
     }

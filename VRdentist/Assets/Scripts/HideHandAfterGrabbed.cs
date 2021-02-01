@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using com.dgn.XR.Extensions;
+using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
 [RequireComponent(typeof(XRGrabInteractable))]
@@ -26,6 +27,7 @@ public class HideHandAfterGrabbed : MonoBehaviour
                 handPresence.showController = recordShowController;
                 handPresence.showHand = recordShowHand;
             }
+
             handPresence = rHandPresence;
             recordShowController = handPresence.showController;
             recordShowHand = handPresence.showHand;

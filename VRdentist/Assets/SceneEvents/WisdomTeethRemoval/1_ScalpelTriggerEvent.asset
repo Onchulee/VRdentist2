@@ -15,4 +15,5 @@ MonoBehaviour:
   delayNextEvent: 1
   collisionTriggerName: TriggerGumArea
   targetItemName: Scalpel
-  nextScene: {fileID: 11400000, guid: d63029c4fa1744c47b048ad782c60444, type: 2}
+  guidanceName: PathGuidance
+  nextScene: {fileID: 0}

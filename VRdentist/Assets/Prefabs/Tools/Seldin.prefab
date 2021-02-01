@@ -185,12 +185,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 854883cd773861a4783c1e524c3eb10b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  config: {fileID: 11400000, guid: 2690cf9ea109abf439216cf04d5e8f1c, type: 2}
+  enableRespawn: 1
   respawnAt: {fileID: 0}
-  respawnTime: 1.5
-  respawnOnCollsionLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  enableRespawn: 0
+  disableWhenIsKinematic: 0
 --- !u!114 &3309614249273045835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,6 +214,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotSpeed: 180
+  inputX_rotate: 1
+  inputY_rotate: 3
 --- !u!114 &7693862954696170752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,10 +230,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   activateType: 0
+  alwaysActivateOnGrabbed: 0
   physicsColliders:
   - {fileID: 5019918559044654693}
-  activateColliders: []
   disabledPhysicsOnGrabbed: 1
+  triggerColliders: []
+  alwaysTriggerOnGrabbed: 1
   isGrabbed: 0
   isActivate: 0
 --- !u!114 &1809281767388086689

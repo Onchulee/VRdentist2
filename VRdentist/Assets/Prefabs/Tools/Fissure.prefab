@@ -205,12 +205,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdbbea7a738f4754d93dab8dd96f4e3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnAt: []
-  respawnTime: 1.5
-  respawnOnCollsionLayer:
-    serializedVersion: 2
-    m_Bits: 256
+  config: {fileID: 11400000, guid: 2690cf9ea109abf439216cf04d5e8f1c, type: 2}
   enableRespawn: 0
+  respawnAt:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &7314290029068692915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,6 +239,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotSpeed: 180
+  inputX_rotate: 1
+  inputY_rotate: 3
 --- !u!114 &7616815284440079314
 MonoBehaviour:
   m_ObjectHideFlags: 0

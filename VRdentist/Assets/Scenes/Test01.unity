@@ -291,7 +291,6 @@ GameObject:
   - component: {fileID: 45299106}
   - component: {fileID: 45299108}
   - component: {fileID: 45299107}
-  - component: {fileID: 45299110}
   m_Layer: 0
   m_Name: TriggerTrayArea
   m_TagString: Untagged
@@ -369,39 +368,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &45299110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 45299104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c141cba928541cd4db1d6cead4e32593, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collisionTriggerName: TriggerTrayArea
-  MissionClearText: {fileID: 1703596452}
-  numOfTools: {fileID: 483229785}
-  ToolsNames:
-  - Scissors
-  - Scalpel
-  - Syringe01
-  - Syringe02
-  - Molt
-  TextCheckNames:
-  - ScissorsText
-  - ScalpelText
-  - Syringe01Text
-  - Syringe02Text
-  - MoltText
-  ToolsNames02:
-  - Scissors
-  - 555
-  - Syringe01
-  - 
-  - 
 --- !u!1001 &75513757
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1688,6 +1654,7 @@ GameObject:
   - component: {fileID: 483229784}
   - component: {fileID: 483229786}
   - component: {fileID: 483229785}
+  - component: {fileID: 483229787}
   m_Layer: 5
   m_Name: num of tools
   m_TagString: Untagged
@@ -1755,6 +1722,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 483229783}
   m_CullTransparentMesh: 0
+--- !u!114 &483229787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483229783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bedf1176fb477cd44b2943bda7574c44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  assetName: num of tools
+  hideOnStart: 0
 --- !u!1 &488249867
 GameObject:
   m_ObjectHideFlags: 0
@@ -5058,6 +5039,7 @@ GameObject:
   - component: {fileID: 1703596451}
   - component: {fileID: 1703596453}
   - component: {fileID: 1703596452}
+  - component: {fileID: 1703596454}
   m_Layer: 5
   m_Name: Mission Clear
   m_TagString: Untagged
@@ -5125,6 +5107,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1703596450}
   m_CullTransparentMesh: 0
+--- !u!114 &1703596454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703596450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bedf1176fb477cd44b2943bda7574c44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  assetName: Mission Clear
+  hideOnStart: 1
 --- !u!1 &1753281964
 GameObject:
   m_ObjectHideFlags: 0
@@ -5925,7 +5921,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onEditMode: 1
   sequenceEvents:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 9f25178c639a8b94aaabbf8b29662cd6, type: 2}
   autoRun: 1
   autoRunNext: 1
   initialEvent: {fileID: 0}

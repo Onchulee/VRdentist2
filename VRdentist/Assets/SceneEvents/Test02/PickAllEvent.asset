@@ -26,4 +26,24 @@ MonoBehaviour:
   - Syringe01TextDetail
   - Syringe02TextDetail
   - MoltTextDetail
+  toolSetup:
+  - toolName: Scissors
+    detailText: ScissorsTextDetail
+    checkText: ScissorsText
+  - toolName: Scalpel
+    detailText: ScalpelTextDetail
+    checkText: ScalpelText
+  - toolName: Syringe01
+    detailText: Syringe01TextDetail
+    checkText: Syringe01Text
+  - toolName: Syringe02
+    detailText: Syringe02TextDetail
+    checkText: Syringe02Text
+  - toolName: Molt
+    detailText: MoltTextDetail
+    checkText: MoltText
+  numOfToolsTextName: num of tools
+  missionClearTextName: Mission Clear
+  guidanceName: PathGuidance
   nextScene: {fileID: 0}
+  missionClearText: {fileID: 0}

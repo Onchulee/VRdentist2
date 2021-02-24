@@ -30,11 +30,7 @@ public class TrayCheck : MonoBehaviour
    // private bool[] check;
 
    // List<GameObject> list;
-
-
-
-
-
+   
         [System.Serializable]
         public struct Tracking 
         {

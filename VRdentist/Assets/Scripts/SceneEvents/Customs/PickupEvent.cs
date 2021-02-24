@@ -1,18 +1,31 @@
 ﻿using com.dgn.SceneEvent;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.XR.Interaction.Toolkit;
 
 [System.Serializable]
-[CreateAssetMenu(fileName = "CollisionTriggerEvent", menuName = "SceneEvent/TeethRemoval/CollisionTriggerEvent")]
-public class CollisionTriggerEvent : SceneEvent
+[CreateAssetMenu(fileName = "PickupEvent", menuName = "SceneEvent/Test/PickupEvent")]
+//[RequireComponent(typeof(XRGrabInteractable))]
+public class PickupEvent : SceneEvent
 {
+    private XRGrabInteractable grabInteractable;
+
     public string collisionTriggerName;
     public string targetItemName;
-    public string guidanceName= "PathGuidance";
+    public string guidanceName = "PathGuidance";
+    public string progressTextName;
     public SceneEvent nextScene;
+
 
     private CollisionTrigger trigger;
     private GrabbableEquipmentBehavior targetItem;
     private PathGuidance guidance;
+    private Text progressText;
+
+
 
     private bool isCollided;
 
@@ -22,8 +35,15 @@ public class CollisionTriggerEvent : SceneEvent
         SceneAssetManager.GetAssetComponentInChildren<CollisionTrigger>(collisionTriggerName, out trigger);
         SceneAssetManager.GetAssetComponent<GrabbableEquipmentBehavior>(targetItemName, out targetItem);
         SceneAssetManager.GetAssetComponent<PathGuidance>(guidanceName, out guidance);
-
+        bool foundText = SceneAssetManager.GetAssetComponent<Text>(progressTextName, out progressText);
         if (nextScene) nextScene.InitEvent();
+
+
+
+
+
+        Debug.Log("Found Asset[" + progressTextName + "]: " + foundText);
+
     }
 
     public override void StartEvent()
@@ -38,14 +58,57 @@ public class CollisionTriggerEvent : SceneEvent
             trigger.OnCollisionEnterEvent += OnCollisionEnter;
             trigger.OnCollisionExitEvent += OnCollisionExit;
         }
+
+
+
+        if (progressText)
+        {
+
+            progressText.gameObject.SetActive(false);
+          //  Debug.Log("ProgessText");
+
+
+        }
+        grabInteractable = targetItem.GetComponent<XRGrabInteractable>();
+
+        
+        grabInteractable.onSelectEntered.AddListener(OnGrabbed);
+        grabInteractable.onSelectExited.AddListener(OnReleased);
+
+
+
     }
+
+    private void OnGrabbed(XRBaseInteractor arg0)
+    {
+        Debug.Log("Grab");
+        progressText.gameObject.SetActive(true);
+    }
+
+
+
+    private void OnReleased(XRBaseInteractor arg0)
+    {
+        Debug.Log("OnReleased");
+        progressText.gameObject.SetActive(false);
+    }
+
+    
 
     public override void UpdateEvent()
     {
-        if (targetItem &&/* targetItem.IsActivate && */isCollided)
+        if (targetItem /*&& targetItem.IsActivate */&& isCollided)
         {
             passEventCondition = true;
         }
+       
+        if (targetItem )
+        {
+           // progressText.gameObject.SetActive(true);
+           
+        }
+
+
     }
 
     public override void StopEvent()
@@ -55,16 +118,26 @@ public class CollisionTriggerEvent : SceneEvent
             Debug.Log("CollisionTriggerEvent remove events");
             trigger.OnCollisionEnterEvent -= OnCollisionEnter;
             trigger.OnCollisionExitEvent -= OnCollisionExit;
-            trigger.gameObject.SetActive(false);
+          //  trigger.gameObject.SetActive(false);
         }
+
+        if (progressText)
+        {
+            progressText.gameObject.SetActive(false);
+        }
+
         guidance?.SetTarget(null);
         guidance?.SetParent(null);
         Debug.Log("Stop event: " + this.name);
+
+        grabInteractable.onSelectEntered.RemoveListener(OnGrabbed);
+        grabInteractable.onSelectExited.RemoveListener(OnReleased);
     }
 
     public override SceneEvent NextEvent()
     {
-        Debug.Log("Go next scene");
+        
+
         return nextScene;
     }
 
@@ -80,10 +153,19 @@ public class CollisionTriggerEvent : SceneEvent
 
     private void OnCollisionEnter(Collision collision)
     {
+       
         Debug.Log("CollisionTriggerEvent call: " + collision.gameObject.name);
-        if (collision.gameObject == targetItem.gameObject) {
+
+        //ตรงนี้ไม่ต้อง
+        ///collision.gameObject คือ area ที่ต้องเอาของไปวาง
+        ///targetItem เครื่องมือแพทย์
+
+        if (collision.gameObject == targetItem.gameObject)
+        {
             if (isCollided == false) Debug.Log(targetItem.name + "is Collided");
             isCollided = true;
+          //  Debug.Log("ชน");
+
         }
     }
 
@@ -92,6 +174,7 @@ public class CollisionTriggerEvent : SceneEvent
         if (collision.gameObject == targetItem.gameObject)
         {
             isCollided = false;
+          //  Debug.Log("ไม่ชน");
         }
     }
 

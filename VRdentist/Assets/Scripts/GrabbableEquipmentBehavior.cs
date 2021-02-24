@@ -61,7 +61,7 @@ public class GrabbableEquipmentBehavior : MonoBehaviour
         SetActivateColliders();
     }
 
-    void OnGrabbed(XRBaseInteractor rBaseInteractor)
+     void OnGrabbed(XRBaseInteractor rBaseInteractor)
     {
         isGrabbed = true;
         isActivate = alwaysActivateOnGrabbed;

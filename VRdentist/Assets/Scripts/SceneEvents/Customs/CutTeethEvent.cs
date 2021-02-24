@@ -19,6 +19,7 @@ public class CutTeethEvent : SceneEvent
     private GameObject wisdomTeeth;
     private CollisionTrigger wisdomTeethTrigger;
     private List<GameObject> fragmentTooth;
+
     private GrabbableEquipmentBehavior tool;
     private Text progressText;
     private PathGuidance guidance;
@@ -43,6 +44,8 @@ public class CutTeethEvent : SceneEvent
                 fragmentTooth.Add(targetObject);
             }
         }
+
+
 
         Debug.Log("Found Asset[" + wisdomTeethName + "]: " + foundTeeth);
         Debug.Log("Found Asset[" + wisdomTeethTriggerName + "]: " + foundTrigger);

@@ -14,18 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayNextEvent: 0
   collisionTriggerName: TriggerTrayArea
-  ToolsNames:
-  - Scissors
-  - Scalpel
-  - Syringe01
-  - Syringe02
-  - Molt
-  ToolsDetailText:
-  - ScissorsTextDetail
-  - ScalpelTextDetail
-  - Syringe01TextDetail
-  - Syringe02TextDetail
-  - MoltTextDetail
   toolSetup:
   - toolName: Scissors
     detailText: ScissorsTextDetail
@@ -46,4 +34,3 @@ MonoBehaviour:
   missionClearTextName: Mission Clear
   guidanceName: PathGuidance
   nextScene: {fileID: 0}
-  missionClearText: {fileID: 0}

@@ -10,6 +10,15 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class PickAllEvent : SceneEvent
 {
     [System.Serializable]
+    public struct ToolSetup
+    {
+        public string toolName;
+        public string detailText;
+        public string checkText;
+    }
+
+
+    [System.Serializable]
     public struct Tracking
     {
         public GrabbableEquipmentBehavior equipment;
@@ -18,12 +27,7 @@ public class PickAllEvent : SceneEvent
         public bool check;
     }
 
-    [System.Serializable]
-    public struct ToolSetup {
-        public string toolName;
-        public string detailText;
-        public string checkText;
-    }
+    
 
     public string collisionTriggerName;
 
@@ -48,8 +52,7 @@ public class PickAllEvent : SceneEvent
 
     private List<XRGrabInteractable> grabInteractables = new List<XRGrabInteractable>();
 
-    private XRGrabInteractable grabInteractable0;
-    private XRGrabInteractable grabInteractable1;
+    
 
 
     public override void InitEvent()
@@ -64,8 +67,7 @@ public class PickAllEvent : SceneEvent
         List<Tracking>  trackedList = new List<Tracking>();
         foreach (ToolSetup config in toolSetup)
         {
-            if (SceneAssetManager.GetAssetComponent(config.toolName, 
-                out GrabbableEquipmentBehavior targetObject))
+            if (SceneAssetManager.GetAssetComponent(config.toolName, out GrabbableEquipmentBehavior targetObject))
             {
                 Tracking newTrack = new Tracking
                 {
@@ -104,29 +106,7 @@ public class PickAllEvent : SceneEvent
 
         /*  Debug.Log("Found Asset[Tools]: " + (tools.Count > 0));
 
-          Debug.Log("อุปกรณ์ที่ถือ" + tools[0]);
-          Debug.Log("อุปกรณ์ที่ถือ" + tools[1]);
-          Debug.Log("อุปกรณ์ที่ถือ" + tools[2]);
-          Debug.Log("อุปกรณ์ที่ถือ" + tools[3]);
-          Debug.Log("อุปกรณ์ที่ถือ" + tools[4]);
-
-
-
-          Debug.Log("Found Asset[Text]: " + (texts.Count > 0));
-          Debug.Log("Found Asset[Text]: " + texts.Count);
-          Debug.Log("Textที่เจอ" + texts[0]);
-          Debug.Log("Textที่เจอ" + texts[1]);
-          Debug.Log("Textที่เจอ" + texts[2]);
-          Debug.Log("Textที่เจอ" + texts[3]);
-          Debug.Log("Textที่เจอ" + texts[4]);
-
-          Debug.Log("Found Asset[GrabInteractable]: " + (grabInteractable.Count > 0));
-          Debug.Log("Found Asset[GrabInteractable]: " + grabInteractable.Count);
-          Debug.Log("GrabInteractableที่เจอ" + grabInteractable[0]);
-          Debug.Log("GrabInteractableเจอ" + grabInteractable[1]);
-          Debug.Log("GrabInteractable" + grabInteractable[2]);
-          Debug.Log("GrabInteractableที่เจอ" + grabInteractable[3]);
-          Debug.Log("GrabInteractableที่เจอ" + grabInteractable[4]);*/
+         */
     }
 
     public override void StartEvent()
@@ -170,11 +150,7 @@ public class PickAllEvent : SceneEvent
             trackedTool.detailWindow.SetActive(false);
         }
 
-        //texts[0].gameObject.SetActive(false);
-        //texts[1].gameObject.SetActive(false);
-        //texts[2].gameObject.SetActive(false);
-        //texts[3].gameObject.SetActive(false);
-        //texts[4].gameObject.SetActive(false);
+        
 
         guidance?.SetParent(null);
     }

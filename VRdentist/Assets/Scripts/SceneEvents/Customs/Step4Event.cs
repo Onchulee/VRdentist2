@@ -89,8 +89,7 @@ public class Step4Event : SceneEvent
                 interactable.onSelectExited.AddListener(OnReleased);
                 grabInteractables.Add(interactable);
 
-                trackedTools[0].freezeTool.SetActive(false);
-                trackedTools[1].freezeTool.SetActive(false);
+                
             }
         }
         trackedTools = trackedList.ToArray();
@@ -113,7 +112,7 @@ public class Step4Event : SceneEvent
             {
                 Debug.Log("จับ " + i);
 
-                trackedTools[i].freezeTool.SetActive(true);
+              //  trackedTools[i].freezeTool.SetActive(true);
 
                 trackedTools[i].guidance?.SetParent(trackedTools[i].equipment.transform);
 
@@ -135,7 +134,7 @@ public class Step4Event : SceneEvent
         {
             trackedTools[i].guidance?.SetParent(null);
 
-            trackedTools[i].freezeTool.SetActive(false);
+        //    trackedTools[i].freezeTool.SetActive(false);
         }
     }
 
@@ -158,7 +157,8 @@ public class Step4Event : SceneEvent
             Debug.Log(trackedTools[i].freezeTool);
 
             //ทำให้อุปกรณ์ มองไม่เห็น
-            
+            trackedTools[i].freezeTool.SetActive(false);
+        //    trackedTools[1].freezeTool.SetActive(false);
 
 
 
@@ -169,8 +169,8 @@ public class Step4Event : SceneEvent
             {
                 
                 trackedTools[i].trigger.gameObject.SetActive(true);
-              //  trackedTools[i].trigger.OnCollisionEnterEvent += OnCollisionEnter;
-             //   trackedTools[i].trigger.OnCollisionExitEvent += OnCollisionExit;
+                trackedTools[i].trigger.OnCollisionEnterEvent += OnCollisionEnter;
+                trackedTools[i].trigger.OnCollisionExitEvent += OnCollisionExit;
                 
             }
             
@@ -197,7 +197,23 @@ public class Step4Event : SceneEvent
 
     public override void UpdateEvent()
     {
-       
+        int triggleToolCount = 0;
+        foreach (Tracking tool in trackedTools)
+        {
+            if (tool.check == true)
+            {
+                triggleToolCount += 1;
+            }
+        }
+
+        if (triggleToolCount >= trackedTools.Length)
+        {
+            Debug.Log("จบ Event step4 แล้วจ้าาาา ");
+            passEventCondition = true;  // Uncomment if you want system to done here
+        }
+
+
+
 
     }
 
@@ -208,22 +224,25 @@ public class Step4Event : SceneEvent
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.rigidbody == null) return;
-
-        
+        if (collision == null) return;
 
 
+       
 
-        Debug.Log("CollisionTriggerEvent call: " + collision.gameObject.name);
 
         for (int i = 0; i < trackedTools.Length; i++)
         {
 
-            if(collision.rigidbody.gameObject == trackedTools[i].equipment.gameObject)
+            if (collision.gameObject == trackedTools[i].equipment.gameObject)
             {
                 Debug.Log("ชนกัน");
+                trackedTools[i].freezeTool.SetActive(true);
 
 
+                trackedTools[i].trigger.gameObject.SetActive(false);
+                trackedTools[i].equipment.gameObject.SetActive(false);
+                trackedTools[i].check = true;
+                break;
             }
 
 
@@ -232,23 +251,22 @@ public class Step4Event : SceneEvent
         }
 
     }
+    private void OnCollisionExit(Collision collision)
+    {
 
-    /*
-          private void OnTriggerEnter(Collider other)
-          {
-              for (int i = 0; i < trackedTools.Length; i++)
-              {
+        if (collision.gameObject == trackedTools[1].equipment.gameObject)
+        {
+           // trackedTools[1].freezeTool.SetActive(false);
+           
 
-                  if (trackedTools[i].trigger.gameObject == trackedTools[i].equipment.gameObject)
-                  {
-                      Debug.Log("ชนกันแล้ว " + i);
 
-                      trackedTools[i].freezeTool.SetActive(true);
+        }
+    }
 
-                      break;
-                  }
-              }
+    private void OntriggerEnter(Collider other)
+    {
 
-          }*/
+
 
     }
+}

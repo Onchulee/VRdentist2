@@ -9,16 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9bf2370e26c2c43bbf12e69492ea20, type: 3}
-  m_Name: PickupAllEvent
+  m_Script: {fileID: 11500000, guid: acfa6129f034271418ce73b442cd693a, type: 3}
+  m_Name: Step4Event
   m_EditorClassIdentifier: 
   delayNextEvent: 0
-  collisionTriggerName: TriggerTrayArea
-  guidanceName: PathGuidance
-  ToolsNames:
-  - Scissors
-  - Scalpel
-  - Syringe01
-  - Syringe02
-  - Molt
+  toolSetup:
+  - toolName: Molt
+    triggerName: TriggerMoltArea
+    guidanceName: PathGuidance
+  - toolName: Seldin
+    triggerName: TriggerSeldinArea
+    guidanceName: PathGuidance2
   nextScene: {fileID: 0}

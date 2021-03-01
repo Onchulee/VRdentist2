@@ -16,7 +16,8 @@ public class Step4Event : SceneEvent
         public string toolName;
         public string triggerName;
         public string guidanceName;
-        
+        public string freezeToolsName;
+
 
     }
 
@@ -26,6 +27,8 @@ public class Step4Event : SceneEvent
         public GrabbableEquipmentBehavior equipment;
         public CollisionTrigger trigger;
         public PathGuidance guidance;
+        public GameObject freezeTool;
+        public bool hold;
         public bool check;
         
     }
@@ -60,7 +63,8 @@ public class Step4Event : SceneEvent
                 Tracking newTrack = new Tracking
                 {
                     equipment = targetObject,
-                    check = false
+                    check = false,
+                    hold = false
                 };
                 if (SceneAssetManager.GetAssetComponentInChildren(config.triggerName, out CollisionTrigger i_trigger))
                 {
@@ -72,6 +76,10 @@ public class Step4Event : SceneEvent
                     newTrack.guidance = i_guidance;
                 }
 
+                if (SceneAssetManager.GetGameObjectAsset(config.freezeToolsName, out GameObject i_freezeTool))
+                {
+                    newTrack.freezeTool = i_freezeTool;
+                }
 
 
                 trackedList.Add(newTrack);
@@ -80,14 +88,16 @@ public class Step4Event : SceneEvent
                 interactable.onSelectEntered.AddListener(OnGrabbed);
                 interactable.onSelectExited.AddListener(OnReleased);
                 grabInteractables.Add(interactable);
+
+                trackedTools[0].freezeTool.SetActive(false);
+                trackedTools[1].freezeTool.SetActive(false);
             }
         }
         trackedTools = trackedList.ToArray();
 
-       
     }
 
-    
+
     private void OnGrabbed(XRBaseInteractor interactor)
     {
         XRBaseInteractable interactable = interactor.selectTarget;
@@ -103,7 +113,9 @@ public class Step4Event : SceneEvent
             {
                 Debug.Log("จับ " + i);
 
-               trackedTools[i].guidance?.SetParent(trackedTools[i].equipment.transform);
+                trackedTools[i].freezeTool.SetActive(true);
+
+                trackedTools[i].guidance?.SetParent(trackedTools[i].equipment.transform);
 
                 break;
             }
@@ -122,6 +134,8 @@ public class Step4Event : SceneEvent
         for (int i = 0; i < trackedTools.Length; i++)
         {
             trackedTools[i].guidance?.SetParent(null);
+
+            trackedTools[i].freezeTool.SetActive(false);
         }
     }
 
@@ -140,8 +154,15 @@ public class Step4Event : SceneEvent
     
         for (int i = 0; i < trackedTools.Length; i++)
         {
+
+            Debug.Log(trackedTools[i].freezeTool);
+
+            //ทำให้อุปกรณ์ มองไม่เห็น
             
-           trackedTools[i].guidance?.SetTarget(trackedTools[i].trigger.transform);
+
+
+
+            trackedTools[i].guidance?.SetTarget(trackedTools[i].trigger.transform);
           
 
             if (trackedTools[i].trigger)
@@ -177,6 +198,7 @@ public class Step4Event : SceneEvent
     public override void UpdateEvent()
     {
        
+
     }
 
     public override SceneEvent NextEvent()
@@ -184,4 +206,49 @@ public class Step4Event : SceneEvent
         return nextScene;
     }
 
-}
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.rigidbody == null) return;
+
+        
+
+
+
+        Debug.Log("CollisionTriggerEvent call: " + collision.gameObject.name);
+
+        for (int i = 0; i < trackedTools.Length; i++)
+        {
+
+            if(collision.rigidbody.gameObject == trackedTools[i].equipment.gameObject)
+            {
+                Debug.Log("ชนกัน");
+
+
+            }
+
+
+
+
+        }
+
+    }
+
+    /*
+          private void OnTriggerEnter(Collider other)
+          {
+              for (int i = 0; i < trackedTools.Length; i++)
+              {
+
+                  if (trackedTools[i].trigger.gameObject == trackedTools[i].equipment.gameObject)
+                  {
+                      Debug.Log("ชนกันแล้ว " + i);
+
+                      trackedTools[i].freezeTool.SetActive(true);
+
+                      break;
+                  }
+              }
+
+          }*/
+
+    }

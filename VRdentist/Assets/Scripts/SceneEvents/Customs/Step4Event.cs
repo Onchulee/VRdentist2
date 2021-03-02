@@ -231,7 +231,7 @@ public class Step4Event : SceneEvent
        
 
         if (moltCollider == null) return;
-        
+        if (moltCollider.attachedRigidbody == null) return;
 
 
         if (moltCollider.attachedRigidbody.gameObject == (trackedTools[0].equipment.gameObject&&trackedTools[0].hold) )
@@ -251,9 +251,9 @@ public class Step4Event : SceneEvent
     private void OnSeldinEnter(Collider seldinCollider)
     {
         if (seldinCollider == null) return;
-       
+        if (seldinCollider.attachedRigidbody == null) return;
 
-      
+
         if (seldinCollider.attachedRigidbody.gameObject == (trackedTools[1].equipment.gameObject && trackedTools[1].hold))
         {
             Debug.Log("ชนกันSeldin");

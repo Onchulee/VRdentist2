@@ -45,7 +45,7 @@ public class SwitchClick : SwitchController
     protected override void Start()
     {
         base.Start();
-        collision.OnCollisionStayEvent += OnCollisionEnterEvent;
+        collision.OnCollisionStayEvent += OnCollisionStayEvent;
         collision.OnCollisionExitEvent += OnCollisionExitEvent;
         defaultConstraints = rigid.constraints;
         fixedConstraints = RigidbodyConstraints.FreezeAll;
@@ -53,7 +53,8 @@ public class SwitchClick : SwitchController
     
     void LateUpdate()
     {
-        if (rigid) {
+        if (rigid)
+        {
             rigid.constraints = defaultConstraints;
             if (isContactA == true && isContactSurfaceA == false)
             {
@@ -120,12 +121,11 @@ public class SwitchClick : SwitchController
     }
 
     private bool GetContact(ContactPoint contactPoint) {
-        bool isNearTouch = Vector3.Distance(contactPoint.point, contactPoint.thisCollider.ClosestPoint(contactPoint.point)) < 0.01f;
         bool isIntersect = contactPoint.thisCollider.bounds.Intersects(contactPoint.otherCollider.bounds);
-        return isNearTouch && isIntersect;
+        return isIntersect;
     }
 
-    private void OnCollisionEnterEvent(Collision collision)
+    private void OnCollisionStayEvent(Collision collision)
     {
         foreach (ContactPoint contactPoint in collision.contacts)
         {
@@ -162,7 +162,7 @@ public class SwitchClick : SwitchController
 
     private void OnDestroy()
     {
-        collision.OnCollisionEnterEvent -= OnCollisionEnterEvent;
+        collision.OnCollisionStayEvent -= OnCollisionStayEvent;
         collision.OnCollisionExitEvent -= OnCollisionExitEvent;
     }
 

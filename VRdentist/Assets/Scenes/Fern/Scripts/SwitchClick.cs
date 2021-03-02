@@ -1,6 +1,4 @@
 ﻿using com.dgn.UnityAttributes;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SwitchClick : SwitchController
@@ -21,40 +19,28 @@ public class SwitchClick : SwitchController
     RigidbodyConstraints fixedConstraints;
 
     public Collider colA;
+    public Transform baseA;
     [ReadOnly]
     [SerializeField]
-    private bool contactA;
+    private bool isContactA;
     [ReadOnly]
     [SerializeField]
-    private bool contactSurfaceA;
-    [ReadOnly]
-    [SerializeField]
-    private float contactOffsetA;
+    private bool isContactSurfaceA;
     [ReadOnly]
     [SerializeField]
     private Vector3 contactPointA;
-    [ReadOnly]
-    [SerializeField]
-    private Vector3 centerA;
-
-
 
     public Collider colB;
+    public Transform baseB;
     [ReadOnly]
     [SerializeField]
-    private bool contactB;
+    private bool isContactB;
     [ReadOnly]
     [SerializeField]
-    private bool contactSurfaceB;
-    [ReadOnly]
-    [SerializeField]
-    private float contactOffsetB;
+    private bool isContactSurfaceB;
     [ReadOnly]
     [SerializeField]
     private Vector3 contactPointB;
-    [ReadOnly]
-    [SerializeField]
-    private Vector3 centerB;
 
     protected override void Start()
     {
@@ -64,29 +50,28 @@ public class SwitchClick : SwitchController
         defaultConstraints = rigid.constraints;
         fixedConstraints = RigidbodyConstraints.FreezeAll;
     }
-
-    private void FixedUpdate()
-    {
-        rigid.constraints = defaultConstraints;
-        if (contactA == true && contactSurfaceA == false)
-        {
-            lockTransform.localRotation = Quaternion.Euler(limitAngles.max);
-            rigid.constraints = fixedConstraints;
-        }
-        if (contactB == true && contactSurfaceB == false)
-        {
-            lockTransform.localRotation = Quaternion.Euler(limitAngles.min);
-            rigid.constraints = fixedConstraints;
-        }
-        if (contactA && contactB)
-        {
-            lockTransform.localRotation = Quaternion.Euler((limitAngles.min + limitAngles.max) * 0.5f);
-            rigid.constraints = fixedConstraints;
-        }
-    }
-
+    
     void LateUpdate()
     {
+        if (rigid) {
+            rigid.constraints = defaultConstraints;
+            if (isContactA == true && isContactSurfaceA == false)
+            {
+                lockTransform.localRotation = Quaternion.Euler(limitAngles.max);
+                rigid.constraints = fixedConstraints;
+            }
+            if (isContactB == true && isContactSurfaceB == false)
+            {
+                lockTransform.localRotation = Quaternion.Euler(limitAngles.min);
+                rigid.constraints = fixedConstraints;
+            }
+            if (isContactA && isContactB)
+            {
+                lockTransform.localRotation = Quaternion.Euler((limitAngles.min + limitAngles.max) * 0.5f);
+                rigid.constraints = fixedConstraints;
+            }
+        }
+
         if (lockTransform)
         {
             LockTransform();
@@ -134,61 +119,67 @@ public class SwitchClick : SwitchController
         }
     }
 
-    private bool GetContact(ContactPoint contactPoint, Collider collider) {
-        return Vector3.Distance(contactPoint.point, collider.ClosestPoint(contactPoint.point)) < 0.01f;
+    private bool GetContact(ContactPoint contactPoint) {
+        bool isNearTouch = Vector3.Distance(contactPoint.point, contactPoint.thisCollider.ClosestPoint(contactPoint.point)) < 0.01f;
+        bool isIntersect = contactPoint.thisCollider.bounds.Intersects(contactPoint.otherCollider.bounds);
+        return isNearTouch && isIntersect;
     }
 
     private void OnCollisionEnterEvent(Collision collision)
     {
         foreach (ContactPoint contactPoint in collision.contacts)
         {
-            if (contactPoint.thisCollider == colA) {
-                contactOffsetA = Vector3.Distance(contactPoint.point, colA.ClosestPoint(contactPoint.point));
-                contactA = GetContact(contactPoint, colA);
+            if (contactPoint.thisCollider == colA)
+            {
                 contactPointA = contactPoint.point;
-                centerA = contactPoint.otherCollider.bounds.center;
-                contactSurfaceA = contactA && contactPoint.point.y < centerA.y;
+                isContactA = GetContact(contactPoint);
+                isContactSurfaceA = CheckContactSurface(contactPoint.point, colA.transform);
             }
             if (contactPoint.thisCollider == colB)
             {
-                contactOffsetB = Vector3.Distance(contactPoint.point, colB.ClosestPoint(contactPoint.point));
-                contactB = GetContact(contactPoint, colB);
                 contactPointB = contactPoint.point;
-                centerB = contactPoint.otherCollider.bounds.center;
-                contactSurfaceB = contactB && contactPoint.point.y < centerB.y;
+                isContactB = GetContact(contactPoint);
+                isContactSurfaceB = CheckContactSurface(contactPoint.point, colB.transform);
             }
         }
+    }
+
+    private bool CheckContactSurface(Vector3 contactPos, Transform baseTransform) {
+        Vector3 heading = contactPos - baseTransform.position;
+        float dot = Vector3.Dot(heading, baseTransform.up);
+        return dot > 0;
     }
 
     private void OnCollisionExitEvent(Collision collision)
     {
         if (collision.contacts.Length <= 0) {
-            contactA = false;
-            contactB = false;
+            isContactA = false;
+            isContactSurfaceA = false;
+            isContactB = false;
+            isContactSurfaceB = false;
         }
     }
 
     private void OnDestroy()
     {
-
         collision.OnCollisionEnterEvent -= OnCollisionEnterEvent;
         collision.OnCollisionExitEvent -= OnCollisionExitEvent;
     }
 
     private void OnDrawGizmos()
     {
-        if (contactA)
+        if (isContactA)
         {
             Gizmos.color = Color.yellow;
-            Gizmos.DrawSphere(centerA, 0.0025f);
+            Gizmos.DrawSphere(colA.bounds.center, 0.0025f);
             Gizmos.color = Color.red;
             Gizmos.DrawSphere(contactPointA, 0.0025f);
         }
 
-        if (contactB)
+        if (isContactB)
         {
             Gizmos.color = Color.yellow;
-            Gizmos.DrawSphere(centerB, 0.0025f);
+            Gizmos.DrawSphere(colB.bounds.center, 0.0025f);
             Gizmos.color = Color.red;
             Gizmos.DrawSphere(contactPointB, 0.0025f);
         }

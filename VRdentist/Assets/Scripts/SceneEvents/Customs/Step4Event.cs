@@ -111,11 +111,8 @@ public class Step4Event : SceneEvent
             if (interactable.gameObject == trackedTools[i].equipment.gameObject)
             {
                 Debug.Log("จับ " + i);
-
-              //  trackedTools[i].freezeTool.SetActive(true);
-
                 trackedTools[i].guidance?.SetParent(trackedTools[i].equipment.transform);
-
+                trackedTools[i].hold = true;
                 break;
             }
         }
@@ -133,8 +130,9 @@ public class Step4Event : SceneEvent
         for (int i = 0; i < trackedTools.Length; i++)
         {
             trackedTools[i].guidance?.SetParent(null);
+            trackedTools[i].hold = false;
 
-        //    trackedTools[i].freezeTool.SetActive(false);
+           
         }
     }
 
@@ -147,18 +145,16 @@ public class Step4Event : SceneEvent
     public override void StartEvent()
     {
 
-
-        Debug.Log(trackedTools.Length);
-
+        
     
         for (int i = 0; i < trackedTools.Length; i++)
         {
 
-            Debug.Log(trackedTools[i].freezeTool);
+           
 
             //ทำให้อุปกรณ์ มองไม่เห็น
             trackedTools[i].freezeTool.SetActive(false);
-        //    trackedTools[1].freezeTool.SetActive(false);
+            trackedTools[1].freezeTool.SetActive(false);
 
 
 
@@ -169,9 +165,16 @@ public class Step4Event : SceneEvent
             {
                 
                 trackedTools[i].trigger.gameObject.SetActive(true);
-                trackedTools[i].trigger.OnCollisionEnterEvent += OnCollisionEnter;
-                trackedTools[i].trigger.OnCollisionExitEvent += OnCollisionExit;
-                
+                // trackedTools[i].trigger.OnCollisionEnterEvent += OnCollisionEnter;
+                //  trackedTools[i].trigger.OnCollisionExitEvent += OnCollisionExit;
+
+                trackedTools[0].trigger.OnTriggerEnterEvent += OnMoltEnter;
+               // trackedTools[0].trigger.OnTriggerExitEvent += OnMoltExit;
+
+                trackedTools[1].trigger.OnTriggerEnterEvent += OnSeldinEnter;
+              //  trackedTools[1].trigger.OnTriggerExitEvent += OnSeldinExit;
+
+
             }
             
         }
@@ -213,8 +216,7 @@ public class Step4Event : SceneEvent
         }
 
 
-
-
+       
     }
 
     public override SceneEvent NextEvent()
@@ -222,51 +224,54 @@ public class Step4Event : SceneEvent
         return nextScene;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision == null) return;
 
+    private void OnMoltEnter(Collider moltCollider)
+    {
 
        
 
+        if (moltCollider == null) return;
+        
 
-        for (int i = 0; i < trackedTools.Length; i++)
+
+        if (moltCollider.attachedRigidbody.gameObject == (trackedTools[0].equipment.gameObject&&trackedTools[0].hold) )
         {
+            Debug.Log("ชนกันMolt");
+            trackedTools[0].freezeTool.SetActive(true);
+            
+            trackedTools[0].trigger.gameObject.SetActive(false);
+            trackedTools[0].equipment.gameObject.SetActive(false);
+            trackedTools[0].check = true;
 
-            if (collision.gameObject == trackedTools[i].equipment.gameObject)
-            {
-                Debug.Log("ชนกัน");
-                trackedTools[i].freezeTool.SetActive(true);
+            
+        }
 
+    }
 
-                trackedTools[i].trigger.gameObject.SetActive(false);
-                trackedTools[i].equipment.gameObject.SetActive(false);
-                trackedTools[i].check = true;
-                break;
-            }
+    private void OnSeldinEnter(Collider seldinCollider)
+    {
+        if (seldinCollider == null) return;
+       
 
+      
+        if (seldinCollider.attachedRigidbody.gameObject == (trackedTools[1].equipment.gameObject && trackedTools[1].hold))
+        {
+            Debug.Log("ชนกันSeldin");
+            trackedTools[1].freezeTool.SetActive(true);
+            
+            trackedTools[1].trigger.gameObject.SetActive(false);
+            trackedTools[1].equipment.gameObject.SetActive(false);
+            trackedTools[1].check = true;
 
 
 
         }
 
     }
-    private void OnCollisionExit(Collision collision)
-    {
 
-        if (collision.gameObject == trackedTools[1].equipment.gameObject)
-        {
-           // trackedTools[1].freezeTool.SetActive(false);
-           
-
-
-        }
-    }
-
-    private void OntriggerEnter(Collider other)
-    {
+   
 
 
 
-    }
+
 }

@@ -17,7 +17,9 @@ MonoBehaviour:
   - toolName: Molt
     triggerName: TriggerMoltArea
     guidanceName: PathGuidance
+    freezeToolsName: MoltFreez
   - toolName: Seldin
     triggerName: TriggerSeldinArea
     guidanceName: PathGuidance2
+    freezeToolsName: SeldinFreez
   nextScene: {fileID: 0}

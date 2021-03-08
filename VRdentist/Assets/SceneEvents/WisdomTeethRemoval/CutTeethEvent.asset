@@ -9,12 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db9675cc1194e334d9c0d839a8695f8f, type: 3}
-  m_Name: 01_Scissors
+  m_Script: {fileID: 11500000, guid: 36d046851d34ead41afacdf0b5bf63ea, type: 3}
+  m_Name: CutTeethEvent
   m_EditorClassIdentifier: 
-  delayNextEvent: 0.5
-  collisionTriggerName: TriggerTrayArea
-  targetItemName: Scissors
+  delayNextEvent: 0
+  wisdomTeethName: TriggerArea
+  wisdomTeethTriggerName: TriggerArea
+  fragmentTeethNames: []
+  toolName: Syringe01
+  progressTextName: Step8ProgressText
+  actionTime: 2
   guidanceName: PathGuidance
-  progressTextName: ScissorsTextDetail
   nextScene: {fileID: 0}

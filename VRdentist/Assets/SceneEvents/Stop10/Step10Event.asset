@@ -9,12 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db9675cc1194e334d9c0d839a8695f8f, type: 3}
-  m_Name: 01_Scissors
+  m_Script: {fileID: 11500000, guid: dc4004645bbf42b4f982675ed36a9996, type: 3}
+  m_Name: Step10Event
   m_EditorClassIdentifier: 
-  delayNextEvent: 0.5
-  collisionTriggerName: TriggerTrayArea
-  targetItemName: Scissors
+  delayNextEvent: 0
+  toolName: Scissors
+  gauzeToolName: Gauze
+  triggerName: TriggerArea
+  gauzeTriggerName: gauzeTrigger
   guidanceName: PathGuidance
-  progressTextName: ScissorsTextDetail
   nextScene: {fileID: 0}

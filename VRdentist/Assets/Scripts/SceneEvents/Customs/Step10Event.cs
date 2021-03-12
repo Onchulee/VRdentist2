@@ -10,22 +10,27 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Step10Event : SceneEvent
 {
     
-        public string toolName;
-        public string gauzeToolName;
-        public string triggerName;
-        public string gauzeTriggerName;
-        public string guidanceName;
+    public string toolName;
+    public string gauzeToolName;
+    public string freezeGauzeName;
+    public string freezeGauzeAtScissorName;
+    public string triggerName;
+    public string gauzeTriggerName;
+    public string guidanceName;
         
 
-        private GrabbableEquipmentBehavior equipment;
-        private GameObject gauzeTool;
-        private CollisionTrigger trigger;
-        private CollisionTrigger gauzeTrigger;
-        private PathGuidance guidance;
+    private GrabbableEquipmentBehavior equipment;
+    private GameObject gauzeTool;
+    private GameObject freezeGauze;
+    private GameObject freezeAtScissorGauze;
+    private CollisionTrigger trigger;
+    private CollisionTrigger gauzeTrigger;
+    private PathGuidance guidance;
         
-    //ต้องมี bool ที่เอาไว้เช็คว่าคีบผ้าก๊อซด้วย
-        private bool hold;
-        private bool check;
+    
+    private bool holdingEquipment;
+    private bool holdingGauze;
+    private bool check;
     
 
 
@@ -35,6 +40,8 @@ public class Step10Event : SceneEvent
     {
         SceneAssetManager.GetAssetComponent<GrabbableEquipmentBehavior>(toolName, out equipment);
         SceneAssetManager.GetGameObjectAsset(gauzeToolName, out gauzeTool);
+        SceneAssetManager.GetGameObjectAsset(freezeGauzeName, out freezeGauze);
+        SceneAssetManager.GetGameObjectAsset(freezeGauzeAtScissorName, out freezeAtScissorGauze);
         SceneAssetManager.GetAssetComponentInChildren<CollisionTrigger>(triggerName, out trigger);
         SceneAssetManager.GetAssetComponentInChildren<CollisionTrigger>(gauzeTriggerName, out gauzeTrigger);
         SceneAssetManager.GetAssetComponent<PathGuidance>(guidanceName, out guidance);
@@ -48,7 +55,10 @@ public class Step10Event : SceneEvent
     }
     public override void StartEvent()
     {
-       
+        holdingGauze = false;
+        check = false;
+
+        freezeGauze.SetActive(false);
         guidance?.SetTarget(gauzeTrigger.transform);
         guidance?.SetParent(equipment.transform);
         if (trigger)
@@ -64,7 +74,7 @@ public class Step10Event : SceneEvent
             gauzeTrigger.gameObject.SetActive(true);
             gauzeTrigger.OnTriggerEnterEvent += OnGauzeTriggerEnter;
             gauzeTrigger.OnTriggerExitEvent += OnGauzeTriggerExit;
-            Debug.Log(gauzeTrigger);
+
         }
         Debug.Log("มาเริ่ม อีเว้นท์ Step4 กันเถอะ");
     }
@@ -73,14 +83,20 @@ public class Step10Event : SceneEvent
     {
         if (collider == null) return;
         if (collider.attachedRigidbody == null) return;
+        
 
-
-        if (collider.attachedRigidbody.gameObject == equipment.gameObject /*คีบ == true*/)
+        if (collider.attachedRigidbody.gameObject == equipment.gameObject && holdingGauze )
         {
-            //อุปกรณ?+ผ้าก๊อช ชนกับจุดเป้าหมาย
-            Debug.Log("");
+            freezeGauze.SetActive(true);
+            gauzeTool.SetActive(false);
+            guidance?.SetTarget(null);
+            freezeAtScissorGauze.SetActive(false);
+            check = true;
+            Debug.Log(check);
+            Debug.Log("วางแล้ว");
+        
 
-        }
+    }
     }
 
 
@@ -94,26 +110,33 @@ public class Step10Event : SceneEvent
 
     }
 
-    private void OnGauzeTriggerEnter(Collider gauzeCollider)
+    private void OnGauzeTriggerEnter(Collider gauzeCollider )
     {
         if (gauzeCollider == null) return;
         if (gauzeCollider.attachedRigidbody == null) return;
 
 
       
-        if(gauzeCollider.attachedRigidbody.gameObject == equipment.gameObject && !equipment.IsActivate)
-        {
+        //if(gauzeCollider.attachedRigidbody.gameObject == equipment.gameObject && !equipment.IsActivate)
+        //{
            
-            Debug.Log("ชนผ้าก๊อชเฉยๆ ไม่ได้คีบ");
+        //    Debug.Log("ชนผ้าก๊อชเฉยๆ ไม่ได้คีบ");
 
-        }
+        //}
 
         if (gauzeCollider.attachedRigidbody.gameObject == equipment.gameObject && equipment.IsActivate)
         {
+
             guidance?.SetTarget(trigger.transform);
-            Debug.Log("คีบ");
-            // ฟังชั่นคีบ ทำงาน
-            // คีบ == true
+
+            holdingGauze = true;
+
+            freezeAtScissorGauze.SetActive(true);
+            gauzeTool.SetActive(false);
+
+           // HoldingGauze();
+            
+
         }
 
     }
@@ -125,52 +148,48 @@ public class Step10Event : SceneEvent
         if (collider == null) return;
         if (collider.attachedRigidbody == null) return;
 
+        guidance?.SetTarget(gauzeTrigger.transform);
+        holdingGauze = false;
+        HoldingGauze();
         
 
+
     }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    private void OnGrabbed(XRBaseInteractor interactor)
+    // คีบ
+    private void HoldingGauze()
     {
-        XRBaseInteractable interactable = interactor.selectTarget;
-        if (interactable == null) return;
+        
 
-        if (interactable.gameObject == equipment.gameObject)
+        if (holdingGauze && equipment.IsActivate)
         {
-            guidance?.SetParent(equipment.transform);
-            hold = true;
+            gauzeTool.transform.SetParent(equipment.transform);
+            gauzeTool.GetComponent<Rigidbody>().isKinematic = true;
+            
+           
+            Debug.Log("คีบ");
+
+
         }
+
+
+        //if (!holdingGauze)
+        //{
+        //    gauzeTool.transform.SetParent(null);
+        //    gauzeTool.GetComponent<Rigidbody>().isKinematic = false;
+
+          
+
+
+        //}
+
+
     }
 
-    private void OnReleased(XRBaseInteractor interactor)
-    {
-        hold = false;
-        guidance?.SetParent(null);
-    }
+    
+    
 
     public override SceneEvent NextEvent()
     {
@@ -185,14 +204,37 @@ public class Step10Event : SceneEvent
 
     public override void UpdateEvent()
     {
+        
+
+        
+
        
+        if (check == true)
+        {
+
+            Debug.Log("ผ่าน Event10 แล้วต้า");
+            passEventCondition = true;
+            
+
+
+        }
     }
 
-    // คีบ
-   private void HoldingGauze()
+    private void OnGrabbed(XRBaseInteractor interactor)
     {
+        XRBaseInteractable interactable = interactor.selectTarget;
+        if (interactable == null) return;
 
+        if (interactable.gameObject == equipment.gameObject)
+        {
+            guidance?.SetParent(equipment.transform);
+            holdingEquipment = true;
+        }
+    }
 
-
+    private void OnReleased(XRBaseInteractor interactor)
+    {
+        holdingEquipment = false;
+        guidance?.SetParent(null);
     }
 }

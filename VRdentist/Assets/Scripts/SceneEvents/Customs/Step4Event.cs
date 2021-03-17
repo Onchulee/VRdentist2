@@ -144,13 +144,11 @@ public class Step4Event : SceneEvent
     
     public override void StartEvent()
     {
-
         
-    
         for (int i = 0; i < trackedTools.Length; i++)
         {
 
-           
+
 
             //ทำให้อุปกรณ์ มองไม่เห็น
             trackedTools[i].freezeTool.SetActive(false);
@@ -165,16 +163,10 @@ public class Step4Event : SceneEvent
             {
                 
                 trackedTools[i].trigger.gameObject.SetActive(true);
-                // trackedTools[i].trigger.OnCollisionEnterEvent += OnCollisionEnter;
-                //  trackedTools[i].trigger.OnCollisionExitEvent += OnCollisionExit;
 
                 trackedTools[0].trigger.OnTriggerEnterEvent += OnMoltEnter;
-               // trackedTools[0].trigger.OnTriggerExitEvent += OnMoltExit;
-
                 trackedTools[1].trigger.OnTriggerEnterEvent += OnSeldinEnter;
-              //  trackedTools[1].trigger.OnTriggerExitEvent += OnSeldinExit;
-
-
+            
             }
             
         }
@@ -184,11 +176,13 @@ public class Step4Event : SceneEvent
 
     public override void StopEvent()
     {
-        foreach (XRGrabInteractable interactable in grabInteractables)
-        {
-            interactable.onSelectEntered.RemoveListener(OnGrabbed);
-            interactable.onSelectExited.RemoveListener(OnReleased);
-        }
+        //foreach (XRGrabInteractable interactable in grabInteractables)
+        //{
+        //    interactable.onSelectEntered.RemoveListener(OnGrabbed);
+        //    interactable.onSelectExited.RemoveListener(OnReleased);
+        //}
+        trackedTools[0].hold = false;
+        trackedTools[1].hold = false;
         grabInteractables.Clear();
 
         for (int i = 0; i < trackedTools.Length; i++)

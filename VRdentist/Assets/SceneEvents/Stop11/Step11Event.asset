@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc4004645bbf42b4f982675ed36a9996, type: 3}
-  m_Name: Step10Event
+  m_Name: Step11Event
   m_EditorClassIdentifier: 
-  delayNextEvent: 0
+  passEventCondition: 0
+  delayNextEvent: 1
   toolName: Scissors
   gauzeToolName: Gauze
   freezeGauzeName: FreezGauze
@@ -20,4 +21,14 @@ MonoBehaviour:
   triggerName: TriggerArea
   gauzeTriggerName: gauzeTrigger
   guidanceName: PathGuidance
+  equipment: {fileID: 0}
+  gauzeTool: {fileID: 0}
+  freezeGauze: {fileID: 0}
+  freezeAtScissorGauze: {fileID: 0}
+  trigger: {fileID: 0}
+  gauzeTrigger: {fileID: 0}
+  guidance: {fileID: 0}
+  holdingEquipment: 0
+  holdingGauze: 0
+  check: 0
   nextScene: {fileID: 0}

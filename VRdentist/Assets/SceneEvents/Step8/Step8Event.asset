@@ -9,14 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a37141b832c9be642a5dc1426647eba8, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d0822556f33fff45a66a02bf42e16d3, type: 3}
   m_Name: Step8Event
   m_EditorClassIdentifier: 
   delayNextEvent: 0
-  toolName: Syringe01
-  triggerName: TriggerArea
-  guidanceName: PathGuidance
-  waterParticleName: WaterObject
-  progressTextName: Step8ProgressText
-  actionTime: 3
+  toolSetup:
+  - toolName: Molt
+    triggerName: TriggerTrayArea
+    guidanceName: PathGuidance
+    freezeToolsName: MoltFreez
+  - toolName: Seldin
+    triggerName: TriggerTrayArea
+    guidanceName: PathGuidance2
+    freezeToolsName: SeldinFreez
   nextScene: {fileID: 0}

@@ -8,108 +8,257 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 
 
-
 [System.Serializable]
 [CreateAssetMenu(fileName = "Step8Event", menuName = "SceneEvent/Step8/Step8Event")]
+[RequireComponent(typeof(XRGrabInteractable))]
 public class Step8Event : SceneEvent
 {
 
-    public string toolName;
-    public string triggerName;
-    public string guidanceName;
-    public string waterParticleName;
-    public string progressTextName;
-    public float actionTime;
-
-    private GrabbableEquipmentBehavior equipment;
-    private CollisionTrigger trigger;
-    private PathGuidance guidance;
-    private GameObject waterObject;
-    private Text progressText;
+    [System.Serializable]
+    public struct ToolSetup
+    {
+        public string toolName;
+        public string triggerName;
+        public string guidanceName;
+        public string freezeToolsName;
 
 
-    private bool hold;
-    private bool check;
-    private float progressTime;
-    private float delayEndProgress;
-    private bool isCollided;
+    }
 
+    [System.Serializable]
+    public struct Tracking
+    {
+        public GrabbableEquipmentBehavior equipment;
+        public CollisionTrigger trigger;
+        public PathGuidance guidance;
+        public GameObject freezeTool;
+        public bool hold;
+        public bool check;
+
+        //เพิ่ม Bool ของวัตุถุที่วางไว้เช็คว่าเรากำลังถืออุปกรณ์ไหนอยู่บ้าง แล้วเมื่อมัน false ก็ให้ kenimatic เป็น false
+
+    }
+
+    public ToolSetup[] toolSetup;
     public SceneEvent nextScene;
-
+    private Tracking[] trackedTools;
+    private List<XRGrabInteractable> grabInteractables = new List<XRGrabInteractable>();
 
     public override void InitEvent()
     {
         base.InitEvent();
-        SceneAssetManager.GetAssetComponent<GrabbableEquipmentBehavior>(toolName, out equipment);
-        SceneAssetManager.GetAssetComponentInChildren<CollisionTrigger>(triggerName, out trigger);
-        SceneAssetManager.GetAssetComponent<PathGuidance>(guidanceName, out guidance);
-        SceneAssetManager.GetGameObjectAsset(waterParticleName, out waterObject);
-        SceneAssetManager.GetAssetComponent<Text>(progressTextName, out progressText);
 
 
-        if (nextScene) nextScene.InitEvent();
-
-        XRGrabInteractable interactable = equipment.GetComponent<XRGrabInteractable>();
-        interactable.onSelectEntered.AddListener(OnGrabbed);
-        interactable.onSelectExited.AddListener(OnReleased);
-    }
-
-    public override void StartEvent()
-    {
-        isCollided = false;
-        progressTime = 0;
-        delayEndProgress = 2f;
-        guidance?.SetTarget(trigger.transform);
-       
-        if (trigger)
+        List<Tracking> trackedList = new List<Tracking>();
+        foreach (ToolSetup config in toolSetup)
         {
-            trigger.gameObject.SetActive(true);
-            Debug.Log("CollisionTriggerEvent assign events");
-          
+            if (SceneAssetManager.GetAssetComponent(config.toolName,
+                out GrabbableEquipmentBehavior targetObject))
+            {
+                Tracking newTrack = new Tracking
+                {
+                    equipment = targetObject,
+                    check = false,
+                    hold = false
+                };
+                if (SceneAssetManager.GetAssetComponentInChildren(config.triggerName, out CollisionTrigger i_trigger))
+                {
+                    newTrack.trigger = i_trigger;
+                }
 
-            trigger.OnTriggerEnterEvent += OnTriggerEnter;
-             trigger.OnTriggerExitEvent += OnTriggerExit;
+                if (SceneAssetManager.GetAssetComponent(config.guidanceName, out PathGuidance i_guidance))
+                {
+                    newTrack.guidance = i_guidance;
+                }
+
+                if (SceneAssetManager.GetGameObjectAsset(config.freezeToolsName, out GameObject i_freezeTool))
+                {
+                    newTrack.freezeTool = i_freezeTool;
+                }
+
+
+                trackedList.Add(newTrack);
+
+                XRGrabInteractable interactable = targetObject.GetComponent<XRGrabInteractable>();
+                interactable.onSelectEntered.AddListener(OnGrabbed);
+                interactable.onSelectExited.AddListener(OnReleased);
+                grabInteractables.Add(interactable);
+
+
+            }
         }
+        trackedTools = trackedList.ToArray();
 
-        Debug.Log("มาเริ่ม อีเว้นท์ Step8 กันเถอะ");
-        Debug.Log(waterObject);
+
+
     }
-
-    
 
     private void OnGrabbed(XRBaseInteractor interactor)
     {
         XRBaseInteractable interactable = interactor.selectTarget;
         if (interactable == null) return;
 
-        if(interactable.gameObject == equipment.gameObject)
+
+
+
+        for (int i = 0; i < trackedTools.Length; i++)
         {
-            guidance?.SetParent(equipment.transform);
-            hold = true;
+            if (interactable.gameObject == trackedTools[i].equipment.gameObject)
+            {
+
+
+
+                Debug.Log("จับ " + i);
+                trackedTools[i].guidance?.SetParent(trackedTools[i].equipment.transform);
+                trackedTools[i].hold = true;
+                break;
+            }
         }
     }
 
     private void OnReleased(XRBaseInteractor interactor)
     {
-        hold = false;
-        guidance?.SetParent(null);
+        XRBaseInteractable interactable = interactor.selectTarget;
+        if (interactable == null) return;
+
+        for (int i = 0; i < trackedTools.Length; i++)
+        {
+
+            if (interactable.gameObject == trackedTools[i].equipment.gameObject && trackedTools[i].hold)
+            {
+                Debug.Log("ปล่อย " + i);
+                trackedTools[i].equipment.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+                trackedTools[i].guidance?.SetParent(null);
+                trackedTools[i].hold = false;
+            }
+
+        }
+
+        //for (int i = 0; i < trackedTools.Length; i++)
+        //{
+
+        //    if (interactable.gameObject == trackedTools[i].equipment.gameObject)
+        //    {
+        //        Debug.Log("ปล่อย " + i);
+        //        trackedTools[i].equipment.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+        //        trackedTools[i].guidance?.SetParent(null);
+        //        trackedTools[i].hold = false;
+        //    }
+
+        //}
     }
 
-    
+
+
+    public override SceneEvent NextEvent()
+    {
+        return nextScene;
+    }
+
+    public override void StartEvent()
+    {
+
+        for (int i = 0; i < trackedTools.Length; i++)
+        {
+
+            trackedTools[i].equipment.gameObject.SetActive(true);
+            trackedTools[i].hold = false;
+            trackedTools[i].freezeTool.gameObject.SetActive(false);
+            trackedTools[i].equipment.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            trackedTools[i].guidance?.SetTarget(trackedTools[i].trigger.transform);
+
+
+            if (trackedTools[i].trigger)
+            {
+
+                trackedTools[i].trigger.gameObject.SetActive(true);
+
+                //trackedTools[0].trigger.OnTriggerEnterEvent += OnMoltEnter;
+                //trackedTools[1].trigger.OnTriggerEnterEvent += OnSeldinEnter;
+                //trackedTools[i].trigger.OnCollisionEnterEvent -= OnCollisionEnter;
+                //trackedTools[i].trigger.OnCollisionExitEvent -= OnCollisionExit;
+
+                trackedTools[i].trigger.OnTriggerEnterEvent += OnTriggerEnter;
+                trackedTools[i].trigger.OnTriggerExitEvent += OnTriggerExit;
+            }
+
+        }
+        Debug.Log("มาเริ่ม อีเว้นท์ Step8 กันเถอะ");
+
+    }
+
+    public override void StopEvent()
+    {
+       
+
+        for (int i = 0; i < trackedTools.Length; i++)
+        {
+            trackedTools[i].guidance?.SetTarget(null);
+            trackedTools[i].guidance?.SetParent(null);
+            trackedTools[i].hold = false;
+
+            trackedTools[i].trigger.gameObject.SetActive(false);
+            trackedTools[i].trigger.OnTriggerEnterEvent -= OnTriggerEnter;
+            trackedTools[i].trigger.OnTriggerExitEvent -= OnTriggerExit;
+            
+
+        }
+        
+
+        grabInteractables.Clear();
+    }
+
+    public override void UpdateEvent()
+    {
+        int placedToolCount = 0;
+
+        if (trackedTools[0].hold)
+        {
+            trackedTools[0].equipment.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+
+
+        }
+
+        if (trackedTools[1].hold)
+        {
+            trackedTools[1].equipment.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+
+
+        }
+
+        foreach (Tracking tool in trackedTools)
+        {
+            if (tool.check == true)
+            {
+                placedToolCount += 1;
+            }
+        }
+        if (placedToolCount >= trackedTools.Length)
+        {
+            Debug.Log("จบ Event step8 แล้วจ้าาาา ");
+            passEventCondition = true;  // Uncomment if you want system to done here
+        }
+
+
+    }
 
     private void OnTriggerEnter(Collider collider)
     {
         if (collider == null) return;
         if (collider.attachedRigidbody == null) return;
 
-        if (collider.attachedRigidbody.gameObject == equipment.gameObject)
+        for (int i = 0; i < trackedTools.Length; i++)
         {
-            // progressText.gameObject.SetActive(true);
-            isCollided = true;
-            Debug.Log("ชนนะ");
-
+            if (collider.attachedRigidbody.gameObject == trackedTools[i].equipment.gameObject)
+            {
+                Debug.Log("วาง");
+                trackedTools[i].check = true;
+                break;
+            }
+            trackedTools[i].guidance?.SetParent(null);
         }
-      
+
+
     }
 
     private void OnTriggerExit(Collider collider)
@@ -117,109 +266,15 @@ public class Step8Event : SceneEvent
         if (collider == null) return;
         if (collider.attachedRigidbody == null) return;
 
-        if (collider.attachedRigidbody.gameObject == equipment.gameObject)
+        for (int i = 0; i < trackedTools.Length; i++)
         {
-            // progressText.gameObject.SetActive(true);
-            isCollided = false;
-            Debug.Log("ไม่ชน");
-
+            if (collider.attachedRigidbody.gameObject == trackedTools[i].equipment.gameObject)
+            {
+                Debug.Log("ยก");
+                trackedTools[i].check = false;
+                break;
+            }
         }
-        
-    }
-    
-
-    public override SceneEvent NextEvent()
-    {
-        return nextScene;
     }
 
-   
-
-    public override void StopEvent()
-    {
-        guidance?.SetTarget(null);
-        guidance?.SetParent(null);
-
-        waterObject.gameObject.SetActive(false);
-        if (trigger)
-        {
-            trigger.OnTriggerEnterEvent += OnTriggerEnter;
-            trigger.OnTriggerExitEvent += OnTriggerExit;
-            trigger.gameObject.SetActive(false);
-        }
-        if (progressText)
-        {
-            progressText.gameObject.SetActive(false);
-        }
-        Debug.Log("Stop event: " + this.name);
-    }
-
-    public override void UpdateEvent()
-    {
-        Injection();
-        if (equipment && equipment.IsActivate && isCollided)
-        {
-            progressText.gameObject.SetActive(true);
-            progressTime += Time.deltaTime;
-            progressText.text = GetProgressString();
-
-            // ต้องทำพุ่นน้ำออกมา
-            Injection();
-        }
-
-        if (!isCollided)
-        {
-            progressText.gameObject.SetActive(false);
-            
-        }
-
-        if (actionTime < progressTime)
-        {
-            
-            //ผ่านด่าน
-            
-            
-            guidance?.SetParent(null);
-            guidance?.SetTarget(null);
-            waterObject.gameObject.SetActive(false);
-            delayEndProgress -= Time.deltaTime;
-            progressText.gameObject.SetActive(false);
-            trigger.gameObject.SetActive(false);
-           
-        }
-        passEventCondition = (actionTime < progressTime && delayEndProgress < 0);
-        if(passEventCondition == true)
-        {
-            Debug.Log("จบ Event step8 แล้วจ้าาาา ");
-
-        }
-       
-        Debug.Log(isCollided);
-        
-    }
-
-    private string GetProgressString()
-    {
-        return Mathf.Clamp(Mathf.FloorToInt(progressTime / actionTime * 100f), 0, 100) + " %";
-    }
-
-    private void Injection()
-    {
-
-       
-        if (equipment&&equipment.IsActivate)
-        {
-            Debug.Log("ฉีดยาจ้าาาาาา");
-
-          
-            waterObject.gameObject.SetActive(true);
-
-        }
-        else
-        {
-             waterObject.gameObject.SetActive(false);
-         
-        }
-
-    }
 }

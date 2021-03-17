@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acfa6129f034271418ce73b442cd693a, type: 3}
   m_Name: Step4Event
   m_EditorClassIdentifier: 
-  delayNextEvent: 0
+  delayNextEvent: 1
   toolSetup:
   - toolName: Molt
     triggerName: TriggerMoltArea

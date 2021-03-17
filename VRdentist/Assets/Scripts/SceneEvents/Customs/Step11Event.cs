@@ -6,8 +6,8 @@ using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 
 [System.Serializable]
-[CreateAssetMenu(fileName = "Step10Event", menuName = "SceneEvent/Step10/Step10Event")]
-public class Step10Event : SceneEvent
+[CreateAssetMenu(fileName = "Step11Event", menuName = "SceneEvent/Step11/Step11Event")]
+public class Step11Event : SceneEvent
 {
     
     public string toolName;
@@ -76,7 +76,7 @@ public class Step10Event : SceneEvent
             gauzeTrigger.OnTriggerExitEvent += OnGauzeTriggerExit;
 
         }
-        Debug.Log("มาเริ่ม อีเว้นท์ Step4 กันเถอะ");
+        Debug.Log("มาเริ่ม อีเว้นท์ Step11 กันเถอะ");
     }
 
     private void OnTriggerEnter(Collider collider)
@@ -91,6 +91,8 @@ public class Step10Event : SceneEvent
             gauzeTool.SetActive(false);
             guidance?.SetTarget(null);
             freezeAtScissorGauze.SetActive(false);
+            trigger.gameObject.SetActive(false);
+           
             check = true;
             Debug.Log(check);
             Debug.Log("วางแล้ว");
@@ -199,7 +201,19 @@ public class Step10Event : SceneEvent
     
     public override void StopEvent()
     {
-       
+
+
+        guidance?.SetTarget(null);
+        guidance?.SetParent(null);
+
+        if (trigger)
+        {
+            trigger.OnTriggerEnterEvent -= OnTriggerEnter;
+            trigger.OnTriggerExitEvent -= OnTriggerExit;
+            trigger.gameObject.SetActive(false);
+        }
+
+
     }
 
     public override void UpdateEvent()
@@ -212,7 +226,7 @@ public class Step10Event : SceneEvent
         if (check == true)
         {
 
-            Debug.Log("ผ่าน Event10 แล้วต้า");
+            Debug.Log("ผ่าน Event11 แล้วต้า");
             passEventCondition = true;
             
 

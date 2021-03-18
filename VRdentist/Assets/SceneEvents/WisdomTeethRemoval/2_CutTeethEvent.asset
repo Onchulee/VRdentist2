@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 2_CutTeethEvent
   m_EditorClassIdentifier: 
   delayNextEvent: 0
+  uiBoardName: S6_UiBoard
   wisdomTeethName: WisdomTeeth
   wisdomTeethTriggerName: ToothTrigger
   fragmentTeethNames:

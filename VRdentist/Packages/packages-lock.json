@@ -1,11 +1,43 @@
 {
   "dependencies": {
-    "com.dgn.scene-events": {
-      "version": "https://github.com/Onchulee/SceneEvents.git",
+    "com.coffee.upm-git-extension": {
+      "version": "https://github.com/mob-sakai/UpmGitExtension.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "42cad02fee069cb6ff6583902c89278a30e67f90"
+      "hash": "c5bd85b033ee9994cf7b4d711479e2602d42c639"
+    },
+    "com.dgn.scene-events": {
+      "version": "https://github.com/Onchulee/SceneEvents.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.dgn.unity-attributes": "1.0.6"
+      },
+      "hash": "dab2d32e9d66d260596f9633db88c2040cf717a7"
+    },
+    "com.dgn.thaitext": {
+      "version": "https://github.com/Onchulee/ThaiText.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "9693b62b2c74c6ecbd4b30b8098d896f1fab7a77"
+    },
+    "com.dgn.unity-attributes": {
+      "version": "https://github.com/Onchulee/UnityAttributes.git#1.0.6",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "1204491e51dbafd7766c1af8400ae2db660f7b85"
+    },
+    "com.dgn.xr-toolkits-extensions": {
+      "version": "https://github.com/Onchulee/XR-Toolkits-Extensions.git#1.0.6",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.dgn.unity-attributes": "1.0.6"
+      },
+      "hash": "58227684dc60aba020aef8052432893ea15d06ed"
     },
     "com.unity.animation.rigging": {
       "version": "0.2.7-preview",
@@ -51,6 +83,13 @@
     },
     "com.unity.ide.vscode": {
       "version": "1.2.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.inputsystem": {
+      "version": "1.0.2",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
@@ -114,12 +153,13 @@
       }
     },
     "com.unity.xr.interaction.toolkit": {
-      "version": "0.9.4-preview",
+      "version": "0.10.0-preview.7",
       "depth": 0,
       "source": "registry",
       "dependencies": {
+        "com.unity.inputsystem": "1.0.0",
         "com.unity.ugui": "1.0.0",
-        "com.unity.xr.legacyinputhelpers": "1.3.11"
+        "com.unity.xr.legacyinputhelpers": "2.1.4"
       },
       "url": "https://packages.unity.com"
     },
@@ -144,7 +184,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.mock-hmd": {
-      "version": "1.1.2-preview.1",
+      "version": "1.2.0-preview.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -153,11 +193,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.oculus": {
-      "version": "1.3.4",
+      "version": "1.6.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.xr.management": "3.0.6",
+        "com.unity.xr.management": "3.2.16",
         "com.unity.ugui": "1.0.0"
       },
       "url": "https://packages.unity.com"

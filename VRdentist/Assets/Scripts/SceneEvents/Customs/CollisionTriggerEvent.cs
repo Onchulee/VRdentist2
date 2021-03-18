@@ -1,15 +1,19 @@
 ﻿using com.dgn.SceneEvent;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 [CreateAssetMenu(fileName = "CollisionTriggerEvent", menuName = "SceneEvent/TeethRemoval/CollisionTriggerEvent")]
 public class CollisionTriggerEvent : SceneEvent
 {
+    public string uiBoardName;
     public string collisionTriggerName;
     public string targetItemName;
     public string guidanceName= "PathGuidance";
     public SceneEvent nextScene;
 
+
+    private Text uiBoardText;
     private CollisionTrigger trigger;
     private GrabbableEquipmentBehavior targetItem;
     private PathGuidance guidance;
@@ -19,6 +23,7 @@ public class CollisionTriggerEvent : SceneEvent
     public override void InitEvent()
     {
         base.InitEvent();
+        SceneAssetManager.GetAssetComponent(uiBoardName, out uiBoardText);
         SceneAssetManager.GetAssetComponentInChildren<CollisionTrigger>(collisionTriggerName, out trigger);
         SceneAssetManager.GetAssetComponent<GrabbableEquipmentBehavior>(targetItemName, out targetItem);
         SceneAssetManager.GetAssetComponent<PathGuidance>(guidanceName, out guidance);
@@ -31,6 +36,7 @@ public class CollisionTriggerEvent : SceneEvent
         isCollided = false;
         guidance?.SetParent(targetItem.transform);
         guidance?.SetTarget(trigger.transform);
+        uiBoardText.gameObject.SetActive(true);
         if (trigger)
         {
             trigger.gameObject.SetActive(true);
@@ -38,11 +44,13 @@ public class CollisionTriggerEvent : SceneEvent
             trigger.OnCollisionEnterEvent += OnCollisionEnter;
             trigger.OnCollisionExitEvent += OnCollisionExit;
         }
+
+        Debug.Log("เริ่ม อีเว้น 2");
     }
 
     public override void UpdateEvent()
     {
-        if (targetItem && targetItem.IsActivate && isCollided)
+        if (targetItem &&/* targetItem.IsActivate && */isCollided)
         {
             passEventCondition = true;
         }
@@ -50,6 +58,8 @@ public class CollisionTriggerEvent : SceneEvent
 
     public override void StopEvent()
     {
+        uiBoardText.gameObject.SetActive(false);
+
         if (trigger)
         {
             Debug.Log("CollisionTriggerEvent remove events");
@@ -64,6 +74,7 @@ public class CollisionTriggerEvent : SceneEvent
 
     public override SceneEvent NextEvent()
     {
+        Debug.Log("Go next scene");
         return nextScene;
     }
 

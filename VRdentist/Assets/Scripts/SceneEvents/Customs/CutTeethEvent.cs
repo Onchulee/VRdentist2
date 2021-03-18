@@ -7,6 +7,7 @@ using UnityEngine.UI;
 [CreateAssetMenu(fileName = "CutTeethEvent", menuName = "SceneEvent/TeethRemoval/CutTeethEvent")]
 public class CutTeethEvent : SceneEvent
 {
+    public string uiBoardName;
     public string wisdomTeethName;
     public string wisdomTeethTriggerName;
     public string[] fragmentTeethNames;
@@ -19,6 +20,8 @@ public class CutTeethEvent : SceneEvent
     private GameObject wisdomTeeth;
     private CollisionTrigger wisdomTeethTrigger;
     private List<GameObject> fragmentTooth;
+
+    private Text uiBoardText;
     private GrabbableEquipmentBehavior tool;
     private Text progressText;
     private PathGuidance guidance;
@@ -30,6 +33,7 @@ public class CutTeethEvent : SceneEvent
     public override void InitEvent()
     {
         base.InitEvent();
+        SceneAssetManager.GetAssetComponent(uiBoardName, out uiBoardText);
         bool foundTeeth = SceneAssetManager.GetGameObjectAsset(wisdomTeethName, out wisdomTeeth);
         bool foundTrigger = SceneAssetManager.GetAssetComponent<CollisionTrigger>(wisdomTeethTriggerName, out wisdomTeethTrigger);
         bool foundItem = SceneAssetManager.GetAssetComponent<GrabbableEquipmentBehavior>(toolName, out tool);
@@ -43,6 +47,8 @@ public class CutTeethEvent : SceneEvent
                 fragmentTooth.Add(targetObject);
             }
         }
+
+
 
         Debug.Log("Found Asset[" + wisdomTeethName + "]: " + foundTeeth);
         Debug.Log("Found Asset[" + wisdomTeethTriggerName + "]: " + foundTrigger);
@@ -60,6 +66,8 @@ public class CutTeethEvent : SceneEvent
         isCollided = false;
         progressTime = 0;
         delayEndProgress = 1f;
+        uiBoardText.gameObject.SetActive(true);
+
         if (wisdomTeeth) {
             wisdomTeeth.SetActive(true);
         }
@@ -100,6 +108,8 @@ public class CutTeethEvent : SceneEvent
 
     public override void StopEvent()
     {
+        uiBoardText.gameObject.SetActive(false);
+
         guidance?.SetTarget(null);
         guidance?.SetParent(null);
         if (wisdomTeethTrigger)

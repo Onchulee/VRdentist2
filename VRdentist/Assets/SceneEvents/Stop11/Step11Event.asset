@@ -12,23 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc4004645bbf42b4f982675ed36a9996, type: 3}
   m_Name: Step11Event
   m_EditorClassIdentifier: 
-  passEventCondition: 0
-  delayNextEvent: 1
+  delayNextEvent: 0
+  uiBoardName: S11_UiBoard
   toolName: Scissors
   gauzeToolName: Gauze
   freezeGauzeName: FreezGauze
   freezeGauzeAtScissorName: GauzeAtScissor
-  triggerName: TriggerArea
+  triggerName: S11_TriggerArea
   gauzeTriggerName: gauzeTrigger
   guidanceName: PathGuidance
-  equipment: {fileID: 0}
-  gauzeTool: {fileID: 0}
-  freezeGauze: {fileID: 0}
-  freezeAtScissorGauze: {fileID: 0}
-  trigger: {fileID: 0}
-  gauzeTrigger: {fileID: 0}
-  guidance: {fileID: 0}
-  holdingEquipment: 0
-  holdingGauze: 0
-  check: 0
   nextScene: {fileID: 0}

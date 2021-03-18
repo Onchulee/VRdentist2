@@ -38,16 +38,19 @@ public class Step8Event : SceneEvent
         //เพิ่ม Bool ของวัตุถุที่วางไว้เช็คว่าเรากำลังถืออุปกรณ์ไหนอยู่บ้าง แล้วเมื่อมัน false ก็ให้ kenimatic เป็น false
 
     }
-
+    public string uiBoardName;
     public ToolSetup[] toolSetup;
     public SceneEvent nextScene;
+
+
     private Tracking[] trackedTools;
+    private Text uiBoardText;
     private List<XRGrabInteractable> grabInteractables = new List<XRGrabInteractable>();
 
     public override void InitEvent()
     {
         base.InitEvent();
-
+        SceneAssetManager.GetAssetComponent(uiBoardName, out uiBoardText);
 
         List<Tracking> trackedList = new List<Tracking>();
         foreach (ToolSetup config in toolSetup)
@@ -157,7 +160,7 @@ public class Step8Event : SceneEvent
 
     public override void StartEvent()
     {
-
+        uiBoardText.gameObject.SetActive(true);
         for (int i = 0; i < trackedTools.Length; i++)
         {
 
@@ -189,7 +192,7 @@ public class Step8Event : SceneEvent
 
     public override void StopEvent()
     {
-       
+        uiBoardText.gameObject.SetActive(false);
 
         for (int i = 0; i < trackedTools.Length; i++)
         {

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a5730557c4dcd74aadda305ae9ca413, type: 3}
   m_Name: 0_Syringe02TriggerEvent
   m_EditorClassIdentifier: 
-  delayNextEvent: 1
+  delayNextEvent: 0
+  uiBoardName: S2_UiBoard
   collisionTriggerName: TriggerGumArea
   targetItemName: Syringe02
   guidanceName: PathGuidance

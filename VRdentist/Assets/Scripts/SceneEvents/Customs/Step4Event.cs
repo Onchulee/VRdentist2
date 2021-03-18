@@ -33,8 +33,8 @@ public class Step4Event : SceneEvent
         
     }
 
-   
 
+    public string uiBoardName;
 
 
 
@@ -44,7 +44,7 @@ public class Step4Event : SceneEvent
     public SceneEvent nextScene;
 
 
-
+    private Text uiBoardText;
     private Tracking[] trackedTools;
    
     private List<XRGrabInteractable> grabInteractables = new List<XRGrabInteractable>();
@@ -52,7 +52,7 @@ public class Step4Event : SceneEvent
     public override void InitEvent()
     {
         base.InitEvent();
-     
+        SceneAssetManager.GetAssetComponent(uiBoardName, out uiBoardText);
 
         List<Tracking> trackedList = new List<Tracking>();
         foreach (ToolSetup config in toolSetup)
@@ -145,6 +145,8 @@ public class Step4Event : SceneEvent
     public override void StartEvent()
     {
         
+        uiBoardText.gameObject.SetActive(true);
+
         for (int i = 0; i < trackedTools.Length; i++)
         {
 
@@ -171,6 +173,7 @@ public class Step4Event : SceneEvent
             
         }
         Debug.Log("มาเริ่ม อีเว้นท์ Step4 กันเถอะ");
+        Debug.Log(uiBoardText);
 
     }
 
@@ -181,6 +184,7 @@ public class Step4Event : SceneEvent
         //    interactable.onSelectEntered.RemoveListener(OnGrabbed);
         //    interactable.onSelectExited.RemoveListener(OnReleased);
         //}
+        uiBoardText.gameObject.SetActive(false);
         trackedTools[0].hold = false;
         trackedTools[1].hold = false;
         grabInteractables.Clear();

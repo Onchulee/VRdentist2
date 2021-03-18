@@ -13,29 +13,29 @@ using UnityEngine.XR.Interaction.Toolkit;
 [CreateAssetMenu(fileName = "Step9Event", menuName = "SceneEvent/Step9/Step9Event")]
 public class Step9Event : SceneEvent
 {
-
+    public string uiBoardName;
     public string toolName;
     public string triggerName;
     public string guidanceName;
     public string waterParticleName;
     public string progressTextName;
     public float actionTime;
-    
 
 
+    private Text uiBoardText;
     private GrabbableEquipmentBehavior equipment;
     private CollisionTrigger trigger;
     private PathGuidance guidance;
     private GameObject waterObject;
     private Text progressText;
-    
 
+
+    
     private bool hold;
     private bool check;
     private float progressTime;
     private float delayEndProgress;
     private bool isCollided;
-
     public SceneEvent nextScene;
 
    
@@ -49,8 +49,8 @@ public class Step9Event : SceneEvent
         SceneAssetManager.GetAssetComponent<PathGuidance>(guidanceName, out guidance);
         SceneAssetManager.GetGameObjectAsset(waterParticleName, out waterObject);
         SceneAssetManager.GetAssetComponent<Text>(progressTextName, out progressText);
+        SceneAssetManager.GetAssetComponent(uiBoardName, out uiBoardText);
 
-       
 
         if (nextScene) nextScene.InitEvent();
 
@@ -65,7 +65,7 @@ public class Step9Event : SceneEvent
         progressTime = 0;
         delayEndProgress = 2f;
         guidance?.SetTarget(trigger.transform);
-       
+        uiBoardText.gameObject.SetActive(true);
         if (trigger)
         {
             trigger.gameObject.SetActive(true);
@@ -147,7 +147,7 @@ public class Step9Event : SceneEvent
     {
         guidance?.SetTarget(null);
         guidance?.SetParent(null);
-
+        uiBoardText.gameObject.SetActive(false);
         waterObject.gameObject.SetActive(false);
         if (trigger)
         {

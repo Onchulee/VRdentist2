@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Step8Event
   m_EditorClassIdentifier: 
   delayNextEvent: 0
+  uiBoardName: S8_UiBoard
   toolSetup:
   - toolName: Molt
     triggerName: TriggerTrayArea

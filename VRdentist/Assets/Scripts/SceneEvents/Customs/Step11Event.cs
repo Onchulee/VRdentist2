@@ -9,7 +9,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 [CreateAssetMenu(fileName = "Step11Event", menuName = "SceneEvent/Step11/Step11Event")]
 public class Step11Event : SceneEvent
 {
-    
+    public string uiBoardName;
     public string toolName;
     public string gauzeToolName;
     public string freezeGauzeName;
@@ -17,8 +17,8 @@ public class Step11Event : SceneEvent
     public string triggerName;
     public string gauzeTriggerName;
     public string guidanceName;
-        
 
+    private Text uiBoardText;
     private GrabbableEquipmentBehavior equipment;
     private GameObject gauzeTool;
     private GameObject freezeGauze;
@@ -38,6 +38,7 @@ public class Step11Event : SceneEvent
 
     public override void InitEvent()
     {
+        SceneAssetManager.GetAssetComponent(uiBoardName, out uiBoardText);
         SceneAssetManager.GetAssetComponent<GrabbableEquipmentBehavior>(toolName, out equipment);
         SceneAssetManager.GetGameObjectAsset(gauzeToolName, out gauzeTool);
         SceneAssetManager.GetGameObjectAsset(freezeGauzeName, out freezeGauze);
@@ -57,10 +58,11 @@ public class Step11Event : SceneEvent
     {
         holdingGauze = false;
         check = false;
-
+        uiBoardText.gameObject.SetActive(true);
         freezeGauze.SetActive(false);
         guidance?.SetTarget(gauzeTrigger.transform);
         guidance?.SetParent(equipment.transform);
+
         if (trigger)
         {
             trigger.gameObject.SetActive(true);
@@ -77,6 +79,23 @@ public class Step11Event : SceneEvent
 
         }
         Debug.Log("มาเริ่ม อีเว้นท์ Step11 กันเถอะ");
+       
+        Debug.Log(check);
+    }
+
+
+    public override void UpdateEvent()
+    {
+
+        if (check == true)
+        {
+
+            Debug.Log("ผ่าน Event11 แล้วต้า");
+            //   passEventCondition = true;
+
+        }
+
+
     }
 
     private void OnTriggerEnter(Collider collider)
@@ -92,7 +111,8 @@ public class Step11Event : SceneEvent
             guidance?.SetTarget(null);
             freezeAtScissorGauze.SetActive(false);
             trigger.gameObject.SetActive(false);
-           
+            uiBoardText.gameObject.SetActive(false);
+
             check = true;
             Debug.Log(check);
             Debug.Log("วางแล้ว");
@@ -152,43 +172,12 @@ public class Step11Event : SceneEvent
 
         guidance?.SetTarget(gauzeTrigger.transform);
         holdingGauze = false;
-        HoldingGauze();
+        //HoldingGauze();
         
 
 
     }
-
-
-
-    // คีบ
-    private void HoldingGauze()
-    {
-        
-
-        if (holdingGauze && equipment.IsActivate)
-        {
-            gauzeTool.transform.SetParent(equipment.transform);
-            gauzeTool.GetComponent<Rigidbody>().isKinematic = true;
-            
-           
-            Debug.Log("คีบ");
-
-
-        }
-
-
-        //if (!holdingGauze)
-        //{
-        //    gauzeTool.transform.SetParent(null);
-        //    gauzeTool.GetComponent<Rigidbody>().isKinematic = false;
-
-          
-
-
-        //}
-
-
-    }
+    
 
     
     
@@ -201,38 +190,16 @@ public class Step11Event : SceneEvent
     
     public override void StopEvent()
     {
+       // uiBoardText.gameObject.SetActive(false);
 
-
-        guidance?.SetTarget(null);
-        guidance?.SetParent(null);
-
-        if (trigger)
-        {
-            trigger.OnTriggerEnterEvent -= OnTriggerEnter;
-            trigger.OnTriggerExitEvent -= OnTriggerExit;
-            trigger.gameObject.SetActive(false);
-        }
-
-
-    }
-
-    public override void UpdateEvent()
-    {
-        
-
-        
+        //guidance?.SetTarget(null);
+        //guidance?.SetParent(null);
 
        
-        if (check == true)
-        {
-
-            Debug.Log("ผ่าน Event11 แล้วต้า");
-            passEventCondition = true;
-            
 
 
-        }
     }
+
 
     private void OnGrabbed(XRBaseInteractor interactor)
     {

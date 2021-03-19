@@ -9,16 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc4004645bbf42b4f982675ed36a9996, type: 3}
-  m_Name: Step11Event
+  m_Script: {fileID: 11500000, guid: 2b4c5ea755b3d9b4c9397d94a59da684, type: 3}
+  m_Name: Step12Event
   m_EditorClassIdentifier: 
   delayNextEvent: 0
-  uiBoardName: S11_UiBoard
-  toolName: Scissors
-  gauzeToolName: Gauze
-  freezeGauzeName: FreezGauze
-  freezeGauzeAtScissorName: GauzeAtScissor
-  triggerName: S11_TriggerArea
-  gauzeTriggerName: gauzeTrigger
-  guidanceName: PathGuidance
+  uiBoardName: S12_UiBoard
   nextScene: {fileID: 0}

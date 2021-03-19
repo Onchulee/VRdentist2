@@ -30,7 +30,13 @@ MonoBehaviour:
   - toolName: Molt
     detailText: MoltTextDetail
     checkText: MoltText
+  - toolName: StraightElevator
+    detailText: StraightElevatorDetail
+    checkText: StraightElevatorText
+  - toolName: Seldin
+    detailText: SeldinTextDetail
+    checkText: SeldinText
   numOfToolsTextName: num of tools
-  missionClearTextName: Mission Clear
+  missionClearTextName: MissionClear
   guidanceName: PathGuidance
   nextScene: {fileID: 0}

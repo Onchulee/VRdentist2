@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a37141b832c9be642a5dc1426647eba8, type: 3}
   m_Name: Step9Event
   m_EditorClassIdentifier: 
-  delayNextEvent: 0
+  delayNextEvent: 1
   uiBoardName: S9_UiBoard
   toolName: Syringe01
   triggerName: S9_TriggerArea

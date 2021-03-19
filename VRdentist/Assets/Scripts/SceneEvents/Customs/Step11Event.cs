@@ -91,7 +91,7 @@ public class Step11Event : SceneEvent
         {
 
             Debug.Log("ผ่าน Event11 แล้วต้า");
-            //   passEventCondition = true;
+               passEventCondition = true;
 
         }
 

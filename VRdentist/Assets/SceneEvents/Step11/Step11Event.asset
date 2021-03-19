@@ -9,12 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a5730557c4dcd74aadda305ae9ca413, type: 3}
-  m_Name: 1_ScalpelTriggerEvent
+  m_Script: {fileID: 11500000, guid: dc4004645bbf42b4f982675ed36a9996, type: 3}
+  m_Name: Step11Event
   m_EditorClassIdentifier: 
   delayNextEvent: 1
-  uiBoardName: S3_UiBoard
-  collisionTriggerName: TriggerGumArea
-  targetItemName: Scalpel
+  uiBoardName: S11_UiBoard
+  toolName: Scissors
+  gauzeToolName: Gauze
+  freezeGauzeName: FreezGauze
+  freezeGauzeAtScissorName: GauzeAtScissor
+  triggerName: S11_TriggerArea
+  gauzeTriggerName: gauzeTrigger
   guidanceName: PathGuidance
   nextScene: {fileID: 0}

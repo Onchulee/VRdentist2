@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d0822556f33fff45a66a02bf42e16d3, type: 3}
   m_Name: Step8Event
   m_EditorClassIdentifier: 
-  delayNextEvent: 0
+  delayNextEvent: 1
   uiBoardName: S8_UiBoard
   toolSetup:
   - toolName: Molt

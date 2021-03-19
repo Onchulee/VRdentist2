@@ -42,7 +42,7 @@ public class PickAllEvent : SceneEvent
 
     private Tracking[] trackedTools;
     private Text numOfTools;
-    private Text missionClearText;
+    private GameObject missionClearText;
 
     //private List<Tracking> trackedTools;
     //private List<GameObject> texts;
@@ -62,7 +62,7 @@ public class PickAllEvent : SceneEvent
         SceneAssetManager.GetAssetComponent(guidanceName, out guidance);
 
         SceneAssetManager.GetAssetComponent(numOfToolsTextName, out numOfTools);
-        SceneAssetManager.GetAssetComponent(missionClearTextName, out missionClearText);
+        SceneAssetManager.GetGameObjectAsset(missionClearTextName, out missionClearText);
 
         List<Tracking>  trackedList = new List<Tracking>();
         foreach (ToolSetup config in toolSetup)
@@ -157,6 +157,10 @@ public class PickAllEvent : SceneEvent
     
     public override void UpdateEvent()
     {
+
+        
+
+
         int placedToolCount = 0;
         foreach(Tracking tool in trackedTools)
         {

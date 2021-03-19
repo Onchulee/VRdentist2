@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36d046851d34ead41afacdf0b5bf63ea, type: 3}
   m_Name: 2_CutTeethEvent
   m_EditorClassIdentifier: 
-  delayNextEvent: 0
+  delayNextEvent: 1
   uiBoardName: S6_UiBoard
   wisdomTeethName: WisdomTeeth
   wisdomTeethTriggerName: ToothTrigger

@@ -35,10 +35,10 @@ public class CollisionTriggerEvent : SceneEvent
     {
         isCollided = false;
         guidance?.SetParent(targetItem.transform);
-        guidance?.SetTarget(trigger.transform);
         uiBoardText.gameObject.SetActive(true);
         if (trigger)
         {
+            guidance?.SetTarget(trigger.transform);
             trigger.gameObject.SetActive(true);
             Debug.Log("CollisionTriggerEvent assign events");
             trigger.OnCollisionEnterEvent += OnCollisionEnter;

@@ -111,7 +111,7 @@ public class Step4Event : SceneEvent
             if (interactable.gameObject == trackedTools[i].equipment.gameObject)
             {
                 Debug.Log("จับ " + i);
-                trackedTools[i].guidance?.SetParent(trackedTools[i].equipment.transform);
+              //  trackedTools[i].guidance?.SetParent(trackedTools[i].equipment.transform);
                 trackedTools[i].hold = true;
                 break;
             }
@@ -129,7 +129,7 @@ public class Step4Event : SceneEvent
 
         for (int i = 0; i < trackedTools.Length; i++)
         {
-            trackedTools[i].guidance?.SetParent(null);
+          //  trackedTools[i].guidance?.SetParent(null);
             trackedTools[i].hold = false;
 
            
@@ -149,7 +149,7 @@ public class Step4Event : SceneEvent
 
         for (int i = 0; i < trackedTools.Length; i++)
         {
-
+            trackedTools[i].guidance?.SetParent(trackedTools[i].equipment.transform);
 
 
             //ทำให้อุปกรณ์ มองไม่เห็น
@@ -240,8 +240,8 @@ public class Step4Event : SceneEvent
             trackedTools[0].trigger.gameObject.SetActive(false);
             trackedTools[0].equipment.gameObject.SetActive(false);
             trackedTools[0].check = true;
+            trackedTools[0].guidance?.SetParent(null);
 
-            
         }
 
     }
@@ -260,7 +260,7 @@ public class Step4Event : SceneEvent
             trackedTools[1].trigger.gameObject.SetActive(false);
             trackedTools[1].equipment.gameObject.SetActive(false);
             trackedTools[1].check = true;
-
+            trackedTools[1].guidance?.SetParent(null);
 
 
         }

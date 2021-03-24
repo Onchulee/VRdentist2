@@ -60,6 +60,9 @@ public class Step11Event : SceneEvent
         check = false;
         uiBoardText.gameObject.SetActive(true);
         freezeGauze.SetActive(false);
+
+
+
         guidance?.SetTarget(gauzeTrigger.transform);
         guidance?.SetParent(equipment.transform);
 
@@ -138,10 +141,10 @@ public class Step11Event : SceneEvent
         if (gauzeCollider.attachedRigidbody == null) return;
 
 
-      
-        //if(gauzeCollider.attachedRigidbody.gameObject == equipment.gameObject && !equipment.IsActivate)
+
+        //if (gauzeCollider.attachedRigidbody.gameObject == equipment.gameObject && !equipment.IsActivate)
         //{
-           
+
         //    Debug.Log("ชนผ้าก๊อชเฉยๆ ไม่ได้คีบ");
 
         //}
@@ -208,7 +211,7 @@ public class Step11Event : SceneEvent
 
         if (interactable.gameObject == equipment.gameObject)
         {
-            guidance?.SetParent(equipment.transform);
+        //    guidance?.SetParent(equipment.transform);
             holdingEquipment = true;
         }
     }
@@ -216,6 +219,6 @@ public class Step11Event : SceneEvent
     private void OnReleased(XRBaseInteractor interactor)
     {
         holdingEquipment = false;
-        guidance?.SetParent(null);
+     //   guidance?.SetParent(null);
     }
 }

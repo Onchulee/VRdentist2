@@ -64,7 +64,11 @@ public class Step9Event : SceneEvent
         isCollided = false;
         progressTime = 0;
         delayEndProgress = 2f;
+
+        guidance?.SetParent(equipment.transform);
         guidance?.SetTarget(trigger.transform);
+       
+
         uiBoardText.gameObject.SetActive(true);
         if (trigger)
         {
@@ -92,7 +96,7 @@ public class Step9Event : SceneEvent
 
         if(interactable.gameObject == equipment.gameObject)
         {
-            guidance?.SetParent(equipment.transform);
+           // guidance?.SetParent(equipment.transform);
             hold = true;
         }
     }
@@ -100,7 +104,7 @@ public class Step9Event : SceneEvent
     private void OnReleased(XRBaseInteractor interactor)
     {
         hold = false;
-        guidance?.SetParent(null);
+      //  guidance?.SetParent(null);
     }
 
     

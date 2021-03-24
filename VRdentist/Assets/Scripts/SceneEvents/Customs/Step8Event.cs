@@ -35,6 +35,8 @@ public class Step8Event : SceneEvent
         public bool hold;
         public bool check;
 
+        public GameObject a;
+        public GameObject d;
         //เพิ่ม Bool ของวัตุถุที่วางไว้เช็คว่าเรากำลังถืออุปกรณ์ไหนอยู่บ้าง แล้วเมื่อมัน false ก็ให้ kenimatic เป็น false
 
     }
@@ -87,6 +89,8 @@ public class Step8Event : SceneEvent
                 interactable.onSelectExited.AddListener(OnReleased);
                 grabInteractables.Add(interactable);
 
+
+            
 
             }
         }
@@ -168,6 +172,9 @@ public class Step8Event : SceneEvent
             trackedTools[i].hold = false;
             trackedTools[i].freezeTool.gameObject.SetActive(false);
             trackedTools[i].equipment.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+
+
+            trackedTools[i].guidance?.SetParent(trackedTools[i].equipment.transform);
             trackedTools[i].guidance?.SetTarget(trackedTools[i].trigger.transform);
 
 

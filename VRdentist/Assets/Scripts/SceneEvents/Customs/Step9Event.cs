@@ -10,10 +10,10 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 
 [System.Serializable]
-[CreateAssetMenu(fileName = "Step9Event", menuName = "SceneEvent/Step9/Step9Event")]
+[CreateAssetMenu(fileName = "Step9_Event", menuName = "SceneEvent/Step9/Step9_Event")]
 public class Step9Event : SceneEvent
 {
-    public string uiBoardName;
+    
     public string toolName;
     public string triggerName;
     public string guidanceName;
@@ -22,7 +22,7 @@ public class Step9Event : SceneEvent
     public float actionTime;
 
 
-    private Text uiBoardText;
+ 
     private GrabbableEquipmentBehavior equipment;
     private CollisionTrigger trigger;
     private PathGuidance guidance;
@@ -36,6 +36,7 @@ public class Step9Event : SceneEvent
     private float progressTime;
     private float delayEndProgress;
     private bool isCollided;
+    private UiController ui;
     public SceneEvent nextScene;
 
    
@@ -44,12 +45,13 @@ public class Step9Event : SceneEvent
     public override void InitEvent()
     {
         base.InitEvent();
+        SceneAssetManager.GetAssetComponent("UIController", out ui);
         SceneAssetManager.GetAssetComponent<GrabbableEquipmentBehavior>(toolName, out equipment);
         SceneAssetManager.GetAssetComponentInChildren<CollisionTrigger>(triggerName, out trigger);
         SceneAssetManager.GetAssetComponent<PathGuidance>(guidanceName, out guidance);
         SceneAssetManager.GetGameObjectAsset(waterParticleName, out waterObject);
         SceneAssetManager.GetAssetComponent<Text>(progressTextName, out progressText);
-        SceneAssetManager.GetAssetComponent(uiBoardName, out uiBoardText);
+       
 
 
         if (nextScene) nextScene.InitEvent();
@@ -61,6 +63,7 @@ public class Step9Event : SceneEvent
 
     public override void StartEvent()
     {
+        ui.UpdateData(7);
         isCollided = false;
         progressTime = 0;
         delayEndProgress = 2f;
@@ -69,7 +72,7 @@ public class Step9Event : SceneEvent
         guidance?.SetTarget(trigger.transform);
        
 
-        uiBoardText.gameObject.SetActive(true);
+      
         if (trigger)
         {
             trigger.gameObject.SetActive(true);
@@ -151,7 +154,7 @@ public class Step9Event : SceneEvent
     {
         guidance?.SetTarget(null);
         guidance?.SetParent(null);
-        uiBoardText.gameObject.SetActive(false);
+      
         waterObject.gameObject.SetActive(false);
         if (trigger)
         {

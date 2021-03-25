@@ -3,27 +3,31 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [System.Serializable]
-[CreateAssetMenu(fileName = "CollisionTriggerEvent", menuName = "SceneEvent/TeethRemoval/CollisionTriggerEvent")]
-public class CollisionTriggerEvent : SceneEvent
+[CreateAssetMenu(fileName = "Step2Event", menuName = "SceneEvent/TeethRemoval/Step2Event")]
+public class Step2Event : SceneEvent
 {
-    public string uiBoardName;
+
     public string collisionTriggerName;
     public string targetItemName;
     public string guidanceName= "PathGuidance";
     public SceneEvent nextScene;
 
 
-    private Text uiBoardText;
+ 
     private CollisionTrigger trigger;
     private GrabbableEquipmentBehavior targetItem;
     private PathGuidance guidance;
+    private UiController ui;
 
     private bool isCollided;
 
     public override void InitEvent()
     {
         base.InitEvent();
-        SceneAssetManager.GetAssetComponent(uiBoardName, out uiBoardText);
+
+        SceneAssetManager.GetAssetComponent("UIController", out ui);
+
+        
         SceneAssetManager.GetAssetComponentInChildren<CollisionTrigger>(collisionTriggerName, out trigger);
         SceneAssetManager.GetAssetComponent<GrabbableEquipmentBehavior>(targetItemName, out targetItem);
         SceneAssetManager.GetAssetComponent<PathGuidance>(guidanceName, out guidance);
@@ -35,7 +39,11 @@ public class CollisionTriggerEvent : SceneEvent
     {
         isCollided = false;
         guidance?.SetParent(targetItem.transform);
-        uiBoardText.gameObject.SetActive(true);
+
+
+        Debug.Log(ui);
+        ui.UpdateData(0);
+      
         if (trigger)
         {
             guidance?.SetTarget(trigger.transform);
@@ -58,7 +66,7 @@ public class CollisionTriggerEvent : SceneEvent
 
     public override void StopEvent()
     {
-        uiBoardText.gameObject.SetActive(false);
+       
 
         if (trigger)
         {

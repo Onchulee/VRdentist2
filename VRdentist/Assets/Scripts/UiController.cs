@@ -7,75 +7,58 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class UiController : MonoBehaviour
 {
-    public ToolSetup[] uiBoardSetup;
-    private Tracking[] trackedUi;
+    public Field trackedUi;
+    public UIData[] uiBoardSetup;
+    
 
     [System.Serializable]
-    public struct ToolSetup
+    public struct UIData
     {
+        public GameObject bgObject;
         public string step;
-        public string picName;
-        public string detailName;
+        public Sprite excempleImage;
+        [TextArea]
+        public string textDetail;
        
 
 
     }
 
     [System.Serializable]
-    public struct Tracking
+    public struct Field
     {
-        public GameObject uiStep;
-        public GameObject pic;
-        public GameObject detail;
+        public GameObject bg;
+        public Text uiStep;
+        public Image pic;
+        public Text detail;
       
-        public bool hold;
-        public bool check;
+       
 
     }
 
-    
+    public void UpdateData(int step)
+    {
+        trackedUi.bg = uiBoardSetup[step].bgObject;
+        trackedUi.uiStep.text = uiBoardSetup[step].step;
+        trackedUi.pic.sprite = uiBoardSetup[step].excempleImage;
+        trackedUi.detail.text = uiBoardSetup[step].textDetail;
+
+
+    }
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-      //  SceneAssetManager.GetAssetComponent(uiBoardName, out uiBoardText);
-
-        List<Tracking> trackedList = new List<Tracking>();
-        foreach (ToolSetup config in uiBoardSetup)
-        {
-            if (SceneAssetManager.GetAssetComponent(config.step,
-                out GameObject targetObject))
-            {
-                Tracking newTrack = new Tracking
-                {
-                    uiStep = targetObject,
-                    check = false,
-                    hold = false
-                };
-                if (SceneAssetManager.GetAssetComponentInChildren(config.picName, out GameObject i_pic))
-                {
-                    newTrack.pic = i_pic;
-                }
-
-                if (SceneAssetManager.GetAssetComponent(config.detailName, out GameObject i_detail))
-                {
-                    newTrack.detail = i_detail;
-                }
-                
-                trackedList.Add(newTrack);
-
-              
-
-
-            }
-        }
+        
+        UpdateData(2);
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(trackedUi[0].uiStep.gameObject);
+      //  Debug.Log(trackedUi[0].uiStep.gameObject);
     }
 }

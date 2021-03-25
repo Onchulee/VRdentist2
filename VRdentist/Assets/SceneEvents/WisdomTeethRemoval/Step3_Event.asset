@@ -9,18 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36d046851d34ead41afacdf0b5bf63ea, type: 3}
-  m_Name: 2_CutTeethEvent
+  m_Script: {fileID: 11500000, guid: 164a4484b602ffc469a91486862e2172, type: 3}
+  m_Name: Step3_Event
   m_EditorClassIdentifier: 
-  delayNextEvent: 1
-  uiBoardName: S6_UiBoard
-  wisdomTeethName: WisdomTeeth
-  wisdomTeethTriggerName: ToothTrigger
-  fragmentTeethNames:
-  - Tooth_Break1
-  - Tooth_Break2
-  toolName: Fissure
-  progressTextName: TeethProgressText
-  actionTime: 2
+  delayNextEvent: 0
+  collisionTriggerName: TriggerGumArea
+  targetItemName: Scalpel
   guidanceName: PathGuidance
   nextScene: {fileID: 0}

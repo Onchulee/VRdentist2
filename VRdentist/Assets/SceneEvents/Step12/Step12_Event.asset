@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b4c5ea755b3d9b4c9397d94a59da684, type: 3}
-  m_Name: Step12Event
+  m_Name: Step12_Event
   m_EditorClassIdentifier: 
   delayNextEvent: 0
   uiBoardName: S12_UiBoard

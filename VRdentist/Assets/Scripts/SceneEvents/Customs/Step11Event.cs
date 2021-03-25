@@ -6,10 +6,10 @@ using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 
 [System.Serializable]
-[CreateAssetMenu(fileName = "Step11Event", menuName = "SceneEvent/Step11/Step11Event")]
+[CreateAssetMenu(fileName = "Step11_Event", menuName = "SceneEvent/Step11/Step11_Event")]
 public class Step11Event : SceneEvent
 {
-    public string uiBoardName;
+  
     public string toolName;
     public string gauzeToolName;
     public string freezeGauzeName;
@@ -18,7 +18,7 @@ public class Step11Event : SceneEvent
     public string gauzeTriggerName;
     public string guidanceName;
 
-    private Text uiBoardText;
+    
     private GrabbableEquipmentBehavior equipment;
     private GameObject gauzeTool;
     private GameObject freezeGauze;
@@ -31,14 +31,14 @@ public class Step11Event : SceneEvent
     private bool holdingEquipment;
     private bool holdingGauze;
     private bool check;
-    
+    private UiController ui;
 
 
     public SceneEvent nextScene;
 
     public override void InitEvent()
     {
-        SceneAssetManager.GetAssetComponent(uiBoardName, out uiBoardText);
+        SceneAssetManager.GetAssetComponent("UIController", out ui);
         SceneAssetManager.GetAssetComponent<GrabbableEquipmentBehavior>(toolName, out equipment);
         SceneAssetManager.GetGameObjectAsset(gauzeToolName, out gauzeTool);
         SceneAssetManager.GetGameObjectAsset(freezeGauzeName, out freezeGauze);
@@ -56,9 +56,10 @@ public class Step11Event : SceneEvent
     }
     public override void StartEvent()
     {
+        ui.UpdateData(9);
         holdingGauze = false;
         check = false;
-        uiBoardText.gameObject.SetActive(true);
+       
         freezeGauze.SetActive(false);
 
 
@@ -83,7 +84,7 @@ public class Step11Event : SceneEvent
         }
         Debug.Log("มาเริ่ม อีเว้นท์ Step11 กันเถอะ");
        
-        Debug.Log(check);
+
     }
 
 
@@ -114,10 +115,10 @@ public class Step11Event : SceneEvent
             guidance?.SetTarget(null);
             freezeAtScissorGauze.SetActive(false);
             trigger.gameObject.SetActive(false);
-            uiBoardText.gameObject.SetActive(false);
+          
 
             check = true;
-            Debug.Log(check);
+
             Debug.Log("วางแล้ว");
         
 

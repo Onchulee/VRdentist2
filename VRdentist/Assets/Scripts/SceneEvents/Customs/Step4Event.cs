@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 
 [System.Serializable]
-[CreateAssetMenu(fileName = "Step4Event", menuName = "SceneEvent/Step4/Step4Event")]
+[CreateAssetMenu(fileName = "Step4_Event", menuName = "SceneEvent/Step4/Step4_Event")]
 [RequireComponent(typeof(XRGrabInteractable))]
 public class Step4Event : SceneEvent
 {
@@ -34,7 +34,7 @@ public class Step4Event : SceneEvent
     }
 
 
-    public string uiBoardName;
+ 
 
 
 
@@ -44,16 +44,20 @@ public class Step4Event : SceneEvent
     public SceneEvent nextScene;
 
 
-    private Text uiBoardText;
+  
     private Tracking[] trackedTools;
-   
+    private UiController ui;
+
+
     private List<XRGrabInteractable> grabInteractables = new List<XRGrabInteractable>();
 
     public override void InitEvent()
     {
         base.InitEvent();
-        SceneAssetManager.GetAssetComponent(uiBoardName, out uiBoardText);
+   
 
+        SceneAssetManager.GetAssetComponent( "UIController" , out ui);
+        
         List<Tracking> trackedList = new List<Tracking>();
         foreach (ToolSetup config in toolSetup)
         {
@@ -144,8 +148,11 @@ public class Step4Event : SceneEvent
     
     public override void StartEvent()
     {
-        
-        uiBoardText.gameObject.SetActive(true);
+        // ไปหาอีกครั้งว่า มันลำดับอะไรกันแน่น น่าจะ 3
+        ui.UpdateData(2);
+
+
+       
 
         for (int i = 0; i < trackedTools.Length; i++)
         {
@@ -173,7 +180,7 @@ public class Step4Event : SceneEvent
             
         }
         Debug.Log("มาเริ่ม อีเว้นท์ Step4 กันเถอะ");
-        Debug.Log(uiBoardText);
+    
 
     }
 
@@ -184,7 +191,7 @@ public class Step4Event : SceneEvent
         //    interactable.onSelectEntered.RemoveListener(OnGrabbed);
         //    interactable.onSelectExited.RemoveListener(OnReleased);
         //}
-        uiBoardText.gameObject.SetActive(false);
+     //   uiBoardText.gameObject.SetActive(false);
         trackedTools[0].hold = false;
         trackedTools[1].hold = false;
         grabInteractables.Clear();

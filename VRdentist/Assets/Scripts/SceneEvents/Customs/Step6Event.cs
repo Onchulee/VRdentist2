@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [System.Serializable]
-[CreateAssetMenu(fileName = "CutTeethEvent", menuName = "SceneEvent/TeethRemoval/CutTeethEvent")]
-public class CutTeethEvent : SceneEvent
+[CreateAssetMenu(fileName = "Step6_Event", menuName = "SceneEvent/TeethRemoval/Step6_Event")]
+public class Step6Event : SceneEvent
 {
-    public string uiBoardName;
+  
     public string wisdomTeethName;
     public string wisdomTeethTriggerName;
     public string[] fragmentTeethNames;
@@ -21,7 +21,7 @@ public class CutTeethEvent : SceneEvent
     private CollisionTrigger wisdomTeethTrigger;
     private List<GameObject> fragmentTooth;
 
-    private Text uiBoardText;
+
     private GrabbableEquipmentBehavior tool;
     private Text progressText;
     private PathGuidance guidance;
@@ -29,11 +29,13 @@ public class CutTeethEvent : SceneEvent
     private bool isCollided;
     private float progressTime;
     private float delayEndProgress;
+    private UiController ui;
+
 
     public override void InitEvent()
     {
         base.InitEvent();
-        SceneAssetManager.GetAssetComponent(uiBoardName, out uiBoardText);
+        SceneAssetManager.GetAssetComponent("UIController", out ui);
         bool foundTeeth = SceneAssetManager.GetGameObjectAsset(wisdomTeethName, out wisdomTeeth);
         bool foundTrigger = SceneAssetManager.GetAssetComponent<CollisionTrigger>(wisdomTeethTriggerName, out wisdomTeethTrigger);
         bool foundItem = SceneAssetManager.GetAssetComponent<GrabbableEquipmentBehavior>(toolName, out tool);
@@ -66,7 +68,7 @@ public class CutTeethEvent : SceneEvent
         isCollided = false;
         progressTime = 0;
         delayEndProgress = 1f;
-        uiBoardText.gameObject.SetActive(true);
+        ui.UpdateData(4);
 
         if (wisdomTeeth) {
             wisdomTeeth.SetActive(true);
@@ -108,7 +110,7 @@ public class CutTeethEvent : SceneEvent
 
     public override void StopEvent()
     {
-        uiBoardText.gameObject.SetActive(false);
+        
 
         guidance?.SetTarget(null);
         guidance?.SetParent(null);

@@ -19,9 +19,6 @@ public class UiController : MonoBehaviour
         public Sprite excempleImage;
         [TextArea]
         public string textDetail;
-       
-
-
     }
 
     [System.Serializable]
@@ -31,9 +28,6 @@ public class UiController : MonoBehaviour
         public Text uiStep;
         public Image pic;
         public Text detail;
-      
-       
-
     }
 
     public void UpdateData(int step)

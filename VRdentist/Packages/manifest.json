@@ -5,6 +5,7 @@
     "com.dgn.thaitext": "https://github.com/Onchulee/ThaiText.git",
     "com.dgn.unity-attributes": "https://github.com/Onchulee/UnityAttributes.git#1.0.6",
     "com.dgn.xr-toolkits-extensions": "https://github.com/Onchulee/XR-Toolkits-Extensions.git#1.0.6",
+    "com.unity.2d.sprite": "1.0.0",
     "com.unity.animation.rigging": "0.2.7-preview",
     "com.unity.collab-proxy": "1.2.16",
     "com.unity.ide.rider": "1.1.4",

@@ -30,8 +30,12 @@ public class Step11Event : SceneEvent
     
     private bool holdingEquipment;
     private bool holdingGauze;
+    private bool gauzeCollided;
     private bool check;
     private UiController ui;
+
+    private bool toolActivated;
+    private bool bb;
 
 
     public SceneEvent nextScene;
@@ -59,10 +63,10 @@ public class Step11Event : SceneEvent
         ui.UpdateData(9);
         holdingGauze = false;
         check = false;
-       
         freezeGauze.SetActive(false);
 
-
+        gauzeCollided = false;
+        bb = false;
 
         guidance?.SetTarget(gauzeTrigger.transform);
         guidance?.SetParent(equipment.transform);
@@ -78,8 +82,12 @@ public class Step11Event : SceneEvent
         if (gauzeTrigger)
         {
             gauzeTrigger.gameObject.SetActive(true);
+
             gauzeTrigger.OnTriggerEnterEvent += OnGauzeTriggerEnter;
             gauzeTrigger.OnTriggerExitEvent += OnGauzeTriggerExit;
+
+            //gauzeTrigger.OnCollisionEnterEvent += OnGauzeCollisionEnter;
+            //gauzeTrigger.OnCollisionExitEvent += OnGauzeCollisionExit;
 
         }
         Debug.Log("มาเริ่ม อีเว้นท์ Step11 กันเถอะ");
@@ -87,9 +95,18 @@ public class Step11Event : SceneEvent
 
     }
 
+  
 
     public override void UpdateEvent()
     {
+
+        if (equipment.IsActivate) toolActivated = true;
+        if (!equipment.IsActivate) toolActivated = false;
+        Debug.Log("เปิดใช้ อุปกรณ์ " + toolActivated);
+
+
+
+
 
         if (check == true)
         {
@@ -99,9 +116,23 @@ public class Step11Event : SceneEvent
 
         }
 
+        
+
+        if (gauzeCollided && !toolActivated)
+        {
+            Debug.Log("ชนผ้าก๊อช อ้าปากด้วย และกำลังคีบ");
+            guidance?.SetTarget(trigger.transform);
+            holdingGauze = true;
+            freezeAtScissorGauze.SetActive(true);
+            gauzeTool.SetActive(false);
+
+        }
+
+
+
 
     }
-
+    //ชนกับฟัน
     private void OnTriggerEnter(Collider collider)
     {
         if (collider == null) return;
@@ -110,6 +141,9 @@ public class Step11Event : SceneEvent
 
         if (collider.attachedRigidbody.gameObject == equipment.gameObject && holdingGauze )
         {
+
+
+
             freezeGauze.SetActive(true);
             gauzeTool.SetActive(false);
             guidance?.SetTarget(null);
@@ -136,55 +170,83 @@ public class Step11Event : SceneEvent
 
     }
 
-    private void OnGauzeTriggerEnter(Collider gauzeCollider )
+    //private void OnGauzeCollisionEnter(Collision gauzeCollision)
+    //{
+    //    if (gauzeCollision == null) return;
+
+
+
+    //    Debug.Log("ซ้อนผ้าก๊อชเฉยๆ ไม่ได้คีบ");
+
+    //    if (aa)
+    //    {
+    //        bb = true;
+    //        Debug.Log("ซ้อนผ้าก๊อชเฉยๆ ไม่ได้คีบ");
+
+    //    }
+
+
+
+    //}
+
+    //private void OnGauzeCollisionExit(Collision gauzeCollision)
+    //{
+
+    //}
+
+
+
+
+
+
+    //ชนผ้าก๊อซ
+    private void OnGauzeTriggerEnter(Collider gauzeCollider)
     {
         if (gauzeCollider == null) return;
         if (gauzeCollider.attachedRigidbody == null) return;
 
+       
 
-
-        //if (gauzeCollider.attachedRigidbody.gameObject == equipment.gameObject && !equipment.IsActivate)
-        //{
-
-        //    Debug.Log("ชนผ้าก๊อชเฉยๆ ไม่ได้คีบ");
-
-        //}
-
-        if (gauzeCollider.attachedRigidbody.gameObject == equipment.gameObject && equipment.IsActivate)
+        if (gauzeCollider.attachedRigidbody.gameObject == equipment.gameObject)
         {
+            gauzeCollided = true;
 
-            guidance?.SetTarget(trigger.transform);
-
-            holdingGauze = true;
-
-            freezeAtScissorGauze.SetActive(true);
-            gauzeTool.SetActive(false);
-
-           // HoldingGauze();
-            
+            Debug.Log("ชนผ้าก๊อช");
 
         }
 
+
+        
+
     }
 
-
-
-    private void OnGauzeTriggerExit(Collider collider)
+    private void OnGauzeTriggerExit(Collider gauzeCollider)
     {
-        if (collider == null) return;
-        if (collider.attachedRigidbody == null) return;
+        if (gauzeCollider == null) return;
+        if (gauzeCollider.attachedRigidbody == null) return;
+
+        if (gauzeCollider.attachedRigidbody.gameObject == equipment.gameObject && !equipment.IsActivate)
+        {
+            gauzeCollided = false;
+
+            Debug.Log("ไม่ชน");
+
+        }
+
+        gauzeCollided = false;
 
         guidance?.SetTarget(gauzeTrigger.transform);
         holdingGauze = false;
-        //HoldingGauze();
-        
-
 
     }
-    
 
-    
-    
+    private void Update()
+    {
+
+      
+    }
+
+
 
     public override SceneEvent NextEvent()
     {

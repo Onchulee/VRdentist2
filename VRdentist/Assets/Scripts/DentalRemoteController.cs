@@ -9,8 +9,7 @@ public class DentalRemoteController : MonoBehaviour
     [ReadOnly]
     [SerializeField]
     private XRInputReceiver holder;
-
-
+    
     [Header("Guideline UI")]
     public Transform pivotUI;
     enum DisplayUI { None, pickGuide, usageGuide}
@@ -18,6 +17,19 @@ public class DentalRemoteController : MonoBehaviour
     public Image pickGuideUI;
     public Image usageGuideUI;
 
+    // Mask Images
+    public Image maskA;
+    public Image maskB;
+    public Image maskThumbStick;
+    public Image maskThumbStick_Left;
+    public Image maskThumbStick_Right;
+
+    // Tracking Input
+    private bool hasInputA;
+    private bool hasInputB;
+    private bool hasInputThumbStick_Left;
+    private bool hasInputThumbStick_Right;
+    private bool hasPickup;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +37,16 @@ public class DentalRemoteController : MonoBehaviour
         currentDisplay = DisplayUI.None;
         pickGuideUI.fillAmount = 0;
         usageGuideUI.fillAmount = 0;
+        maskA.fillAmount = 1;
+        maskB.fillAmount = 1;
+        maskThumbStick.fillAmount = 1;
+        maskThumbStick_Left.fillAmount = 1;
+        maskThumbStick_Right.fillAmount = 1;
+        hasInputA = false;
+        hasInputB = false;
+        hasInputThumbStick_Left = false;
+        hasInputThumbStick_Right = false;
+        hasPickup = false;
     }
     
     void Update()
@@ -35,16 +57,16 @@ public class DentalRemoteController : MonoBehaviour
 
     private void UpdateUIDisplay() {
         // Check status
+        currentDisplay = DisplayUI.None;
         if (IsMainCameraFocus()) {
             if (holder)
             {
                 currentDisplay = DisplayUI.usageGuide;
             }
-            else {
+            else if (hasPickup == false)
+            {
                 currentDisplay = DisplayUI.pickGuide;
             }
-        } else {
-            currentDisplay = DisplayUI.None;
         }
         // Display UI accordingly
         if (currentDisplay == DisplayUI.None)
@@ -60,41 +82,61 @@ public class DentalRemoteController : MonoBehaviour
             DisplayUsageGuide();
         }
 
+        UpdateInputUI();
+
         // Face UI To Camera
         if (pivotUI)
         {
             pivotUI.LookAt(Camera.main.transform, Vector3.up);
         }
     }
+    
+    private void UpdateInputUI() {
+        UpdateEachInputUI(hasInputA, maskA);
+        UpdateEachInputUI(hasInputB, maskB);
+        UpdateEachInputUI(hasInputThumbStick_Left, maskThumbStick_Left);
+        UpdateEachInputUI(hasInputThumbStick_Right, maskThumbStick_Right);
+        UpdateEachInputUI(hasInputThumbStick_Left && hasInputThumbStick_Right, maskThumbStick);
+    }
 
-    private bool IsMainCameraFocus() {
-        Vector3 screenPoint = Camera.main.WorldToViewportPoint(transform.position);
-        bool isInFrontRange = screenPoint.z > 0 
-            && Vector3.Distance(Camera.main.transform.position, transform.position) < 5f;
-        bool isInWidthRange = screenPoint.x > 0.3f && screenPoint.x < 0.7f;
-        bool isInHeightRange = screenPoint.y > 0.3f && screenPoint.y < 0.7f;
-        return isInFrontRange && isInWidthRange && isInHeightRange;
+    private void UpdateEachInputUI(bool hasInput, Image targetImg) {
+        if (hasInput && targetImg.fillAmount > 0)
+        {
+            if (currentDisplay == DisplayUI.usageGuide)
+            {
+                FillImage(targetImg, -Time.deltaTime);
+            }
+            else
+            {
+                targetImg.fillAmount = 0;
+            }
+        }
+    }
+
+    private void FillImage(Image targetImg, float amount) {
+        if(targetImg)
+            targetImg.fillAmount = Mathf.Clamp01(targetImg.fillAmount + amount);
     }
 
     private void DisplayNoneUI() {
         if (pickGuideUI.fillAmount > 0)
         {
-            pickGuideUI.fillAmount = Mathf.Clamp01(pickGuideUI.fillAmount - Time.deltaTime);
+            FillImage(pickGuideUI, -Time.deltaTime);
         }
         if (usageGuideUI.fillAmount > 0)
         {
-            usageGuideUI.fillAmount = Mathf.Clamp01(usageGuideUI.fillAmount - Time.deltaTime);
+            FillImage(usageGuideUI, -Time.deltaTime);
         }
     }
 
     private void DisplayPickGuide() {
         if (usageGuideUI.fillAmount > 0)
         {
-            usageGuideUI.fillAmount = Mathf.Clamp01(usageGuideUI.fillAmount - Time.deltaTime);
+            FillImage(usageGuideUI, -Time.deltaTime);
         }
         else
         {
-            pickGuideUI.fillAmount = Mathf.Clamp01(pickGuideUI.fillAmount + Time.deltaTime);
+            FillImage(pickGuideUI, +Time.deltaTime);
         }
     }
 
@@ -102,11 +144,11 @@ public class DentalRemoteController : MonoBehaviour
     {
         if (pickGuideUI.fillAmount > 0)
         {
-            pickGuideUI.fillAmount = Mathf.Clamp01(pickGuideUI.fillAmount - Time.deltaTime);
+            FillImage(pickGuideUI, -Time.deltaTime);
         }
         else
         {
-            usageGuideUI.fillAmount = Mathf.Clamp01(usageGuideUI.fillAmount + Time.deltaTime);
+            FillImage(usageGuideUI, +Time.deltaTime);
         }
     }
 
@@ -115,26 +157,41 @@ public class DentalRemoteController : MonoBehaviour
         {
             if (holder.GetKey(XRInputReceiver.KEY.PrimaryButton))
             {
+                hasInputA = true;
                 chairController.LiftDown();
             }
             if (holder.GetKey(XRInputReceiver.KEY.SecondaryButton))
             {
+                hasInputB = true;
                 chairController.LiftUp();
             }
             if (holder.GetPrimary2DAxis().x > 0.5f)
             {
+                hasInputThumbStick_Right = true;
                 chairController.BlendDown();
             }
             if (holder.GetPrimary2DAxis().x < -0.5f)
             {
+                hasInputThumbStick_Left = true;
                 chairController.BlendUp();
             }
         }
     }
 
+    private bool IsMainCameraFocus()
+    {
+        Vector3 screenPoint = Camera.main.WorldToViewportPoint(transform.position);
+        bool isInFrontRange = screenPoint.z > 0
+            && Vector3.Distance(Camera.main.transform.position, transform.position) < 5f;
+        bool isInWidthRange = screenPoint.x > 0.3f && screenPoint.x < 0.7f;
+        bool isInHeightRange = screenPoint.y > 0.3f && screenPoint.y < 0.7f;
+        return isInFrontRange && isInWidthRange && isInHeightRange;
+    }
+
     public void OnGrabbed(XRBaseInteractor baseInteractor)
     {
         holder = XRInputInteractorMapper.Instance.GetXRInputReceiver(baseInteractor);
+        hasPickup = true;
     }
 
     public void OnReleased(XRBaseInteractor baseInteractor)

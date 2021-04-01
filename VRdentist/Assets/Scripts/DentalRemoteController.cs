@@ -184,7 +184,7 @@ public class DentalRemoteController : MonoBehaviour
         bool isInFrontRange = screenPoint.z > 0
             && Vector3.Distance(Camera.main.transform.position, transform.position) < 5f;
         bool isInWidthRange = screenPoint.x > 0.3f && screenPoint.x < 0.7f;
-        bool isInHeightRange = screenPoint.y > 0.3f && screenPoint.y < 0.7f;
+        bool isInHeightRange = screenPoint.y > 0.2f && screenPoint.y < 0.8f;
         return isInFrontRange && isInWidthRange && isInHeightRange;
     }
 

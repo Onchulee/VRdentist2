@@ -215,4 +215,5 @@ MonoBehaviour:
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
-  allowInteractables: []
+  allowInteractables:
+  - {fileID: 0}

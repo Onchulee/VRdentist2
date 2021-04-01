@@ -18,7 +18,7 @@ public class Step3Event : SceneEvent
     private GrabbableEquipmentBehavior targetItem;
     private PathGuidance guidance;
     private UiController ui;
-
+    private UiEquipmentController uiEquipment;
     private bool isCollided;
 
     public override void InitEvent()
@@ -26,7 +26,7 @@ public class Step3Event : SceneEvent
         base.InitEvent();
 
         SceneAssetManager.GetAssetComponent("UIController", out ui);
-
+        SceneAssetManager.GetAssetComponent("UIEquipment", out uiEquipment);
 
         SceneAssetManager.GetAssetComponentInChildren<CollisionTrigger>(collisionTriggerName, out trigger);
         SceneAssetManager.GetAssetComponent<GrabbableEquipmentBehavior>(targetItemName, out targetItem);
@@ -43,7 +43,7 @@ public class Step3Event : SceneEvent
 
         Debug.Log(ui);
         ui.UpdateData(1);
-
+        uiEquipment.UpdateData(1);
         if (trigger)
         {
             guidance?.SetTarget(trigger.transform);

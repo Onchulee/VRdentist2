@@ -37,6 +37,7 @@ public class Step9Event : SceneEvent
     private float delayEndProgress;
     private bool isCollided;
     private UiController ui;
+    private UiEquipmentController uiEquipment;
     public SceneEvent nextScene;
 
    
@@ -46,6 +47,7 @@ public class Step9Event : SceneEvent
     {
         base.InitEvent();
         SceneAssetManager.GetAssetComponent("UIController", out ui);
+        SceneAssetManager.GetAssetComponent("UIEquipment", out uiEquipment);
         SceneAssetManager.GetAssetComponent<GrabbableEquipmentBehavior>(toolName, out equipment);
         SceneAssetManager.GetAssetComponentInChildren<CollisionTrigger>(triggerName, out trigger);
         SceneAssetManager.GetAssetComponent<PathGuidance>(guidanceName, out guidance);
@@ -64,6 +66,7 @@ public class Step9Event : SceneEvent
     public override void StartEvent()
     {
         ui.UpdateData(7);
+        uiEquipment.UpdateData(7);
         isCollided = false;
         progressTime = 0;
         delayEndProgress = 2f;

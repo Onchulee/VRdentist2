@@ -34,6 +34,7 @@ public class Step11Event : SceneEvent
     private bool teethCollided;
     private bool check;
     private UiController ui;
+    private UiEquipmentController uiEquipment;
 
 
     private bool toolActivated;
@@ -45,6 +46,7 @@ public class Step11Event : SceneEvent
     public override void InitEvent()
     {
         SceneAssetManager.GetAssetComponent("UIController", out ui);
+        SceneAssetManager.GetAssetComponent("UIEquipment", out uiEquipment);
         SceneAssetManager.GetAssetComponent<GrabbableEquipmentBehavior>(toolName, out equipment);
         SceneAssetManager.GetGameObjectAsset(gauzeToolName, out gauzeTool);
         SceneAssetManager.GetGameObjectAsset(freezeGauzeName, out freezeGauze);
@@ -102,6 +104,11 @@ public class Step11Event : SceneEvent
             Debug.Log(" ปล่อยกลางอากาศ");
 
 
+            gauzeTool.transform.position = freezeAtScissorGauze.transform.position;
+            gauzeTool.transform.rotation = freezeAtScissorGauze.transform.rotation;
+
+
+
             guidance?.SetTarget(gauzeTrigger.transform);
             gauzeTool.SetActive(true);
             freezeAtScissorGauze.SetActive(false);
@@ -118,6 +125,7 @@ public class Step11Event : SceneEvent
     public override void StartEvent()
     {
         ui.UpdateData(9);
+        uiEquipment.UpdateData(9);
         holdingGauze = false;
         check = false;
         freezeGauze.SetActive(false);
@@ -154,7 +162,7 @@ public class Step11Event : SceneEvent
     {
         if (equipment.IsActivate) toolActivated = true;
         if (!equipment.IsActivate) toolActivated = false;
-        Debug.Log("เปิดใช้ อุปกรณ์ " + toolActivated);
+        //Debug.Log("เปิดใช้ อุปกรณ์ " + toolActivated);
         
         if (check == true)
         {

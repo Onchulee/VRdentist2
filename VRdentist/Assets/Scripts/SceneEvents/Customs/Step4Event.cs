@@ -47,7 +47,7 @@ public class Step4Event : SceneEvent
   
     private Tracking[] trackedTools;
     private UiController ui;
-
+    private UiEquipmentController uiEquipment;
 
     private List<XRGrabInteractable> grabInteractables = new List<XRGrabInteractable>();
 
@@ -57,7 +57,7 @@ public class Step4Event : SceneEvent
    
 
         SceneAssetManager.GetAssetComponent( "UIController" , out ui);
-        
+        SceneAssetManager.GetAssetComponent("UIEquipment", out uiEquipment);
         List<Tracking> trackedList = new List<Tracking>();
         foreach (ToolSetup config in toolSetup)
         {
@@ -150,9 +150,9 @@ public class Step4Event : SceneEvent
     {
         // ไปหาอีกครั้งว่า มันลำดับอะไรกันแน่น น่าจะ 3
         ui.UpdateData(2);
+        uiEquipment.UpdateData(2); // ไม่ต้องแสดงมันออกมา
 
 
-       
 
         for (int i = 0; i < trackedTools.Length; i++)
         {
@@ -220,8 +220,11 @@ public class Step4Event : SceneEvent
             passEventCondition = true;  // Uncomment if you want system to done here
         }
 
+        
 
-       
+
+
+
     }
 
     public override SceneEvent NextEvent()

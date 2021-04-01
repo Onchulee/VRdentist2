@@ -2033,7 +2033,8 @@ PrefabInstance:
         type: 3}
       propertyPath: config
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 2690cf9ea109abf439216cf04d5e8f1c,
+        type: 2}
     - target: {fileID: 8440276471894281748, guid: 0de2a918f70647f49ae36e9462e9becc,
         type: 3}
       propertyPath: respawnAt.Array.size

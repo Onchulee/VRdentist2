@@ -28070,8 +28070,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1281235889}
---- !u!64 &8977719005432586628
-MeshCollider:
+--- !u!65 &8977719005432586628
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -28080,10 +28080,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1507216354692496199, guid: d24750b1700a8674ab343bef8e9824e0, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.22574347, y: 0.008148042, z: 0.39898574}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8977719005432586629
 Rigidbody:
   m_ObjectHideFlags: 0

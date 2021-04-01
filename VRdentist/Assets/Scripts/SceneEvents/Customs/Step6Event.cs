@@ -30,12 +30,14 @@ public class Step6Event : SceneEvent
     private float progressTime;
     private float delayEndProgress;
     private UiController ui;
+    private UiEquipmentController uiEquipment;
 
 
     public override void InitEvent()
     {
         base.InitEvent();
         SceneAssetManager.GetAssetComponent("UIController", out ui);
+        SceneAssetManager.GetAssetComponent("UIEquipment", out uiEquipment);
         bool foundTeeth = SceneAssetManager.GetGameObjectAsset(wisdomTeethName, out wisdomTeeth);
         bool foundTrigger = SceneAssetManager.GetAssetComponent<CollisionTrigger>(wisdomTeethTriggerName, out wisdomTeethTrigger);
         bool foundItem = SceneAssetManager.GetAssetComponent<GrabbableEquipmentBehavior>(toolName, out tool);
@@ -69,7 +71,7 @@ public class Step6Event : SceneEvent
         progressTime = 0;
         delayEndProgress = 1f;
         ui.UpdateData(4);
-
+        uiEquipment.UpdateData(4);
         if (wisdomTeeth) {
             wisdomTeeth.SetActive(true);
         }

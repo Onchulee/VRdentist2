@@ -13,19 +13,19 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Step12Event : SceneEvent
 {
 
-    public string uiBoardName;
-
-    private Text uiBoardText;
-
+   
     public SceneEvent nextScene;
 
 
-
+    private UiResultController uiResult;
 
     public override void InitEvent()
     {
         base.InitEvent();
-        SceneAssetManager.GetAssetComponent(uiBoardName, out uiBoardText);
+        
+        SceneAssetManager.GetAssetComponent("UiResultController", out uiResult);
+
+        uiResult.gameObject.SetActive(false);
     }
 
 
@@ -37,15 +37,18 @@ public class Step12Event : SceneEvent
 
     public override void StartEvent()
     {
+
+
+        uiResult.UpdateData(2);
         Debug.Log("มาเริ่ม อีเว้นท์ Step12 กันเถอะ");
-        uiBoardText.gameObject.SetActive(true);
+        
     }
 
     public override void StopEvent()
     {
 
         Debug.Log("จบ Step12 กันเถอะ");
-        uiBoardText.gameObject.SetActive(false);
+        
     }
 
     public override void UpdateEvent()

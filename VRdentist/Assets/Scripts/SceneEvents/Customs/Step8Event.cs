@@ -47,6 +47,7 @@ public class Step8Event : SceneEvent
 
     private Tracking[] trackedTools;
     private UiController ui;
+    private UiEquipmentController uiEquipment;
     private List<XRGrabInteractable> grabInteractables = new List<XRGrabInteractable>();
 
     public override void InitEvent()
@@ -54,6 +55,7 @@ public class Step8Event : SceneEvent
         base.InitEvent();
 
         SceneAssetManager.GetAssetComponent("UIController", out ui);
+        SceneAssetManager.GetAssetComponent("UIEquipment", out uiEquipment);
         List<Tracking> trackedList = new List<Tracking>();
         foreach (ToolSetup config in toolSetup)
         {
@@ -165,6 +167,7 @@ public class Step8Event : SceneEvent
     public override void StartEvent()
     {
         ui.UpdateData(6);
+        uiEquipment.UpdateData(6);
         for (int i = 0; i < trackedTools.Length; i++)
         {
 

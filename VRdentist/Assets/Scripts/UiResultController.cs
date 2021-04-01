@@ -42,7 +42,7 @@ public class UiResultController : MonoBehaviour
 
     void Start()
     {
-        UpdateData(2);
+        //UpdateData(2);
     }
 
     // Update is called once per frame

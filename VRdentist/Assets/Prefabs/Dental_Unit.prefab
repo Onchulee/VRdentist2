@@ -2118,7 +2118,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2089492656771785754}
-  - component: {fileID: 2089492656771785755}
+  - component: {fileID: 3479578376207373943}
   m_Layer: 0
   m_Name: TrayHolder_Collider
   m_TagString: Untagged
@@ -2140,8 +2140,8 @@ Transform:
   m_Father: {fileID: 3739711452601439249}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2089492656771785755
-BoxCollider:
+--- !u!64 &3479578376207373943
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2150,9 +2150,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.33741665, y: 0.05, z: 0.5226004}
-  m_Center: {x: 0, y: 0.025, z: 0}
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7141087623337532443, guid: d24750b1700a8674ab343bef8e9824e0, type: 3}
 --- !u!1 &2089492658093428175
 GameObject:
   m_ObjectHideFlags: 0
@@ -4115,6 +4116,7 @@ GameObject:
   - component: {fileID: 281924911744406537}
   - component: {fileID: 3532603101460304371}
   - component: {fileID: 7510914463438148737}
+  - component: {fileID: 2358734557621827936}
   m_Layer: 0
   m_Name: MiniTray
   m_TagString: Untagged
@@ -4183,6 +4185,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &2358734557621827936
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3124088139259932778}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8005060002245307658, guid: 6a931d2eb1fcd774b91c62a4acc293db, type: 3}
 --- !u!1 &3157791882990541415
 GameObject:
   m_ObjectHideFlags: 0

@@ -12403,12 +12403,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1219895482}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1227021472 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2089492656771785754, guid: adab35cc366e01d4589f27246ce04e0b,
-    type: 3}
-  m_PrefabInstance: {fileID: 2089492656486824998}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1229655978
 GameObject:
   m_ObjectHideFlags: 0
@@ -12963,6 +12957,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4385396671002389598, guid: ec08b972ab00ad44f8d0a7d7f4224655,
     type: 3}
   m_PrefabInstance: {fileID: 1279957437}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1281235889 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6009712664899700539, guid: adab35cc366e01d4589f27246ce04e0b,
+    type: 3}
+  m_PrefabInstance: {fileID: 2089492656486824998}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1285516947
 PrefabInstance:
@@ -28021,19 +28021,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assetName: S9_TriggerArea
   hideOnStart: 1
---- !u!65 &8977719005432586624
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8977719005432586626}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.33741665, y: 0.05038601, z: 0.5226004}
-  m_Center: {x: -0.028791673, y: 0.49114385, z: 0.40405577}
 --- !u!4 &8977719005432586625
 Transform:
   m_ObjectHideFlags: 0
@@ -28041,8 +28028,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8977719005432586626}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2729144, y: 0.35593867, z: 0.39506334}
+  m_LocalRotation: {x: -0, y: -0, z: -0.0034033954, w: 0.9999942}
+  m_LocalPosition: {x: 0.09540236, y: 1.1267132, z: 0.76601225}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8977719005756766260}
@@ -28059,9 +28046,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8977719005432586625}
   - component: {fileID: 8977719005432586629}
+  - component: {fileID: 8977719005432586628}
   - component: {fileID: 8977719005432586630}
   - component: {fileID: 8977719005432586631}
-  - component: {fileID: 8977719005432586624}
   - component: {fileID: 8977719005432586627}
   m_Layer: 15
   m_Name: TriggerTrayArea
@@ -28082,7 +28069,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0662cf4483331784ba169971fce1f75f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1227021472}
+  target: {fileID: 1281235889}
+--- !u!64 &8977719005432586628
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8977719005432586626}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1507216354692496199, guid: d24750b1700a8674ab343bef8e9824e0, type: 3}
 --- !u!54 &8977719005432586629
 Rigidbody:
   m_ObjectHideFlags: 0

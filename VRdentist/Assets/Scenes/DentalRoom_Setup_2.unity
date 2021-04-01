@@ -3818,6 +3818,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 398645561}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &404918837 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7116118684226623103, guid: adab35cc366e01d4589f27246ce04e0b,
+    type: 3}
+  m_PrefabInstance: {fileID: 2089492656486824998}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &418443067
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6365,7 +6371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0662cf4483331784ba169971fce1f75f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 404918837}
 --- !u!1001 &752425292
 PrefabInstance:
   m_ObjectHideFlags: 0

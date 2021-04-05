@@ -27,6 +27,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Chair_mat
+    second: {fileID: 2100000, guid: a8aaf8528ce681a4fb33b25e3018b37c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Down_Button_mat
+    second: {fileID: 2100000, guid: 6d620bbd4e3db8f44b5d5813044d46b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Eye2
     second: {fileID: 2100000, guid: f45475710f28efe49a839c56c17cfdd4, type: 2}
   - first:
@@ -42,8 +52,23 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Left_Button_mat
+    second: {fileID: 2100000, guid: 44a1a999f20b630448bf824c2e07f6d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Light_Plane_mat
+    second: {fileID: 2100000, guid: 1f4f9f8e3ab6d9a43a7cb210b74962ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Pants1
     second: {fileID: 2100000, guid: a5d7031ec8d072b448741029155df823, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Right_Button_mat
+    second: {fileID: 2100000, guid: 1fc631f703c2c9c429730feda8cbd953, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -57,28 +82,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Up_Button_mat
+    second: {fileID: 2100000, guid: 95dcc47f9d6659842acaf05b32d4ec85, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Veil
     second: {fileID: 2100000, guid: dbc1723fd874ddd4498d3ed018aede6a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: button1
-    second: {fileID: 2100000, guid: 5fac5172e151e2d4495c6d26de99e0ac, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: chair1
-    second: {fileID: 2100000, guid: 682070b049ba5704597dc373558c7187, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: chair2
-    second: {fileID: 2100000, guid: 7fb845868e1ab664caec9360fc941c11, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: light_plane
-    second: {fileID: 2100000, guid: 67fbb3146254047499373c2b10e67163, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

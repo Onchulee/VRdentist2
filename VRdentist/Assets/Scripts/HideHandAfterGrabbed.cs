@@ -21,7 +21,7 @@ public class HideHandAfterGrabbed : MonoBehaviour
 
     void OnGrabbed(XRBaseInteractor rBaseInteractor)
     {
-        HandPresence rHandPresence = rBaseInteractor.attachTransform.GetComponentInChildren<HandPresence>();
+        HandPresence rHandPresence = rBaseInteractor.GetComponentInChildren<HandPresence>();
         if (rHandPresence) {
             if (handPresence && handPresence!=rHandPresence) {
                 handPresence.showController = recordShowController;

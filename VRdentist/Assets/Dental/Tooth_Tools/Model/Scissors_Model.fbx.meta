@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Stainless
-    second: {fileID: 2100000, guid: a8eb3fd35f489e046af8336c1bb18d45, type: 2}
+    second: {fileID: 2100000, guid: 5192f7f7646b6524897bf04f79969533, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

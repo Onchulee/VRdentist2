@@ -41,10 +41,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.016
-  m_Height: 0.19
+  m_Radius: 0.01
+  m_Height: 0.1
   m_Direction: 1
-  m_Center: {x: 0, y: 0.016, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2414449472931618454
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,22 +117,25 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 28672
-  m_OnFirstHoverEnter:
+  m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnLastHoverExit:
+  m_OnLastHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -235,7 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 8266718938519969217}
-  activateType: 1
+  activateType: 0
   alwaysActivateOnGrabbed: 0
   physicsColliders:
   - {fileID: 7921969077819570721}
@@ -351,10 +354,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.02
-  m_Height: 0.19
+  m_Radius: 0.015
+  m_Height: 0.1
   m_Direction: 1
-  m_Center: {x: 0, y: 0.016, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &5436389201807093917
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -374,6 +377,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 16eaba815a2c7e44b83f7081e9432226,
         type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 16eaba815a2c7e44b83f7081e9432226,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -385,6 +393,11 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 16eaba815a2c7e44b83f7081e9432226,
         type: 3}
       propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 16eaba815a2c7e44b83f7081e9432226,
+        type: 3}
+      propertyPath: m_LocalRotation.w
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 16eaba815a2c7e44b83f7081e9432226,
@@ -401,16 +414,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 16eaba815a2c7e44b83f7081e9432226,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 16eaba815a2c7e44b83f7081e9432226,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 16eaba815a2c7e44b83f7081e9432226,
         type: 3}

@@ -31,6 +31,12 @@ public class DentalRemoteController : MonoBehaviour
     private bool hasInputThumbStick_Right;
     private bool hasPickup;
 
+    [Header("Button Renderers")]
+    public Renderer button_liftUp;
+    public Renderer button_liftDown;
+    public Renderer button_blendUp;
+    public Renderer button_blendDown;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -159,21 +165,40 @@ public class DentalRemoteController : MonoBehaviour
             {
                 hasInputA = true;
                 chairController.LiftDown();
+                SetEmissionRenderer(button_liftDown, Color.white, 1f);
+            }
+            else {
+                SetEmissionRenderer(button_liftDown, Color.white, 0.25f);
             }
             if (holder.GetKey(XRInputReceiver.KEY.SecondaryButton))
             {
                 hasInputB = true;
                 chairController.LiftUp();
+                SetEmissionRenderer(button_liftUp, Color.white, 1f);
+            }
+            else
+            {
+                SetEmissionRenderer(button_liftUp, Color.white, 0.25f);
             }
             if (holder.GetPrimary2DAxis().x > 0.5f)
             {
                 hasInputThumbStick_Right = true;
                 chairController.BlendDown();
+                SetEmissionRenderer(button_blendDown, Color.white, 1f);
+            }
+            else
+            {
+                SetEmissionRenderer(button_blendDown, Color.white, 0.25f);
             }
             if (holder.GetPrimary2DAxis().x < -0.5f)
             {
                 hasInputThumbStick_Left = true;
                 chairController.BlendUp();
+                SetEmissionRenderer(button_blendUp, Color.white, 1f);
+            }
+            else
+            {
+                SetEmissionRenderer(button_blendUp, Color.white, 0.25f);
             }
         }
     }
@@ -186,6 +211,13 @@ public class DentalRemoteController : MonoBehaviour
         bool isInWidthRange = screenPoint.x > 0.3f && screenPoint.x < 0.7f;
         bool isInHeightRange = screenPoint.y > 0.2f && screenPoint.y < 0.8f;
         return isInFrontRange && isInWidthRange && isInHeightRange;
+    }
+
+    private void SetEmissionRenderer(Renderer targetRend, Color _color, float _intensity) {
+        if (targetRend == null) return;
+        targetRend.material.EnableKeyword("_EMISSION");
+        targetRend.material.globalIlluminationFlags = MaterialGlobalIlluminationFlags.RealtimeEmissive;
+        targetRend.material.SetVector("_EmissionColor", _color * _intensity);
     }
 
     public void OnGrabbed(XRBaseInteractor baseInteractor)

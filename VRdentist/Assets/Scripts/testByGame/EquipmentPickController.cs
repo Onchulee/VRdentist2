@@ -5,7 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class EquipmentPickController : MonoBehaviour
 {
-    
+   
     [ReadOnly]
     [SerializeField]
     private XRInputReceiver holder;
@@ -14,38 +14,45 @@ public class EquipmentPickController : MonoBehaviour
     public Transform pivotUI;
     enum DisplayUI { None, pickGuide, usageGuide }
     private DisplayUI currentDisplay;
-    public Image pickGuideUI;
+  //  public Image pickGuideUI;
     public Image usageGuideUI;
 
     // Mask Images
-    public Image maskA;
+    //public Image maskA;
     public Image maskB;
-    public Image maskThumbStick;
-    public Image maskThumbStick_Left;
-    public Image maskThumbStick_Right;
+    //public Image maskThumbStick;
+    //public Image maskThumbStick_Left;
+    //public Image maskThumbStick_Right;
 
     // Tracking Input
-    private bool hasInputA;
+    //private bool hasInputA;
     private bool hasInputB;
-    private bool hasInputThumbStick_Left;
-    private bool hasInputThumbStick_Right;
+    //private bool hasInputThumbStick_Left;
+    //private bool hasInputThumbStick_Right;
     private bool hasPickup;
+
+    //[Header("Button Renderers")]
+    //public Renderer button_liftUp;
+    //public Renderer button_liftDown;
+    //public Renderer button_blendUp;
+    //public Renderer button_blendDown;
 
     // Start is called before the first frame update
     void Start()
     {
+       
         currentDisplay = DisplayUI.None;
-        pickGuideUI.fillAmount = 0;
+      //  pickGuideUI.fillAmount = 0;
         usageGuideUI.fillAmount = 0;
-        maskA.fillAmount = 1;
+        //maskA.fillAmount = 1;
         maskB.fillAmount = 1;
-        maskThumbStick.fillAmount = 1;
-        maskThumbStick_Left.fillAmount = 1;
-        maskThumbStick_Right.fillAmount = 1;
-        hasInputA = false;
+        //maskThumbStick.fillAmount = 1;
+        //maskThumbStick_Left.fillAmount = 1;
+        //maskThumbStick_Right.fillAmount = 1;
+        //hasInputA = false;
         hasInputB = false;
-        hasInputThumbStick_Left = false;
-        hasInputThumbStick_Right = false;
+        //hasInputThumbStick_Left = false;
+        //hasInputThumbStick_Right = false;
         hasPickup = false;
     }
 
@@ -75,13 +82,13 @@ public class EquipmentPickController : MonoBehaviour
         {
             DisplayNoneUI();
         }
-        if (currentDisplay == DisplayUI.pickGuide && pickGuideUI.fillAmount < 1f)
+        if (currentDisplay == DisplayUI.pickGuide /*&& pickGuideUI.fillAmount < 1f*/)
         {
             DisplayPickGuide();
         }
         if (currentDisplay == DisplayUI.usageGuide && usageGuideUI.fillAmount < 1f)
         {
-            DisplayUsageGuide();
+           DisplayUsageGuide();
         }
 
         UpdateInputUI();
@@ -95,11 +102,11 @@ public class EquipmentPickController : MonoBehaviour
 
     private void UpdateInputUI()
     {
-        UpdateEachInputUI(hasInputA, maskA);
+        //UpdateEachInputUI(hasInputA, maskA);
         UpdateEachInputUI(hasInputB, maskB);
-        UpdateEachInputUI(hasInputThumbStick_Left, maskThumbStick_Left);
-        UpdateEachInputUI(hasInputThumbStick_Right, maskThumbStick_Right);
-        UpdateEachInputUI(hasInputThumbStick_Left && hasInputThumbStick_Right, maskThumbStick);
+        //UpdateEachInputUI(hasInputThumbStick_Left, maskThumbStick_Left);
+        //UpdateEachInputUI(hasInputThumbStick_Right, maskThumbStick_Right);
+        //UpdateEachInputUI(hasInputThumbStick_Left && hasInputThumbStick_Right, maskThumbStick);
     }
 
     private void UpdateEachInputUI(bool hasInput, Image targetImg)
@@ -125,10 +132,10 @@ public class EquipmentPickController : MonoBehaviour
 
     private void DisplayNoneUI()
     {
-        if (pickGuideUI.fillAmount > 0)
+       /* if (pickGuideUI.fillAmount > 0)
         {
             FillImage(pickGuideUI, -Time.deltaTime);
-        }
+        }*/
         if (usageGuideUI.fillAmount > 0)
         {
             FillImage(usageGuideUI, -Time.deltaTime);
@@ -141,48 +148,64 @@ public class EquipmentPickController : MonoBehaviour
         {
             FillImage(usageGuideUI, -Time.deltaTime);
         }
-        else
+        /*else
         {
             FillImage(pickGuideUI, +Time.deltaTime);
-        }
+        }*/
     }
 
     private void DisplayUsageGuide()
     {
-        if (pickGuideUI.fillAmount > 0)
-        {
-            FillImage(pickGuideUI, -Time.deltaTime);
-        }
-        else
-        {
+        
             FillImage(usageGuideUI, +Time.deltaTime);
-        }
+        
     }
 
     private void ListenInput()
     {
-        if (holder)
+        if (holder  )
         {
-            if (holder.GetKey(XRInputReceiver.KEY.PrimaryButton))
-            {
-                hasInputA = true;
-              
-            }
+            //if (holder.GetKey(XRInputReceiver.KEY.PrimaryButton))
+            //{
+            //    hasInputA = true;
+
+            //    SetEmissionRenderer(button_liftDown, Color.white, 1f);
+            //}
+            //else
+            //{
+            //    SetEmissionRenderer(button_liftDown, Color.white, 0.25f);
+            //}
             if (holder.GetKey(XRInputReceiver.KEY.SecondaryButton))
             {
                 hasInputB = true;
-               
+                Debug.Log("กดปุ่ม");
+                usageGuideUI.fillAmount = 1;
+
             }
-            if (holder.GetPrimary2DAxis().x > 0.5f)
+            else
             {
-                hasInputThumbStick_Right = true;
-               
-            }
-            if (holder.GetPrimary2DAxis().x < -0.5f)
-            {
-                hasInputThumbStick_Left = true;
                 
             }
+            //if (holder.GetPrimary2DAxis().x > 0.5f)
+            //{
+            //    hasInputThumbStick_Right = true;
+               
+            //    SetEmissionRenderer(button_blendDown, Color.white, 1f);
+            //}
+            //else
+            //{
+            //    SetEmissionRenderer(button_blendDown, Color.white, 0.25f);
+            //}
+            //if (holder.GetPrimary2DAxis().x < -0.5f)
+            //{
+            //    hasInputThumbStick_Left = true;
+                
+            //    SetEmissionRenderer(button_blendUp, Color.white, 1f);
+            //}
+            //else
+            //{
+            //    SetEmissionRenderer(button_blendUp, Color.white, 0.25f);
+            //}
         }
     }
 
@@ -196,9 +219,18 @@ public class EquipmentPickController : MonoBehaviour
         return isInFrontRange && isInWidthRange && isInHeightRange;
     }
 
+    private void SetEmissionRenderer(Renderer targetRend, Color _color, float _intensity)
+    {
+        if (targetRend == null) return;
+        targetRend.material.EnableKeyword("_EMISSION");
+        targetRend.material.globalIlluminationFlags = MaterialGlobalIlluminationFlags.RealtimeEmissive;
+        targetRend.material.SetVector("_EmissionColor", _color * _intensity);
+    }
+
     public void OnGrabbed(XRBaseInteractor baseInteractor)
     {
         holder = XRInputInteractorMapper.Instance.GetXRInputReceiver(baseInteractor);
+        
         hasPickup = true;
     }
 

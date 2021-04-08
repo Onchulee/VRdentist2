@@ -36,6 +36,12 @@ MonoBehaviour:
   - toolName: Seldin
     detailText: SeldinTextDetail
     checkText: SeldinText
+  - toolName: Fissure
+    detailText: FissureTextDetail
+    checkText: FissureText
+  - toolName: Steel
+    detailText: SteelTextDetail
+    checkText: SteelText
   numOfToolsTextName: num of tools
   missionClearTextName: MissionClear
   guidanceName: PathGuidance

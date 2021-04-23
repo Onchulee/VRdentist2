@@ -39,8 +39,9 @@ public class Step4Event : SceneEvent
 
 
     public ToolSetup[] toolSetup;
-  
-   
+
+    public string gumControllerName = "GumController";
+
     public SceneEvent nextScene;
 
 
@@ -48,6 +49,8 @@ public class Step4Event : SceneEvent
     private Tracking[] trackedTools;
     private UiController ui;
     private UiEquipmentController uiEquipment;
+
+    private GumController gumCtrl;
 
     private List<XRGrabInteractable> grabInteractables = new List<XRGrabInteractable>();
 
@@ -58,6 +61,8 @@ public class Step4Event : SceneEvent
 
         SceneAssetManager.GetAssetComponent( "UIController" , out ui);
         SceneAssetManager.GetAssetComponent("UIEquipment", out uiEquipment);
+        SceneAssetManager.GetAssetComponent<GumController>(gumControllerName, out gumCtrl);
+
         List<Tracking> trackedList = new List<Tracking>();
         foreach (ToolSetup config in toolSetup)
         {
@@ -201,6 +206,8 @@ public class Step4Event : SceneEvent
             trackedTools[i].guidance?.SetTarget(null);
             trackedTools[i].guidance?.SetParent(null);
         }
+        if (gumCtrl) gumCtrl.SettingGum(gumCtrl.targetGum_parent, gumCtrl.widenGum_parent);
+
     }
 
     public override void UpdateEvent()

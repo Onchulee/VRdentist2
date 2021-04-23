@@ -18,7 +18,7 @@ TagManager:
   - Floor
   - Wall
   - Ceiling
-  - Props
+  - Static
   - Body
   - Grabbable/Default
   - Grabbable/Socket

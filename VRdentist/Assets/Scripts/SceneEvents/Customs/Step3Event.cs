@@ -9,6 +9,7 @@ public class Step3Event : SceneEvent
 
     public string collisionTriggerName;
     public string targetItemName;
+    public string gumControllerName = "GumController";
     public string guidanceName = "PathGuidance";
     public SceneEvent nextScene;
 
@@ -19,6 +20,7 @@ public class Step3Event : SceneEvent
     private PathGuidance guidance;
     private UiController ui;
     private UiEquipmentController uiEquipment;
+    private GumController gumCtrl;
     private bool isCollided;
 
     public override void InitEvent()
@@ -31,6 +33,7 @@ public class Step3Event : SceneEvent
         SceneAssetManager.GetAssetComponentInChildren<CollisionTrigger>(collisionTriggerName, out trigger);
         SceneAssetManager.GetAssetComponent<GrabbableEquipmentBehavior>(targetItemName, out targetItem);
         SceneAssetManager.GetAssetComponent<PathGuidance>(guidanceName, out guidance);
+        SceneAssetManager.GetAssetComponent<GumController>(gumControllerName, out gumCtrl);
 
         if (nextScene) nextScene.InitEvent();
     }
@@ -66,8 +69,6 @@ public class Step3Event : SceneEvent
 
     public override void StopEvent()
     {
-
-
         if (trigger)
         {
             Debug.Log("CollisionTriggerEvent remove events");
@@ -77,6 +78,7 @@ public class Step3Event : SceneEvent
         }
         guidance?.SetTarget(null);
         guidance?.SetParent(null);
+        if (gumCtrl) gumCtrl.SettingGum(gumCtrl.targetGum_parent, gumCtrl.cutGum_parent);
         Debug.Log("Stop event: " + this.name);
     }
 

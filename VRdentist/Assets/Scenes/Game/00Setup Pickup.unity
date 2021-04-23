@@ -629,6 +629,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -689,6 +694,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6407065466059908593, guid: 5d9e457616ded7048a6c4f629e2c7e13,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407065466059908593, guid: 5d9e457616ded7048a6c4f629e2c7e13,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -710,7 +720,7 @@ GameObject:
   m_Component:
   - component: {fileID: 31001480}
   - component: {fileID: 31001481}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1205,6 +1215,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1344542622064624652, guid: d7197b3e666585146bcde50ba0053f92,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344542622064624652, guid: d7197b3e666585146bcde50ba0053f92,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -1337,6 +1352,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medibottle04Model (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
         type: 3}
@@ -1815,6 +1835,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3571954171610063103, guid: 2837a94a5011a5e49925bf5c777ec3b8,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571954171610063103, guid: 2837a94a5011a5e49925bf5c777ec3b8,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -1965,6 +1990,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -2063,7 +2093,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 94678020}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bookpile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2160,6 +2190,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medibottle02Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 5691197136270386768, guid: 99d714362e1c4d245bc6b3748aed6cdb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5691197136270386768, guid: 99d714362e1c4d245bc6b3748aed6cdb,
         type: 3}
@@ -2362,6 +2397,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4005916293549487844, guid: ec08b972ab00ad44f8d0a7d7f4224655,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4005916293549487844, guid: ec08b972ab00ad44f8d0a7d7f4224655,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -2512,6 +2552,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5691197136270386768, guid: 99d714362e1c4d245bc6b3748aed6cdb,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5691197136270386768, guid: 99d714362e1c4d245bc6b3748aed6cdb,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -2534,6 +2579,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medibottle03Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344542622064624652, guid: d7197b3e666585146bcde50ba0053f92,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1344542622064624652, guid: d7197b3e666585146bcde50ba0053f92,
         type: 3}
@@ -2614,6 +2664,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CapsuleBottleModel (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8458803318442369727, guid: 75ce655933d1d2b45a566e6cf23e9768,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8458803318442369727, guid: 75ce655933d1d2b45a566e6cf23e9768,
         type: 3}
@@ -2846,6 +2901,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 94c678177cbddf1449af55ce94fd61c1,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 94c678177cbddf1449af55ce94fd61c1,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -2868,6 +2928,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookModel_Green Variant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940969053865044286, guid: 818693c50193e78459353fb37a68c3d7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4940969053865044286, guid: 818693c50193e78459353fb37a68c3d7,
         type: 3}
@@ -3133,6 +3198,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookModel_Yellow Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4005916293549487844, guid: ec08b972ab00ad44f8d0a7d7f4224655,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4005916293549487844, guid: ec08b972ab00ad44f8d0a7d7f4224655,
         type: 3}
@@ -3596,6 +3666,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7689581527468730283, guid: 35cb2b54666ab784f99387b73581dc81,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7689581527468730283, guid: 35cb2b54666ab784f99387b73581dc81,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -3922,6 +3997,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medibottle03Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344542622064624652, guid: d7197b3e666585146bcde50ba0053f92,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1344542622064624652, guid: d7197b3e666585146bcde50ba0053f92,
         type: 3}
@@ -4271,6 +4351,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5691197136270386768, guid: 99d714362e1c4d245bc6b3748aed6cdb,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5691197136270386768, guid: 99d714362e1c4d245bc6b3748aed6cdb,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -4351,6 +4436,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5536b6a3d1dc94c47b4f5b893a1a24dd,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5536b6a3d1dc94c47b4f5b893a1a24dd,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -4373,6 +4463,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TissueBox01Model (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6245529576164109315, guid: fcbdf83d33470bd4ca2bf7f908655e41,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6245529576164109315, guid: fcbdf83d33470bd4ca2bf7f908655e41,
         type: 3}
@@ -4751,6 +4846,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -5087,6 +5187,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -5183,6 +5288,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medibottle03Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344542622064624652, guid: d7197b3e666585146bcde50ba0053f92,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1344542622064624652, guid: d7197b3e666585146bcde50ba0053f92,
         type: 3}
@@ -5491,6 +5601,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookModel (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
         type: 3}
@@ -5808,6 +5923,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6407065466059908593, guid: 5d9e457616ded7048a6c4f629e2c7e13,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407065466059908593, guid: 5d9e457616ded7048a6c4f629e2c7e13,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -5828,7 +5948,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 312754923}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LargeRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5932,6 +6052,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookModel_Orange Variant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407065466059908593, guid: 5d9e457616ded7048a6c4f629e2c7e13,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6407065466059908593, guid: 5d9e457616ded7048a6c4f629e2c7e13,
         type: 3}
@@ -6396,6 +6521,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3571954171610063103, guid: 2837a94a5011a5e49925bf5c777ec3b8,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571954171610063103, guid: 2837a94a5011a5e49925bf5c777ec3b8,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -6563,6 +6693,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medibottle01Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 446527324290283653, guid: e26df79bc7230654a8cfe18ed041670e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 446527324290283653, guid: e26df79bc7230654a8cfe18ed041670e,
         type: 3}
@@ -7292,7 +7427,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 372740384}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MiniShelf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7328,6 +7463,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookModel_Yellow Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4005916293549487844, guid: ec08b972ab00ad44f8d0a7d7f4224655,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4005916293549487844, guid: ec08b972ab00ad44f8d0a7d7f4224655,
         type: 3}
@@ -7497,7 +7637,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 380180549}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7533,7 +7673,7 @@ GameObject:
   m_Component:
   - component: {fileID: 386444602}
   - component: {fileID: 386444603}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7776,6 +7916,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4268111612363843724, guid: 8ae9e802080d60946b336e328d39214e,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268111612363843724, guid: 8ae9e802080d60946b336e328d39214e,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -7853,6 +7998,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medibottle04Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
         type: 3}
@@ -8209,6 +8359,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4584691200399107289, guid: 0eb35ded2201ad74a8cbb15c7e6835c5,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584691200399107289, guid: 0eb35ded2201ad74a8cbb15c7e6835c5,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -8286,6 +8441,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medibottle02Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 5691197136270386768, guid: 99d714362e1c4d245bc6b3748aed6cdb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5691197136270386768, guid: 99d714362e1c4d245bc6b3748aed6cdb,
         type: 3}
@@ -8464,6 +8624,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -8638,6 +8803,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5691197136270386768, guid: 99d714362e1c4d245bc6b3748aed6cdb,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5691197136270386768, guid: 99d714362e1c4d245bc6b3748aed6cdb,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -8715,6 +8885,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TrashModel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5237613012011711696, guid: e0b3be3d2d2f1db44a6d14e17c2f38ab,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5237613012011711696, guid: e0b3be3d2d2f1db44a6d14e17c2f38ab,
         type: 3}
@@ -9420,6 +9595,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -9618,6 +9798,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1344542622064624652, guid: d7197b3e666585146bcde50ba0053f92,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344542622064624652, guid: d7197b3e666585146bcde50ba0053f92,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -9798,6 +9983,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -9935,6 +10125,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookModel_Orange Variant (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407065466059908593, guid: 5d9e457616ded7048a6c4f629e2c7e13,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6407065466059908593, guid: 5d9e457616ded7048a6c4f629e2c7e13,
         type: 3}
@@ -10988,6 +11183,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -11158,6 +11358,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CertificateModel
+      objectReference: {fileID: 0}
+    - target: {fileID: 559076567049681198, guid: 878d2ecff514e7c408fda321cd24d310,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 559076567049681198, guid: 878d2ecff514e7c408fda321cd24d310,
         type: 3}
@@ -11463,6 +11668,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -11732,7 +11942,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 616923002}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Medibottle (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11784,6 +11994,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookModel_Yellow Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4005916293549487844, guid: ec08b972ab00ad44f8d0a7d7f4224655,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4005916293549487844, guid: ec08b972ab00ad44f8d0a7d7f4224655,
         type: 3}
@@ -12846,6 +13061,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -12923,6 +13143,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FolderModel (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584691200399107289, guid: 0eb35ded2201ad74a8cbb15c7e6835c5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4584691200399107289, guid: 0eb35ded2201ad74a8cbb15c7e6835c5,
         type: 3}
@@ -13443,7 +13668,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 684421528}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Medicine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13557,7 +13782,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 685572430}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RoomLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13598,6 +13823,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookModel_Gray Variant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571954171610063103, guid: 2837a94a5011a5e49925bf5c777ec3b8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3571954171610063103, guid: 2837a94a5011a5e49925bf5c777ec3b8,
         type: 3}
@@ -13748,6 +13978,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medibottle04Model (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
         type: 3}
@@ -14325,7 +14560,7 @@ GameObject:
   m_Component:
   - component: {fileID: 729555343}
   - component: {fileID: 729555344}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14910,6 +15145,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7549641400343921375, guid: 66e34116de6c72b44aa1cff8b618d003,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549641400343921375, guid: 66e34116de6c72b44aa1cff8b618d003,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -14932,6 +15172,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookModel_Gray Variant (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571954171610063103, guid: 2837a94a5011a5e49925bf5c777ec3b8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3571954171610063103, guid: 2837a94a5011a5e49925bf5c777ec3b8,
         type: 3}
@@ -15293,6 +15538,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medibottle01Model (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 446527324290283653, guid: e26df79bc7230654a8cfe18ed041670e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 446527324290283653, guid: e26df79bc7230654a8cfe18ed041670e,
         type: 3}
@@ -16151,6 +16401,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6407065466059908593, guid: 5d9e457616ded7048a6c4f629e2c7e13,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407065466059908593, guid: 5d9e457616ded7048a6c4f629e2c7e13,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -16173,6 +16428,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TissueBox02Model (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 488958540725721749, guid: c631ae6da8bc913418d056080e422389,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 488958540725721749, guid: c631ae6da8bc913418d056080e422389,
         type: 3}
@@ -16252,7 +16512,7 @@ GameObject:
   m_Component:
   - component: {fileID: 808143496}
   - component: {fileID: 808143497}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16400,6 +16660,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medibottle04Model (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
         type: 3}
@@ -17060,6 +17325,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a240097fb8beaf348a79744764dadde7,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a240097fb8beaf348a79744764dadde7,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -17280,6 +17550,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -17302,6 +17577,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookModel (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
         type: 3}
@@ -17400,6 +17680,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 446527324290283653, guid: e26df79bc7230654a8cfe18ed041670e,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 446527324290283653, guid: e26df79bc7230654a8cfe18ed041670e,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -17476,7 +17761,7 @@ GameObject:
   m_Component:
   - component: {fileID: 877663772}
   - component: {fileID: 877663773}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18815,6 +19100,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4940969053865044286, guid: 818693c50193e78459353fb37a68c3d7,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940969053865044286, guid: 818693c50193e78459353fb37a68c3d7,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -19144,6 +19434,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7549641400343921375, guid: 66e34116de6c72b44aa1cff8b618d003,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549641400343921375, guid: 66e34116de6c72b44aa1cff8b618d003,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -19302,6 +19597,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4584691200399107289, guid: 0eb35ded2201ad74a8cbb15c7e6835c5,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584691200399107289, guid: 0eb35ded2201ad74a8cbb15c7e6835c5,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -19324,6 +19624,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookModel_Yellow Variant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4005916293549487844, guid: ec08b972ab00ad44f8d0a7d7f4224655,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4005916293549487844, guid: ec08b972ab00ad44f8d0a7d7f4224655,
         type: 3}
@@ -19690,6 +19995,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bab294a867603d1499277ed1526242da,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bab294a867603d1499277ed1526242da,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -19853,6 +20163,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookModel (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
         type: 3}
@@ -20086,6 +20401,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookModel (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
         type: 3}
@@ -20406,6 +20726,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8509036486653312951, guid: ac0dda89fc7abd74b839ba854fc68220,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: -8509036486653312951, guid: ac0dda89fc7abd74b839ba854fc68220,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -20416,13 +20741,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7512962469406372097, guid: ac0dda89fc7abd74b839ba854fc68220,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: -7512962469406372097, guid: ac0dda89fc7abd74b839ba854fc68220,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: -5743350618785959237, guid: ac0dda89fc7abd74b839ba854fc68220,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: -5743350618785959237, guid: ac0dda89fc7abd74b839ba854fc68220,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: -5625962647284935580, guid: ac0dda89fc7abd74b839ba854fc68220,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: -5625962647284935580, guid: ac0dda89fc7abd74b839ba854fc68220,
         type: 3}
@@ -20441,6 +20781,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4120749181980465195, guid: ac0dda89fc7abd74b839ba854fc68220,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: -4120749181980465195, guid: ac0dda89fc7abd74b839ba854fc68220,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -20451,13 +20796,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3415595908788601478, guid: ac0dda89fc7abd74b839ba854fc68220,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: -3415595908788601478, guid: ac0dda89fc7abd74b839ba854fc68220,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: -3318377984755429641, guid: ac0dda89fc7abd74b839ba854fc68220,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: -3318377984755429641, guid: ac0dda89fc7abd74b839ba854fc68220,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: -3225959511443494117, guid: ac0dda89fc7abd74b839ba854fc68220,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: -3225959511443494117, guid: ac0dda89fc7abd74b839ba854fc68220,
         type: 3}
@@ -20476,8 +20836,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2839473913103277699, guid: ac0dda89fc7abd74b839ba854fc68220,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: -2839473913103277699, guid: ac0dda89fc7abd74b839ba854fc68220,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: -2188533403993169257, guid: ac0dda89fc7abd74b839ba854fc68220,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: -2188533403993169257, guid: ac0dda89fc7abd74b839ba854fc68220,
         type: 3}
@@ -20486,8 +20856,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1495647790576044562, guid: ac0dda89fc7abd74b839ba854fc68220,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: -1495647790576044562, guid: ac0dda89fc7abd74b839ba854fc68220,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: -1411414600132525845, guid: ac0dda89fc7abd74b839ba854fc68220,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: -1411414600132525845, guid: ac0dda89fc7abd74b839ba854fc68220,
         type: 3}
@@ -20496,8 +20876,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1382310259138254773, guid: ac0dda89fc7abd74b839ba854fc68220,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: -1382310259138254773, guid: ac0dda89fc7abd74b839ba854fc68220,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: -848810075482985824, guid: ac0dda89fc7abd74b839ba854fc68220,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: -848810075482985824, guid: ac0dda89fc7abd74b839ba854fc68220,
         type: 3}
@@ -20508,6 +20898,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -127663129974957919, guid: ac0dda89fc7abd74b839ba854fc68220,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: -127663129974957919, guid: ac0dda89fc7abd74b839ba854fc68220,
         type: 3}
@@ -20526,6 +20921,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 56645352485773903, guid: ac0dda89fc7abd74b839ba854fc68220,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 56645352485773903, guid: ac0dda89fc7abd74b839ba854fc68220,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -20541,6 +20941,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 287801641315677761, guid: ac0dda89fc7abd74b839ba854fc68220,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 287801641315677761, guid: ac0dda89fc7abd74b839ba854fc68220,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -20551,8 +20956,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ac0dda89fc7abd74b839ba854fc68220,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ac0dda89fc7abd74b839ba854fc68220,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1144745428700299488, guid: ac0dda89fc7abd74b839ba854fc68220,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1144745428700299488, guid: ac0dda89fc7abd74b839ba854fc68220,
         type: 3}
@@ -20561,8 +20976,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1205097685144858162, guid: ac0dda89fc7abd74b839ba854fc68220,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205097685144858162, guid: ac0dda89fc7abd74b839ba854fc68220,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1473852997443910654, guid: ac0dda89fc7abd74b839ba854fc68220,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1473852997443910654, guid: ac0dda89fc7abd74b839ba854fc68220,
         type: 3}
@@ -20581,6 +21006,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2208829090296373244, guid: ac0dda89fc7abd74b839ba854fc68220,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208829090296373244, guid: ac0dda89fc7abd74b839ba854fc68220,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -20596,8 +21026,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3257287909276931455, guid: ac0dda89fc7abd74b839ba854fc68220,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257287909276931455, guid: ac0dda89fc7abd74b839ba854fc68220,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276954715683093756, guid: ac0dda89fc7abd74b839ba854fc68220,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3276954715683093756, guid: ac0dda89fc7abd74b839ba854fc68220,
         type: 3}
@@ -20606,13 +21046,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3932649459435202605, guid: ac0dda89fc7abd74b839ba854fc68220,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3932649459435202605, guid: ac0dda89fc7abd74b839ba854fc68220,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4036647863111539459, guid: ac0dda89fc7abd74b839ba854fc68220,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4036647863111539459, guid: ac0dda89fc7abd74b839ba854fc68220,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162820104835090806, guid: ac0dda89fc7abd74b839ba854fc68220,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6948809459719224524, guid: ac0dda89fc7abd74b839ba854fc68220,
         type: 3}
@@ -20626,8 +21081,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7433961738391306393, guid: ac0dda89fc7abd74b839ba854fc68220,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7433961738391306393, guid: ac0dda89fc7abd74b839ba854fc68220,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938945021739698394, guid: ac0dda89fc7abd74b839ba854fc68220,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7938945021739698394, guid: ac0dda89fc7abd74b839ba854fc68220,
         type: 3}
@@ -20636,8 +21101,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8033128669362676822, guid: ac0dda89fc7abd74b839ba854fc68220,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8033128669362676822, guid: ac0dda89fc7abd74b839ba854fc68220,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8285062650099261282, guid: ac0dda89fc7abd74b839ba854fc68220,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8285062650099261282, guid: ac0dda89fc7abd74b839ba854fc68220,
         type: 3}
@@ -20653,6 +21128,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ReceiveShadows
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9125812942391018518, guid: ac0dda89fc7abd74b839ba854fc68220,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 9125812942391018518, guid: ac0dda89fc7abd74b839ba854fc68220,
         type: 3}
@@ -21149,6 +21629,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -21252,6 +21737,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medibottle03Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344542622064624652, guid: d7197b3e666585146bcde50ba0053f92,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1344542622064624652, guid: d7197b3e666585146bcde50ba0053f92,
         type: 3}
@@ -21587,6 +22077,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3571954171610063103, guid: 2837a94a5011a5e49925bf5c777ec3b8,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571954171610063103, guid: 2837a94a5011a5e49925bf5c777ec3b8,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -21682,6 +22177,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4005916293549487844, guid: ec08b972ab00ad44f8d0a7d7f4224655,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4005916293549487844, guid: ec08b972ab00ad44f8d0a7d7f4224655,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -21772,7 +22272,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1033434172}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bookpie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21804,6 +22304,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medibottle01Model (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 446527324290283653, guid: e26df79bc7230654a8cfe18ed041670e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 446527324290283653, guid: e26df79bc7230654a8cfe18ed041670e,
         type: 3}
@@ -21979,6 +22484,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 446527324290283653, guid: e26df79bc7230654a8cfe18ed041670e,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 446527324290283653, guid: e26df79bc7230654a8cfe18ed041670e,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -22056,6 +22566,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookModel (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
         type: 3}
@@ -22602,7 +23117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1056880108}
   - component: {fileID: 1056880109}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22914,6 +23429,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3571954171610063103, guid: 2837a94a5011a5e49925bf5c777ec3b8,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571954171610063103, guid: 2837a94a5011a5e49925bf5c777ec3b8,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -23006,6 +23526,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TissueBox02Model (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 488958540725721749, guid: c631ae6da8bc913418d056080e422389,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 488958540725721749, guid: c631ae6da8bc913418d056080e422389,
         type: 3}
@@ -23233,6 +23758,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medibottle04Model (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
         type: 3}
@@ -23531,7 +24061,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1088865287}
   - component: {fileID: 1088865288}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24109,6 +24639,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5691197136270386768, guid: 99d714362e1c4d245bc6b3748aed6cdb,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5691197136270386768, guid: 99d714362e1c4d245bc6b3748aed6cdb,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -24381,6 +24916,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8458803318442369727, guid: 75ce655933d1d2b45a566e6cf23e9768,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8458803318442369727, guid: 75ce655933d1d2b45a566e6cf23e9768,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -24531,6 +25071,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -24665,6 +25210,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookModel_Green Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940969053865044286, guid: 818693c50193e78459353fb37a68c3d7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4940969053865044286, guid: 818693c50193e78459353fb37a68c3d7,
         type: 3}
@@ -25083,6 +25633,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -25470,6 +26025,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4268111612363843724, guid: 8ae9e802080d60946b336e328d39214e,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268111612363843724, guid: 8ae9e802080d60946b336e328d39214e,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -25523,6 +26083,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookModel (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
         type: 3}
@@ -25768,6 +26333,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -25848,6 +26418,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5691197136270386768, guid: 99d714362e1c4d245bc6b3748aed6cdb,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5691197136270386768, guid: 99d714362e1c4d245bc6b3748aed6cdb,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -25914,6 +26489,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookModel_Yellow Variant (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4005916293549487844, guid: ec08b972ab00ad44f8d0a7d7f4224655,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4005916293549487844, guid: ec08b972ab00ad44f8d0a7d7f4224655,
         type: 3}
@@ -26507,6 +27087,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 446527324290283653, guid: e26df79bc7230654a8cfe18ed041670e,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 446527324290283653, guid: e26df79bc7230654a8cfe18ed041670e,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -26659,6 +27244,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookModel (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
         type: 3}
@@ -26817,7 +27407,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1206693413}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bookpie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26948,6 +27538,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4005916293549487844, guid: ec08b972ab00ad44f8d0a7d7f4224655,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4005916293549487844, guid: ec08b972ab00ad44f8d0a7d7f4224655,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -27040,6 +27635,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TissueBox02Model (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 488958540725721749, guid: c631ae6da8bc913418d056080e422389,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 488958540725721749, guid: c631ae6da8bc913418d056080e422389,
         type: 3}
@@ -27168,6 +27768,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookModel (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
         type: 3}
@@ -27316,7 +27921,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1229655979}
   - component: {fileID: 1229655980}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27641,7 +28246,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1247116188}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bookpile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27833,6 +28438,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6407065466059908593, guid: 5d9e457616ded7048a6c4f629e2c7e13,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407065466059908593, guid: 5d9e457616ded7048a6c4f629e2c7e13,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -27855,6 +28465,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medibottle01Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 446527324290283653, guid: e26df79bc7230654a8cfe18ed041670e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 446527324290283653, guid: e26df79bc7230654a8cfe18ed041670e,
         type: 3}
@@ -27990,6 +28605,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medibottle04Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
         type: 3}
@@ -28477,6 +29097,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4005916293549487844, guid: ec08b972ab00ad44f8d0a7d7f4224655,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4005916293549487844, guid: ec08b972ab00ad44f8d0a7d7f4224655,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -28740,6 +29365,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4584691200399107289, guid: 0eb35ded2201ad74a8cbb15c7e6835c5,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584691200399107289, guid: 0eb35ded2201ad74a8cbb15c7e6835c5,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -28806,6 +29436,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookModel_Gray Variant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571954171610063103, guid: 2837a94a5011a5e49925bf5c777ec3b8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3571954171610063103, guid: 2837a94a5011a5e49925bf5c777ec3b8,
         type: 3}
@@ -28978,7 +29613,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1304052596}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29142,7 +29777,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1314903394}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Medibottle (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29186,6 +29821,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookModel_Gray Variant (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571954171610063103, guid: 2837a94a5011a5e49925bf5c777ec3b8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3571954171610063103, guid: 2837a94a5011a5e49925bf5c777ec3b8,
         type: 3}
@@ -29470,6 +30110,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -29492,6 +30137,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookModel (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
         type: 3}
@@ -30403,7 +31053,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1362714086}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bookpile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30790,6 +31440,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: dab8324de99e6dc4982643d7ca10e310,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dab8324de99e6dc4982643d7ca10e310,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -30936,6 +31591,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 446527324290283653, guid: e26df79bc7230654a8cfe18ed041670e,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 446527324290283653, guid: e26df79bc7230654a8cfe18ed041670e,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -31046,7 +31706,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1407905901}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SmallRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31161,7 +31821,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1409169849}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31280,7 +31940,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1412040301}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Stainless
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31530,6 +32190,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5691197136270386768, guid: 99d714362e1c4d245bc6b3748aed6cdb,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5691197136270386768, guid: 99d714362e1c4d245bc6b3748aed6cdb,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -31607,6 +32272,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medibottle04Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
         type: 3}
@@ -31702,6 +32372,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ClockModel
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8918a7c564a9a644b6d46fa807b0c84,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f8918a7c564a9a644b6d46fa807b0c84,
         type: 3}
@@ -31861,6 +32536,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7689581527468730283, guid: 35cb2b54666ab784f99387b73581dc81,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7689581527468730283, guid: 35cb2b54666ab784f99387b73581dc81,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -31959,7 +32639,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1443476456}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FolderModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32223,6 +32903,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medibottle02Model (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5691197136270386768, guid: 99d714362e1c4d245bc6b3748aed6cdb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5691197136270386768, guid: 99d714362e1c4d245bc6b3748aed6cdb,
         type: 3}
@@ -32565,6 +33250,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5691197136270386768, guid: 99d714362e1c4d245bc6b3748aed6cdb,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5691197136270386768, guid: 99d714362e1c4d245bc6b3748aed6cdb,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -32755,6 +33445,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4940969053865044286, guid: 818693c50193e78459353fb37a68c3d7,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940969053865044286, guid: 818693c50193e78459353fb37a68c3d7,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -32936,6 +33631,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medibottle01Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 446527324290283653, guid: e26df79bc7230654a8cfe18ed041670e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 446527324290283653, guid: e26df79bc7230654a8cfe18ed041670e,
         type: 3}
@@ -33137,7 +33837,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1481315175}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Static Objects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33259,6 +33959,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medibottle03Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344542622064624652, guid: d7197b3e666585146bcde50ba0053f92,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1344542622064624652, guid: d7197b3e666585146bcde50ba0053f92,
         type: 3}
@@ -33394,6 +34099,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medibottle04Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
         type: 3}
@@ -33817,6 +34527,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4314895308276005518, guid: 3e931eb892bedf84690e23b6ea3e48a9,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4314895308276005518, guid: 3e931eb892bedf84690e23b6ea3e48a9,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -33983,6 +34698,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookModel_Orange Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407065466059908593, guid: 5d9e457616ded7048a6c4f629e2c7e13,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6407065466059908593, guid: 5d9e457616ded7048a6c4f629e2c7e13,
         type: 3}
@@ -34161,6 +34881,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medibottle01Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 446527324290283653, guid: e26df79bc7230654a8cfe18ed041670e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 446527324290283653, guid: e26df79bc7230654a8cfe18ed041670e,
         type: 3}
@@ -34372,6 +35097,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medibottle02Model (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5691197136270386768, guid: 99d714362e1c4d245bc6b3748aed6cdb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5691197136270386768, guid: 99d714362e1c4d245bc6b3748aed6cdb,
         type: 3}
@@ -34780,6 +35510,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6407065466059908593, guid: 5d9e457616ded7048a6c4f629e2c7e13,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407065466059908593, guid: 5d9e457616ded7048a6c4f629e2c7e13,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -34992,6 +35727,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5691197136270386768, guid: 99d714362e1c4d245bc6b3748aed6cdb,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5691197136270386768, guid: 99d714362e1c4d245bc6b3748aed6cdb,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -35090,6 +35830,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookModel_Yellow Variant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4005916293549487844, guid: ec08b972ab00ad44f8d0a7d7f4224655,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4005916293549487844, guid: ec08b972ab00ad44f8d0a7d7f4224655,
         type: 3}
@@ -35367,6 +36112,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medibottle02Model (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5691197136270386768, guid: 99d714362e1c4d245bc6b3748aed6cdb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5691197136270386768, guid: 99d714362e1c4d245bc6b3748aed6cdb,
         type: 3}
@@ -36004,6 +36754,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6105396577135488470, guid: 0d2c5b06135e9614da1b43ecdcecaf66,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6105396577135488470, guid: 0d2c5b06135e9614da1b43ecdcecaf66,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -36141,6 +36896,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FolderModel (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584691200399107289, guid: 0eb35ded2201ad74a8cbb15c7e6835c5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4584691200399107289, guid: 0eb35ded2201ad74a8cbb15c7e6835c5,
         type: 3}
@@ -36502,6 +37262,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1344542622064624652, guid: d7197b3e666585146bcde50ba0053f92,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344542622064624652, guid: d7197b3e666585146bcde50ba0053f92,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -36619,6 +37384,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4005916293549487844, guid: ec08b972ab00ad44f8d0a7d7f4224655,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4005916293549487844, guid: ec08b972ab00ad44f8d0a7d7f4224655,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -36714,6 +37484,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -36806,6 +37581,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medibottle01Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 446527324290283653, guid: e26df79bc7230654a8cfe18ed041670e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 446527324290283653, guid: e26df79bc7230654a8cfe18ed041670e,
         type: 3}
@@ -37113,7 +37893,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1630378063}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bookpile (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37149,6 +37929,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medibottle03Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344542622064624652, guid: d7197b3e666585146bcde50ba0053f92,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1344542622064624652, guid: d7197b3e666585146bcde50ba0053f92,
         type: 3}
@@ -37474,6 +38259,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -37540,6 +38330,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medibottle03Model (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344542622064624652, guid: d7197b3e666585146bcde50ba0053f92,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1344542622064624652, guid: d7197b3e666585146bcde50ba0053f92,
         type: 3}
@@ -38667,7 +39462,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1719418211}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Medibottle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39214,6 +40009,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -39587,6 +40387,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4584691200399107289, guid: 0eb35ded2201ad74a8cbb15c7e6835c5,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584691200399107289, guid: 0eb35ded2201ad74a8cbb15c7e6835c5,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -39717,6 +40522,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TissueBox02Model (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 488958540725721749, guid: c631ae6da8bc913418d056080e422389,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 488958540725721749, guid: c631ae6da8bc913418d056080e422389,
         type: 3}
@@ -39972,6 +40782,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -40197,6 +41012,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MiniShelf01Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 4314895308276005518, guid: 3e931eb892bedf84690e23b6ea3e48a9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4314895308276005518, guid: 3e931eb892bedf84690e23b6ea3e48a9,
         type: 3}
@@ -40463,6 +41283,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6407065466059908593, guid: 5d9e457616ded7048a6c4f629e2c7e13,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407065466059908593, guid: 5d9e457616ded7048a6c4f629e2c7e13,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -40680,6 +41505,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FolderModel (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584691200399107289, guid: 0eb35ded2201ad74a8cbb15c7e6835c5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4584691200399107289, guid: 0eb35ded2201ad74a8cbb15c7e6835c5,
         type: 3}
@@ -41016,6 +41846,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a748ea2ed8cca33439a27661a0d1357a,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a748ea2ed8cca33439a27661a0d1357a,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -41206,6 +42041,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medibottle03Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344542622064624652, guid: d7197b3e666585146bcde50ba0053f92,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1344542622064624652, guid: d7197b3e666585146bcde50ba0053f92,
         type: 3}
@@ -41548,7 +42388,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1866268767}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Gum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41580,7 +42420,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1869571949}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Medibottle (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41624,6 +42464,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medibottle03Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344542622064624652, guid: d7197b3e666585146bcde50ba0053f92,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1344542622064624652, guid: d7197b3e666585146bcde50ba0053f92,
         type: 3}
@@ -42209,6 +43054,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a844169800c91dd41b4e3d388c1186d3,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a844169800c91dd41b4e3d388c1186d3,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -42479,6 +43329,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5691197136270386768, guid: 99d714362e1c4d245bc6b3748aed6cdb,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5691197136270386768, guid: 99d714362e1c4d245bc6b3748aed6cdb,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -42579,6 +43434,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookModel_Yellow Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4005916293549487844, guid: ec08b972ab00ad44f8d0a7d7f4224655,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4005916293549487844, guid: ec08b972ab00ad44f8d0a7d7f4224655,
         type: 3}
@@ -43157,6 +44017,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6072448814159192537, guid: ef442734e2a183b49b99dff83ff3cb58,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6072448814159192537, guid: ef442734e2a183b49b99dff83ff3cb58,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -43234,6 +44099,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medibottle03Model (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344542622064624652, guid: d7197b3e666585146bcde50ba0053f92,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1344542622064624652, guid: d7197b3e666585146bcde50ba0053f92,
         type: 3}
@@ -43326,6 +44196,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookModel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
         type: 3}
@@ -43424,6 +44299,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -43516,6 +44396,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookModel (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
         type: 3}
@@ -43791,6 +44676,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5691197136270386768, guid: 99d714362e1c4d245bc6b3748aed6cdb,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5691197136270386768, guid: 99d714362e1c4d245bc6b3748aed6cdb,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -43977,6 +44867,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 446527324290283653, guid: e26df79bc7230654a8cfe18ed041670e,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 446527324290283653, guid: e26df79bc7230654a8cfe18ed041670e,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -44054,6 +44949,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medibottle01Model (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 446527324290283653, guid: e26df79bc7230654a8cfe18ed041670e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 446527324290283653, guid: e26df79bc7230654a8cfe18ed041670e,
         type: 3}
@@ -44347,6 +45247,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -44438,7 +45343,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1984638108}
   - component: {fileID: 1984638109}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44690,6 +45595,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -44770,7 +45680,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1986326568}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DentalRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45236,6 +46146,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6245529576164109315, guid: fcbdf83d33470bd4ca2bf7f908655e41,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6245529576164109315, guid: fcbdf83d33470bd4ca2bf7f908655e41,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -45313,6 +46228,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookModel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
         type: 3}
@@ -45453,6 +46373,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookModel_Yellow Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4005916293549487844, guid: ec08b972ab00ad44f8d0a7d7f4224655,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4005916293549487844, guid: ec08b972ab00ad44f8d0a7d7f4224655,
         type: 3}
@@ -45806,6 +46731,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medibottle01Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 446527324290283653, guid: e26df79bc7230654a8cfe18ed041670e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 446527324290283653, guid: e26df79bc7230654a8cfe18ed041670e,
         type: 3}
@@ -46252,6 +47182,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -46414,6 +47349,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookModel_Orange Variant (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407065466059908593, guid: 5d9e457616ded7048a6c4f629e2c7e13,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6407065466059908593, guid: 5d9e457616ded7048a6c4f629e2c7e13,
         type: 3}
@@ -47275,6 +48215,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 446527324290283653, guid: e26df79bc7230654a8cfe18ed041670e,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 446527324290283653, guid: e26df79bc7230654a8cfe18ed041670e,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -47355,6 +48300,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -47425,7 +48375,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2109488500}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TissueBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47729,6 +48679,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookModel_Gray Variant (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571954171610063103, guid: 2837a94a5011a5e49925bf5c777ec3b8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3571954171610063103, guid: 2837a94a5011a5e49925bf5c777ec3b8,
         type: 3}
@@ -48070,6 +49025,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848355038107732780, guid: 95c133c0747d92e4f904e81827e5ae6d,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -48331,6 +49291,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030310980479934026, guid: 6418b656b2a8da248b1e6214374bdf73,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -48351,7 +49316,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2134238405}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Props
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48710,6 +49675,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6245529576164109315, guid: fcbdf83d33470bd4ca2bf7f908655e41,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6245529576164109315, guid: fcbdf83d33470bd4ca2bf7f908655e41,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -48820,6 +49790,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 559076567049681198, guid: 878d2ecff514e7c408fda321cd24d310,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 559076567049681198, guid: 878d2ecff514e7c408fda321cd24d310,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -48906,6 +49881,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MiniShelf02Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 6105396577135488470, guid: 0d2c5b06135e9614da1b43ecdcecaf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6105396577135488470, guid: 0d2c5b06135e9614da1b43ecdcecaf66,
         type: 3}
@@ -49413,6 +50393,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1953328167432032556, guid: 4901bd1aecdf12e49a74012432d2bcab,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1953328167432032556, guid: 4901bd1aecdf12e49a74012432d2bcab,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -49532,6 +50517,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PumpBottleModel_Yellow
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549641400343921375, guid: 66e34116de6c72b44aa1cff8b618d003,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7549641400343921375, guid: 66e34116de6c72b44aa1cff8b618d003,
         type: 3}
@@ -50589,6 +51579,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4268111612363843724, guid: 8ae9e802080d60946b336e328d39214e,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268111612363843724, guid: 8ae9e802080d60946b336e328d39214e,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -50678,6 +51673,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CapsuleBottleModel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8458803318442369727, guid: 75ce655933d1d2b45a566e6cf23e9768,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8458803318442369727, guid: 75ce655933d1d2b45a566e6cf23e9768,
         type: 3}
@@ -50976,6 +51976,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5237613012011711696, guid: e0b3be3d2d2f1db44a6d14e17c2f38ab,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5237613012011711696, guid: e0b3be3d2d2f1db44a6d14e17c2f38ab,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -51224,6 +52229,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2376906610146054800, guid: 768ccaef2212c334f8c2333bbbf2fa27,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2376906610146054800, guid: 768ccaef2212c334f8c2333bbbf2fa27,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -51426,6 +52436,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TissueBox02Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 488958540725721749, guid: c631ae6da8bc913418d056080e422389,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 488958540725721749, guid: c631ae6da8bc913418d056080e422389,
         type: 3}
@@ -51755,6 +52770,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6072448814159192537, guid: ef442734e2a183b49b99dff83ff3cb58,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6072448814159192537, guid: ef442734e2a183b49b99dff83ff3cb58,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -52044,6 +53064,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4584691200399107289, guid: 0eb35ded2201ad74a8cbb15c7e6835c5,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584691200399107289, guid: 0eb35ded2201ad74a8cbb15c7e6835c5,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -52230,6 +53255,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7689581527468730283, guid: 35cb2b54666ab784f99387b73581dc81,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7689581527468730283, guid: 35cb2b54666ab784f99387b73581dc81,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -52246,6 +53276,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TrayModel
+      objectReference: {fileID: 0}
+    - target: {fileID: 345164041518513674, guid: 4dcbd68c477327c40991bae96b387902,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 345164041518513674, guid: 4dcbd68c477327c40991bae96b387902,
         type: 3}

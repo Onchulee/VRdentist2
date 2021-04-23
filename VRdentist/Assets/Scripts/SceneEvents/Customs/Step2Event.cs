@@ -58,7 +58,7 @@ public class Step2Event : SceneEvent
 
     public override void UpdateEvent()
     {
-        if (targetItem &&/* targetItem.IsActivate && */isCollided)
+        if (targetItem && targetItem.IsActivate && isCollided)
         {
             passEventCondition = true;
         }

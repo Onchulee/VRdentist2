@@ -16,31 +16,40 @@ MonoBehaviour:
   collisionTriggerName: TriggerTrayArea
   toolSetup:
   - toolName: Scissors
-    detailText: ScissorsTextDetail
+    detailTextR: ScissorsTextDetailRight
+    detailTextL: ScissorsTextDetailLeft
     checkText: ScissorsText
   - toolName: Scalpel
-    detailText: ScalpelTextDetail
+    detailTextR: ScalpelTextDetailRight
+    detailTextL: ScalpelTextDetailLeft
     checkText: ScalpelText
   - toolName: Syringe01
-    detailText: Syringe01TextDetail
+    detailTextR: Syringe01TextDetailRight
+    detailTextL: Syringe01TextDetailLeft
     checkText: Syringe01Text
   - toolName: Syringe02
-    detailText: Syringe02TextDetail
+    detailTextR: Syringe02TextDetailRight
+    detailTextL: Syringe02TextDetailLeft
     checkText: Syringe02Text
   - toolName: Molt
-    detailText: MoltTextDetail
+    detailTextR: MoltTextDetailRight
+    detailTextL: MoltTextDetailLeft
     checkText: MoltText
   - toolName: StraightElevator
-    detailText: StraightElevatorDetail
+    detailTextR: StraightElevatorDetailRight
+    detailTextL: StraightElevatorDetailLeft
     checkText: StraightElevatorText
   - toolName: Seldin
-    detailText: SeldinTextDetail
+    detailTextR: SeldinTextDetailRight
+    detailTextL: SeldinTextDetailLeft
     checkText: SeldinText
   - toolName: Fissure
-    detailText: FissureTextDetail
+    detailTextR: FissureTextDetailRight
+    detailTextL: FissureTextDetailLeft
     checkText: FissureText
   - toolName: Steel
-    detailText: SteelTextDetail
+    detailTextR: SteelTextDetailRight
+    detailTextL: SteelTextDetailLeft
     checkText: SteelText
   numOfToolsTextName: num of tools
   missionClearTextName: MissionClear

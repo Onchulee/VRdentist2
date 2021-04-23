@@ -168,11 +168,11 @@ public class Step8Event : SceneEvent
     {
         ui.UpdateData(6);
         uiEquipment.UpdateData(6);
+
         for (int i = 0; i < trackedTools.Length; i++)
         {
-
-            trackedTools[i].equipment.gameObject.SetActive(true);
             trackedTools[i].hold = false;
+            trackedTools[i].equipment.gameObject.SetActive(true);
             trackedTools[i].freezeTool.gameObject.SetActive(false);
             trackedTools[i].equipment.gameObject.GetComponent<Rigidbody>().isKinematic = true;
 
@@ -180,6 +180,10 @@ public class Step8Event : SceneEvent
             trackedTools[i].guidance?.SetParent(trackedTools[i].equipment.transform);
             trackedTools[i].guidance?.SetTarget(trackedTools[i].trigger.transform);
 
+
+
+            trackedTools[i].equipment.transform.position = trackedTools[i].freezeTool.transform.position;
+            trackedTools[i].equipment.transform.rotation = trackedTools[i].freezeTool.transform.rotation;
 
             if (trackedTools[i].trigger)
             {

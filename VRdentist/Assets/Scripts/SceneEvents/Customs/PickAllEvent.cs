@@ -13,8 +13,10 @@ public class PickAllEvent : SceneEvent
     public struct ToolSetup
     {
         public string toolName;
-        public string detailText;
+        public string detailTextR;
+        public string detailTextL;
         public string checkText;
+       
     }
 
 
@@ -22,18 +24,17 @@ public class PickAllEvent : SceneEvent
     public struct Tracking
     {
         public GrabbableEquipmentBehavior equipment;
-        public GameObject detailWindow;
+        public GameObject detailWindowRight;
+        public GameObject detailWindowLeft;
         public GameObject checkText;
         public bool check;
+        
+
     }
 
     
 
     public string collisionTriggerName;
-
-    //public string[] ToolsNames;
-    //public string[] ToolsDetailText;
-
     public ToolSetup[] toolSetup;
     public string numOfToolsTextName;
     public string missionClearTextName;
@@ -43,9 +44,6 @@ public class PickAllEvent : SceneEvent
     private Tracking[] trackedTools;
     private Text numOfTools;
     private GameObject missionClearText;
-
-    //private List<Tracking> trackedTools;
-    //private List<GameObject> texts;
     private CollisionTrigger trigger;
     private PathGuidance guidance;
 
@@ -60,7 +58,6 @@ public class PickAllEvent : SceneEvent
         base.InitEvent();
         SceneAssetManager.GetAssetComponentInChildren(collisionTriggerName, out trigger);
         SceneAssetManager.GetAssetComponent(guidanceName, out guidance);
-
         SceneAssetManager.GetAssetComponent(numOfToolsTextName, out numOfTools);
         SceneAssetManager.GetGameObjectAsset(missionClearTextName, out missionClearText);
 
@@ -74,10 +71,19 @@ public class PickAllEvent : SceneEvent
                     equipment = targetObject,
                     check = false
                 };
-                if (SceneAssetManager.GetGameObjectAsset(config.detailText, out GameObject i_detailWindow))
+
+
+                if (SceneAssetManager.GetGameObjectAsset(config.detailTextR, out GameObject i_detailWindowRight))
                 {
-                    newTrack.detailWindow = i_detailWindow;
+                    newTrack.detailWindowRight = i_detailWindowRight;
                 }
+                if (SceneAssetManager.GetGameObjectAsset(config.detailTextL, out GameObject i_detailWindowLeft))
+                {
+                    newTrack.detailWindowLeft = i_detailWindowLeft;
+                }
+
+
+
                 if (SceneAssetManager.GetGameObjectAsset(config.checkText, out GameObject i_checkWindow))
                 {
                     newTrack.checkText = i_checkWindow;
@@ -93,20 +99,7 @@ public class PickAllEvent : SceneEvent
 
         trackedTools = trackedList.ToArray();
 
-        //texts = new List<GameObject>();
-        //foreach (string targetName in ToolsDetailText)
-        //{
-        //    if (SceneAssetManager.GetGameObjectAsset(targetName, out GameObject targetObject))
-        //    {
-        //        targetObject.SetActive(false); // hide at begin
-        //        texts.Add(targetObject);
-        //    }
-        //}
-
-
-        /*  Debug.Log("Found Asset[Tools]: " + (tools.Count > 0));
-
-         */
+        
     }
 
     public override void StartEvent()
@@ -124,31 +117,88 @@ public class PickAllEvent : SceneEvent
     private void OnGrabbed(XRBaseInteractor interactor)
     {
         XRBaseInteractable interactable = interactor.selectTarget;
+        XRController controller = interactor.GetComponent<XRController>();
+
         if (interactable == null) return;
+       
 
-        for (int i=0; i<trackedTools.Length; i++) {
-
-            if (interactable.gameObject == trackedTools[i].equipment.gameObject)
+        //มือขวา
+        if (controller.controllerNode == UnityEngine.XR.XRNode.RightHand)
+        {
+            Debug.Log("ขวา");
+            for (int i = 0; i < trackedTools.Length; i++)
             {
-                Debug.Log("จับ "+i);
-                trackedTools[i].detailWindow.SetActive(true);
-                guidance?.SetParent(trackedTools[i].equipment.transform);
-                break;
+
+                if (interactable.gameObject == trackedTools[i].equipment.gameObject)
+                {
+                    Debug.Log("จับขวา " + i);
+                    trackedTools[i].detailWindowRight.SetActive(true);
+                    guidance?.SetParent(trackedTools[i].equipment.transform);
+                    break;
+                }
             }
         }
+
+
+        //มือซ้าย
+        if (controller.controllerNode == UnityEngine.XR.XRNode.LeftHand)
+        {
+            Debug.Log("ซ้าย");
+            for (int i = 0; i < trackedTools.Length; i++)
+            {
+                if (interactable.gameObject == trackedTools[i].equipment.gameObject)
+                {
+                    Debug.Log("จับซ้าย " + i);
+                    trackedTools[i].detailWindowLeft.SetActive(true);
+                    guidance?.SetParent(trackedTools[i].equipment.transform);
+                    break;
+                }
+            }
+        }
+        
+        //for (int i=0; i<trackedTools.Length; i++) {
+
+        //    if (interactable.gameObject == trackedTools[i].equipment.gameObject)
+        //    {
+        //        Debug.Log("จับ "+i);
+        //        trackedTools[i].detailWindow.SetActive(true);
+        //        guidance?.SetParent(trackedTools[i].equipment.transform);
+        //        break;
+        //    }
+        //}
     }
 
 
 
     private void OnReleased(XRBaseInteractor interactor)
     {
-        //XRBaseInteractable interactable = interactor.selectTarget;
-        //  if (interactable == null) return;
-        //if (interactor == null) return;
+        XRController controller = interactor.GetComponent<XRController>();
 
-        foreach (Tracking trackedTool in trackedTools) {
-            trackedTool.detailWindow.SetActive(false);
+
+        if (controller.controllerNode == UnityEngine.XR.XRNode.RightHand)
+        {
+            foreach (Tracking trackedTool in trackedTools)
+            {
+                trackedTool.detailWindowRight.SetActive(false);
+
+            }
         }
+
+
+        if (controller.controllerNode == UnityEngine.XR.XRNode.LeftHand)
+        {
+            foreach (Tracking trackedTool in trackedTools)
+            {
+                trackedTool.detailWindowLeft.SetActive(false);
+
+            }
+        }
+
+
+        //foreach (Tracking trackedTool in trackedTools) {
+        //    trackedTool.detailWindow.SetActive(false);
+        //    trackedTool.detailWindowleft.SetActive(false);
+        //}
 
         
 
@@ -172,7 +222,7 @@ public class PickAllEvent : SceneEvent
         if (placedToolCount >= trackedTools.Length)
         {
             missionClearText.gameObject.SetActive(true);
-            //passEventCondition = true;  // Uncomment if you want system to done here
+            passEventCondition = true;  // Uncomment if you want system to done here
         }
         else
         {

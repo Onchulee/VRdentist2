@@ -38,14 +38,16 @@ public class PickAllEvent : SceneEvent
     public ToolSetup[] toolSetup;
     public string numOfToolsTextName;
     public string missionClearTextName;
-    public string guidanceName = "PathGuidance";
+    public string guidanceRightName = "PathGuidance";
+    public string guidanceLeftName = "PathGuidance2";
     public SceneEvent nextScene;
 
     private Tracking[] trackedTools;
     private Text numOfTools;
     private GameObject missionClearText;
     private CollisionTrigger trigger;
-    private PathGuidance guidance;
+    private PathGuidance guidance_left;
+    private PathGuidance guidance_right;
 
 
     private List<XRGrabInteractable> grabInteractables = new List<XRGrabInteractable>();
@@ -57,7 +59,8 @@ public class PickAllEvent : SceneEvent
     {
         base.InitEvent();
         SceneAssetManager.GetAssetComponentInChildren(collisionTriggerName, out trigger);
-        SceneAssetManager.GetAssetComponent(guidanceName, out guidance);
+        SceneAssetManager.GetAssetComponent(guidanceRightName, out guidance_right);
+        SceneAssetManager.GetAssetComponent(guidanceLeftName, out guidance_left);
         SceneAssetManager.GetAssetComponent(numOfToolsTextName, out numOfTools);
         SceneAssetManager.GetGameObjectAsset(missionClearTextName, out missionClearText);
 
@@ -104,7 +107,8 @@ public class PickAllEvent : SceneEvent
 
     public override void StartEvent()
     {
-        guidance?.SetTarget(trigger.transform);
+        guidance_right?.SetTarget(trigger.transform);
+        guidance_left?.SetTarget(trigger.transform);
         if (trigger)
         {
             trigger.gameObject.SetActive(true);
@@ -133,7 +137,7 @@ public class PickAllEvent : SceneEvent
                 {
                     Debug.Log("จับขวา " + i);
                     trackedTools[i].detailWindowRight.SetActive(true);
-                    guidance?.SetParent(trackedTools[i].equipment.transform);
+                    guidance_right?.SetParent(trackedTools[i].equipment.transform);
                     break;
                 }
             }
@@ -150,7 +154,7 @@ public class PickAllEvent : SceneEvent
                 {
                     Debug.Log("จับซ้าย " + i);
                     trackedTools[i].detailWindowLeft.SetActive(true);
-                    guidance?.SetParent(trackedTools[i].equipment.transform);
+                    guidance_left?.SetParent(trackedTools[i].equipment.transform);
                     break;
                 }
             }
@@ -180,8 +184,8 @@ public class PickAllEvent : SceneEvent
             foreach (Tracking trackedTool in trackedTools)
             {
                 trackedTool.detailWindowRight.SetActive(false);
-
             }
+            guidance_right?.SetParent(null);
         }
 
 
@@ -190,27 +194,14 @@ public class PickAllEvent : SceneEvent
             foreach (Tracking trackedTool in trackedTools)
             {
                 trackedTool.detailWindowLeft.SetActive(false);
-
             }
+            guidance_left?.SetParent(null);
         }
-
-
-        //foreach (Tracking trackedTool in trackedTools) {
-        //    trackedTool.detailWindow.SetActive(false);
-        //    trackedTool.detailWindowleft.SetActive(false);
-        //}
-
         
-
-        guidance?.SetParent(null);
     }
     
     public override void UpdateEvent()
     {
-
-        
-
-
         int placedToolCount = 0;
         foreach(Tracking tool in trackedTools)
         {
@@ -233,13 +224,16 @@ public class PickAllEvent : SceneEvent
     public override void StopEvent()
     {
         foreach (XRGrabInteractable interactable in grabInteractables) {
-            interactable.onSelectEntered.RemoveListener(OnGrabbed);
-            interactable.onSelectExited.RemoveListener(OnReleased);
+            if (interactable)
+            {
+                interactable.onSelectEntered.RemoveListener(OnGrabbed);
+                interactable.onSelectExited.RemoveListener(OnReleased);
+            }
         }
         grabInteractables.Clear();
 
-        guidance?.SetTarget(null);
-        guidance?.SetParent(null);
+        guidance_right?.SetTarget(null);
+        guidance_left?.SetParent(null);
 
         if (trigger)
         {
@@ -277,7 +271,7 @@ public class PickAllEvent : SceneEvent
             }
         }
 
-        guidance?.SetParent(null);
+        guidance_right?.SetParent(null);
     }
 
     private void OnCollisionExit(Collision collision)
